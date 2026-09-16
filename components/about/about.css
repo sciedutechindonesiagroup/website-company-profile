@@ -1,0 +1,541 @@
+/* =========================================
+   COMPONENT: ABOUT PAGE (GABUNGAN SELURUH SECTION)
+   ========================================= */
+
+/* --- 1. HERO SECTION --- */
+.about-page-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--navy);
+    padding-top: 100px;
+    overflow: hidden; /* Mencegah ornamen tumpah */
+}
+
+.about-hero-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center; z-index: 1;
+}
+
+.about-shape-dark-navy {
+    position: absolute; top: 0; left: 0; width: 45%; height: 100%;
+    background-color: #051426; clip-path: polygon(0 0, 100% 0, 0 100%); z-index: 2;
+}
+
+.about-shape-navy {
+    position: absolute; top: 0; left: 0; width: 75%; height: 100%;
+    background-color: rgba(11, 37, 69, 0.92); clip-path: polygon(0 0, 75% 0, 30% 100%, 0 100%); z-index: 3;
+}
+
+.about-shape-yellow {
+    position: absolute; bottom: 0; right: 0; width: 250px; height: 250px;
+    background-color: var(--yellow); clip-path: polygon(100% 100%, 100% 0, 0 100%); z-index: 3;
+}
+
+.about-watermark {
+    position: absolute; top: 35%; right: 4%;
+    font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800;
+    color: rgba(11, 37, 69, 0.4); line-height: 1.2; letter-spacing: 2px; text-align: right; z-index: 2;
+}
+
+.about-hero-container {
+    position: relative; z-index: 10; max-width: 1300px; margin: 0 auto; width: 100%;
+    padding: 60px 5%; flex: 1; display: flex; align-items: center;
+}
+
+.about-hero-content { max-width: 600px; }
+
+.badge-subtitle { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; flex-wrap: wrap; }
+.badge-subtitle .line { width: 40px; height: 2px; background-color: var(--yellow); }
+.badge-subtitle .text { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; color: #9CA3AF; letter-spacing: 2px; }
+.badge-subtitle .divider { color: rgba(255, 255, 255, 0.2); margin: 0 5px; }
+
+.about-title { font-size: 4rem; margin-bottom: 25px; line-height: 1.1; color: var(--white); }
+.about-desc { color: var(--white); font-size: 1.1rem; font-weight: 400; line-height: 1.6; margin-bottom: 45px; }
+
+.breadcrumb { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 500; flex-wrap: wrap; }
+.breadcrumb a { color: #D1D5DB; }
+.breadcrumb a:hover { color: var(--white); }
+.breadcrumb-arrow { color: var(--yellow); font-size: 1.2rem; }
+.breadcrumb .current { color: var(--yellow); font-weight: 600; }
+
+.about-feature-bar {
+    position: relative; z-index: 10; width: 100%;
+    background-color: #07172B; padding: 30px 5%; 
+    display: flex; justify-content: center; align-items: center; gap: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap;
+}
+
+.about-feature-item { display: flex; align-items: center; gap: 15px; flex: 1; min-width: 200px; justify-content: center; }
+.about-feature-icon { color: var(--white); }
+.about-feature-icon.icon-yellow { color: var(--yellow); }
+.about-feature-icon span { font-size: 2.4rem; font-variation-settings: 'FILL' 0, 'wght' 300; }
+.about-feature-text { display: flex; flex-direction: column; }
+.about-feature-text .title { color: var(--white); font-size: 0.95rem; font-weight: 600; line-height: 1.3; }
+.about-feature-text .desc { color: #9CA3AF; font-size: 0.85rem; line-height: 1.3; }
+.about-v-divider { width: 1px; height: 40px; background-color: rgba(255,255,255,0.15); }
+
+
+/* --- 2. WHO WE ARE SECTION --- */
+.about-who-we-are {
+    position: relative; padding: 100px 5%; background-color: var(--white); overflow: hidden;
+}
+
+.who-bg-pattern {
+    position: absolute; bottom: 0; left: 0; width: 400px; height: 400px;
+    background-image: url('../../assets/images/bg-blueprint.png'); background-size: cover; opacity: 0.05; pointer-events: none;
+}
+
+.who-container {
+    max-width: 1300px; margin: 0 auto; display: flex; align-items: center; gap: 80px; position: relative; z-index: 2;
+}
+
+.who-content-left { flex: 1.1; }
+.who-title { font-family: var(--font-heading); font-size: 3.2rem; font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 25px; }
+.who-desc { color: #4B5563; font-size: 1.05rem; line-height: 1.7; margin-bottom: 50px; }
+
+.who-features { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.who-feature-item { display: flex; flex-direction: column; gap: 15px; flex: 1; min-width: 120px; }
+.who-feature-item p { color: var(--navy); font-size: 0.95rem; font-weight: 600; line-height: 1.4; margin: 0; }
+.who-v-divider { width: 1px; height: 70px; background-color: rgba(11,37,69,0.2); margin-top: 10px; }
+
+.who-image-right { flex: 1; position: relative; width: 100%; }
+.who-img-wrapper { position: relative; width: 100%; aspect-ratio: 4/3; z-index: 2; }
+.who-img-wrapper img { width: 100%; height: 100%; object-fit: cover; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+.who-ornament-top-left {
+    position: absolute; top: -30px; left: -40px; width: 130px; height: 60px;
+    background-color: var(--yellow); clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%); z-index: -1;
+}
+
+.who-ornament-bottom-right {
+    position: absolute; bottom: -30px; right: -30px; background-color: var(--navy);
+    padding: 40px 40px 30px 60px; clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 3; color: var(--white); box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.who-ornament-bottom-right .ornament-line { width: 30px; height: 3px; background-color: var(--yellow); margin-bottom: 15px; }
+.who-ornament-bottom-right p { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; line-height: 1.4; margin: 0; }
+
+
+/* --- 3. VISI MISI (DETAIL) --- */
+.about-vision-mission {
+    position: relative; background-color: #061930; padding: 100px 5%; overflow: hidden; color: var(--white);
+}
+
+.vm-bg-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center; opacity: 0.15; z-index: 1; mix-blend-mode: luminosity;
+}
+
+.vm-gradient-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(6,25,48,0.95) 0%, rgba(6,25,48,0.85) 100%); z-index: 2;
+}
+
+.vm-watermark-visi, .vm-watermark-misi {
+    position: absolute; font-family: var(--font-heading); font-size: 14rem; font-weight: 800;
+    color: rgba(255,255,255,0.03); z-index: 3; line-height: 1; letter-spacing: 5px; pointer-events: none;
+}
+.vm-watermark-visi { bottom: -5%; left: 3%; }
+.vm-watermark-misi { top: 10%; right: 3%; }
+
+.vm-watermark-topright { position: absolute; top: 50px; right: 5%; text-align: right; z-index: 4; }
+.vm-watermark-topright span { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.4); line-height: 1.3; letter-spacing: 1px; }
+.vm-watermark-topright .decor-line { width: 40px; height: 2px; background-color: var(--yellow); margin-top: 10px; margin-left: auto; }
+
+.vm-ornament-left {
+    position: absolute; top: 45%; left: 5%; width: 80px; height: 150px;
+    border-left: 2px solid var(--yellow); border-top: 2px solid var(--yellow); border-top-left-radius: 8px; z-index: 4; opacity: 0.8;
+}
+.vm-ornament-right {
+    position: absolute; bottom: 0; right: 0; width: 200px; height: 200px;
+    background-color: var(--yellow); clip-path: polygon(100% 100%, 100% 30%, 30% 100%); z-index: 4;
+}
+
+.vm-container { position: relative; z-index: 10; max-width: 1300px; margin: 0 auto; width: 100%; }
+
+.vm-header { display: flex; align-items: stretch; gap: 40px; margin-bottom: 80px; flex-wrap: wrap; }
+.vm-header-left { flex: 1.2; min-width: 300px; }
+.vm-title { font-family: var(--font-heading); font-size: 3rem; font-weight: 800; line-height: 1.2; margin-top: 10px; color: var(--white); }
+.vm-header-divider { width: 1px; background-color: rgba(255,255,255,0.2); margin-top: 10px; }
+.vm-header-right { flex: 1; min-width: 300px; display: flex; align-items: center; }
+.vm-header-right p { color: #D1D5DB; font-size: 1.1rem; line-height: 1.6; margin: 0; }
+
+.vm-content { display: flex; align-items: stretch; gap: 40px; margin-bottom: 70px; flex-wrap: wrap; }
+.vm-col-visi, .vm-col-misi { flex: 1; display: flex; align-items: flex-start; gap: 25px; min-width: 300px; }
+.vm-col-divider { width: 1px; background-color: rgba(255,255,255,0.1); }
+
+.vm-icon-box { width: 80px; height: 80px; background-color: var(--yellow); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.vm-icon-box span { font-size: 3.5rem; color: var(--navy); }
+.vm-subtitle { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 20px; color: var(--yellow); }
+.vm-desc { color: #E5E7EB; font-size: 1.1rem; line-height: 1.7; font-weight: 400; }
+
+.vm-list { display: flex; flex-direction: column; gap: 20px; list-style: none; padding: 0; margin: 0; }
+.vm-list li { display: flex; align-items: flex-start; gap: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.vm-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.vm-list .num { color: var(--yellow); font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; line-height: 1.2; }
+.vm-list .text { color: #E5E7EB; font-size: 1.05rem; line-height: 1.5; }
+
+.vm-bottom-bar {
+    background-color: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;
+    padding: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+    backdrop-filter: blur(10px);
+}
+.vm-feature { display: flex; align-items: center; gap: 15px; flex: 1; min-width: 200px; justify-content: center; }
+.vm-feature-icon { color: var(--yellow); font-size: 2.2rem; }
+.vm-feature-text { display: flex; flex-direction: column; }
+.vm-feature-text .title { color: var(--white); font-size: 0.95rem; font-weight: 600; margin-bottom: 3px; }
+.vm-feature-text .desc { color: #9CA3AF; font-size: 0.85rem; }
+.vm-feature-divider { width: 1px; height: 40px; background-color: rgba(255,255,255,0.15); }
+
+
+/* --- 4. LEGALITAS & SERTIFIKASI --- */
+.about-legalitas { background-color: #061930; padding: 100px 5%; position: relative; overflow: hidden; }
+.about-container-001 { max-width: 1300px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
+.legalitas-header { margin-bottom: 50px; }
+.legalitas-desc { color: #D1D5DB; font-size: 1.05rem; line-height: 1.6; margin-top: 15px; max-width: 700px; }
+
+.legalitas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 50px; }
+.legal-card {
+    background-color: var(--white); border-radius: 8px; padding: 20px 25px;
+    display: flex; align-items: center; gap: 20px; transition: 0.3s;
+}
+.legal-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+.legal-icon-wrap { position: relative; display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; flex-shrink: 0; }
+.legal-main-icon { font-size: 3rem; color: var(--navy); }
+.legal-check {
+    position: absolute; bottom: -5px; right: -5px; font-size: 1.3rem; color: #10B981; 
+    background: white; border-radius: 50%; font-variation-settings: 'FILL' 1;
+}
+.legal-text { flex: 1; }
+.legal-text h4 { color: var(--navy); font-size: 1.05rem; font-weight: 700; margin-bottom: 5px; line-height: 1.3; }
+.legal-text p { color: #6B7280; font-size: 0.85rem; line-height: 1.4; margin: 0; }
+.legal-arrow { color: #D1D5DB; font-size: 1.8rem; }
+
+.legal-trust-banner {
+    background-color: #0B2545; border-radius: 8px; padding: 30px;
+    display: flex; align-items: center; justify-content: space-between; gap: 30px; border: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap;
+}
+.trust-left { display: flex; align-items: center; gap: 15px; min-width: 250px; }
+.trust-icon { color: var(--yellow); font-size: 3rem; }
+.trust-text-bold { display: flex; flex-direction: column; color: var(--white); font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; }
+.trust-divider-vertical { width: 1px; height: 60px; background-color: rgba(255,255,255,0.2); }
+.trust-middle { flex: 1; color: #D1D5DB; font-size: 0.95rem; line-height: 1.5; min-width: 250px; }
+.trust-right { display: flex; flex-direction: column; text-align: right; color: rgba(255,255,255,0.4); font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; }
+
+
+/* --- 5. CULTURE (NILAI-NILAI) --- */
+.about-culture { background-color: #F8F9FA; padding: 100px 5%; position: relative; overflow: hidden; }
+.culture-bg-pattern {
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('../../assets/images/bg/bg-2.png'); background-size: cover; opacity: 0.05; pointer-events: none;
+}
+.culture-header { text-align: center; margin-bottom: 60px; position: relative; z-index: 2; }
+.culture-desc { color: #4B5563; font-size: 1.1rem; margin-top: 15px; }
+
+.culture-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; position: relative; z-index: 2; margin-bottom: 50px; }
+.culture-card {
+    background: var(--white); padding: 40px 30px; border-radius: 8px;
+    position: relative; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #E5E7EB;
+}
+.culture-bg-num {
+    position: absolute; top: 10px; right: 15px; font-family: var(--font-heading);
+    font-size: 5.5rem; font-weight: 800; color: #F3F4F6; line-height: 1; z-index: 0;
+}
+.culture-icon-box {
+    position: relative; z-index: 2; width: 60px; height: 60px;
+    background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;
+}
+.culture-icon-box span { color: var(--white); font-size: 2.2rem; }
+.culture-card h4 { position: relative; z-index: 2; color: var(--navy); font-size: 1.2rem; margin-bottom: 15px; }
+.culture-card .culture-line { position: relative; z-index: 2; width: 30px; height: 3px; background: var(--yellow); margin-bottom: 15px; }
+.culture-card p { position: relative; z-index: 2; color: #6B7280; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+
+.culture-bottom-text { display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 2; border-top: 1px solid #E5E7EB; padding-top: 30px; flex-wrap: wrap; gap: 20px;}
+.culture-watermark { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #D1D5DB; line-height: 1.2; letter-spacing: 1px; }
+.culture-tagline { max-width: 450px; text-align: right; }
+.culture-tagline p { color: #6B7280; font-size: 0.95rem; line-height: 1.5; margin-bottom: 10px; }
+.culture-tagline .tagline-line { width: 40px; height: 3px; background: var(--yellow); margin-left: auto; }
+
+
+/* --- 6. KEUNGGULAN KAMI --- */
+.about-excellence { background-color: var(--white); padding: 100px 5%; overflow: hidden;}
+.excellence-header { text-align: center; margin-bottom: 60px; }
+.excellence-desc { color: #4B5563; font-size: 1.1rem; margin-top: 15px; }
+
+.excellence-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.excellence-card {
+    background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #E5E7EB; display: flex; flex-direction: column;
+}
+.excellence-img { width: 100%; height: 220px; background-size: cover; background-position: center; }
+.excellence-content { padding: 0 30px 30px; flex: 1; display: flex; flex-direction: column; }
+.excellence-icon-wrap { display: flex; align-items: center; gap: 15px; margin-top: -30px; margin-bottom: 25px; }
+.excellence-icon-box {
+    width: 60px; height: 60px; background: var(--navy); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.excellence-icon-box span { color: var(--white); font-size: 2rem; }
+.excellence-line { width: 30px; height: 3px; background: var(--yellow); margin-top: 30px;}
+
+.excellence-content h4 { color: var(--navy); font-size: 1.05rem; line-height: 1.4; margin-bottom: 15px; }
+.excellence-content p { color: #6B7280; font-size: 0.9rem; line-height: 1.6; margin-bottom: 30px; flex: 1; }
+.excellence-link {
+    display: flex; align-items: center; justify-content: space-between;
+    font-weight: 600; font-size: 0.9rem; color: var(--navy); border-top: 1px solid #E5E7EB; padding-top: 20px;
+}
+.arrow-circle {
+    width: 35px; height: 35px; border: 1px solid #E5E7EB; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: 0.3s;
+}
+.excellence-link:hover .arrow-circle { border-color: var(--navy); background: var(--navy); color: var(--white); }
+
+
+/* =========================================
+   MEDIA QUERIES (PENYELAMAT DESKTOP, TABLET & MOBILE)
+   ========================================= */
+
+/* --- TABLET (Layar Menengah) --- */
+@media (max-width: 1024px) {
+    /* Hero */
+    .about-shape-navy { clip-path: polygon(0 0, 100% 0, 65% 100%, 0 100%); }
+    .about-title { font-size: 3.5rem; }
+    .about-watermark { display: none; }
+    
+    /* Who We Are */
+    .who-container { flex-direction: column; gap: 50px; }
+    .who-content-left, .who-image-right { width: 100%; }
+
+    /* Visi Misi */
+    .vm-header { flex-direction: column; gap: 20px; margin-bottom: 40px;}
+    .vm-header-divider { display: none; }
+    .vm-content { flex-direction: column; gap: 40px; }
+    .vm-col-divider { display: none; }
+    .vm-watermark-visi, .vm-watermark-misi { font-size: 10rem; }
+    .vm-watermark-topright { display: none; }
+
+    /* Legalitas, Culture, Excellence */
+    .legalitas-grid { grid-template-columns: 1fr; }
+    .culture-grid, .excellence-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- MOBILE (Layar HP) --- */
+@media (max-width: 768px) {
+    /* General Padding */
+    .about-page-hero, .about-who-we-are, .about-vision-mission, 
+    .about-legalitas, .about-culture, .about-excellence { 
+        padding: 60px 5%; 
+    }
+
+    /* Hero */
+    .about-page-hero { min-height: auto; }
+    .about-hero-bg { height: 350px; position: relative; }
+    .about-shape-dark-navy, .about-shape-navy, .about-shape-yellow { display: none; }
+    .about-hero-container { background-color: var(--navy); padding: 40px 5%; margin: 0;}
+    .about-title { font-size: 2.5rem; }
+    .about-feature-bar { flex-direction: column; align-items: flex-start; gap: 20px; padding: 40px 5%; }
+    .about-feature-item { width: 100%; justify-content: flex-start; }
+    .about-v-divider { display: none; }
+
+    /* Who We Are */
+    .who-title { font-size: 2.2rem; }
+    .who-features { flex-direction: column; gap: 30px; }
+    .who-v-divider { display: none; }
+    .who-feature-item { flex-direction: row; align-items: flex-start; text-align: left; gap: 20px; }
+    .who-ornament-top-left { display: none; }
+    .who-ornament-bottom-right { 
+        bottom: 0; right: 0; padding: 20px; 
+        clip-path: none; /* Hilangkan efek potongan agar rapi di HP */
+    }
+
+    /* Visi Misi */
+    .vm-title { font-size: 2.2rem; }
+    .vm-watermark-visi, .vm-watermark-misi, .vm-ornament-left, .vm-ornament-right { display: none; }
+    .vm-col-visi, .vm-col-misi { flex-direction: column; align-items: flex-start; }
+    .vm-bottom-bar { flex-direction: column; align-items: flex-start; gap: 20px; padding: 25px; }
+    .vm-feature { justify-content: flex-start; width: 100%; }
+    .vm-feature-divider { display: none; }
+
+    /* Legalitas */
+    .legal-trust-banner { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .trust-left { min-width: auto; }
+    .trust-divider-vertical { display: none; }
+    .trust-right { text-align: left; }
+
+    /* Culture */
+    .culture-grid { grid-template-columns: 1fr; }
+    .culture-bottom-text { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .culture-tagline { text-align: left; max-width: 100%; }
+    .culture-tagline .tagline-line { margin-left: 0; }
+
+    /* Excellence */
+    .excellence-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   COMPONENT: ABOUT - FINAL CTA SECTION
+   ========================================= */
+.about-cta-section {
+    position: relative;
+    width: 100%;
+    background-color: #05162A; /* Navy gelap khas desain CTA */
+    padding: 90px 5%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 480px;
+}
+
+/* Background Kanan dengan Potongan Miring */
+.about-cta-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* Membuat potongan diagonal miring / di sisi kiri gambar */
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+/* Aksen Segitiga Kuning di Kanan Bawah */
+.about-cta-yellow-shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    background-color: var(--yellow);
+    clip-path: polygon(100% 60%, 100% 100%, 40% 100%);
+    z-index: 2;
+}
+
+/* Watermark Teks Kanan Atas */
+.about-cta-watermark {
+    position: absolute;
+    top: 50px;
+    right: 5%;
+    text-align: right;
+    z-index: 3;
+}
+.about-cta-watermark span {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7); /* Putih transparan */
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+.about-cta-watermark .decor-line {
+    width: 40px;
+    height: 2px;
+    background-color: var(--yellow);
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+/* Kontainer Konten */
+.about-cta-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+}
+.about-cta-content { max-width: 850px; }
+
+/* Tipografi */
+.about-cta-title {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.about-cta-desc {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+/* Baris Bawah: Tombol & Fitur */
+.about-cta-action-row {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.cta-btn-yellow {
+    background-color: var(--yellow);
+    color: var(--navy);
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.05rem;
+    transition: 0.3s ease;
+    border: none;
+}
+.cta-btn-yellow:hover {
+    background-color: #E6B000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(251, 192, 45, 0.3);
+}
+
+.cta-action-features {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    padding-left: 35px;
+}
+
+.cta-feat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.cta-feat-icon {
+    color: var(--yellow);
+    font-size: 2rem;
+    font-variation-settings: 'wght' 300;
+}
+.cta-feat-item p {
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+}
+.cta-feat-divider {
+    width: 1px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- TAMBAHKAN RESPONSIVE INI KE MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+    .about-cta-bg { width: 45%; clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%); }
+    .about-cta-title { font-size: 2.5rem; }
+    .cta-action-features { border-left: none; padding-left: 0; flex-wrap: wrap; }
+}
+
+@media (max-width: 768px) {
+    .about-cta-section { padding: 60px 5%; flex-direction: column; align-items: flex-start; }
+    .about-cta-bg { position: relative; width: 100%; height: 250px; clip-path: none; margin-bottom: 30px; }
+    .about-cta-yellow-shape, .about-cta-watermark { display: none; }
+    .about-cta-title { font-size: 2.2rem; }
+    .about-cta-action-row { flex-direction: column; align-items: flex-start; gap: 25px; }
+    .cta-action-features { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .cta-feat-divider { display: none; }
+}

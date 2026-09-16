@@ -1,0 +1,323 @@
+/* =========================================
+   COMPONENT: SERVICES PAGE
+   ========================================= */
+
+/* --- 1. HERO SECTION --- */
+.services-page-hero {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    background-color: var(--navy);
+    padding-top: 80px; /* Jarak untuk Navbar */
+    overflow: hidden;
+}
+
+.services-hero-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center 20%; z-index: 1;
+}
+
+.services-hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(90deg, rgba(6, 25, 48, 0.95) 0%, rgba(6, 25, 48, 0.7) 50%, rgba(6, 25, 48, 0.4) 100%);
+    z-index: 2;
+}
+
+.services-hero-container {
+    position: relative; z-index: 10; max-width: 1300px; margin: 0 auto; width: 100%;
+    padding: 0 5%; display: flex; justify-content: space-between; align-items: center;
+}
+
+.services-hero-content { max-width: 600px; }
+
+.services-title {
+    font-family: var(--font-heading); font-size: 3.5rem; font-weight: 800;
+    color: var(--white); line-height: 1.15; margin-bottom: 20px; margin-top: 15px;
+}
+
+.services-desc { color: #E5E7EB; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; font-weight: 400;}
+
+/* Watermark Top Right */
+.services-watermark-topright { text-align: right; }
+.services-watermark-topright span {
+    font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
+    color: rgba(255,255,255,0.4); line-height: 1.3; letter-spacing: 1px;
+}
+.services-watermark-topright .decor-line {
+    width: 40px; height: 2px; background-color: var(--yellow); margin-top: 10px; margin-left: auto;
+}
+
+/* --- 2. LIST LAYANAN DETAIL --- */
+.services-detail-section {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Baris Selang-Seling */
+.service-row {
+    display: flex; align-items: stretch; gap: 80px;
+    padding: 100px 8%; position: relative; overflow: hidden;
+}
+.reverse-row { flex-direction: row-reverse; }
+.bg-gray-light { background-color: #F9FAFB; border-top: 1px solid #F3F4F6; border-bottom: 1px solid #F3F4F6;}
+
+/* Watermark Angka Besar & Teks Vertikal */
+.service-watermark-num {
+    position: absolute; font-family: var(--font-heading); font-size: 18rem; font-weight: 800;
+    color: rgba(0,0,0,0.03); line-height: 1; z-index: 1; top: 50px; pointer-events: none;
+}
+.right-watermark { right: 5%; }
+.left-watermark { left: 5%; }
+
+.vertical-faint-text {
+    position: absolute; top: 120px;
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600;
+    color: rgba(0,0,0,0.1); letter-spacing: 4px; text-transform: uppercase; z-index: 1;
+}
+.text-right-pos { right: 2%; }
+.text-left-pos { left: 2%; }
+
+/* --- Kolom Gambar --- */
+.service-col-img { flex: 1; position: relative; z-index: 2; display: flex; align-items: center; justify-content: center;}
+.service-img-box { position: relative; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden;}
+.service-img-box img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+/* Overlay Kotak Navy di Bawah Gambar */
+.service-img-overlay {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    background-color: rgba(11, 37, 69, 0.95); padding: 25px 30px;
+    display: flex; align-items: center; gap: 20px;
+    backdrop-filter: blur(5px);
+}
+.overlay-icon { font-size: 2.5rem; color: var(--white); font-variation-settings: 'wght' 300; }
+.overlay-text { display: flex; flex-direction: column; }
+.overlay-text .title { color: var(--white); font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+.overlay-text .desc { color: var(--yellow); font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;}
+
+/* --- Kolom Teks --- */
+.service-col-text { flex: 1.2; position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center;}
+
+/* Badge Angka (01, 02, 03) */
+.service-badge-v2 { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.badge-num {
+    background-color: var(--yellow); color: var(--navy); font-family: var(--font-heading);
+    font-size: 1.1rem; font-weight: 800; padding: 6px 12px; border-radius: 4px;
+}
+.badge-text { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--navy); letter-spacing: 1.5px; }
+
+.service-heading { font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
+.service-paragraph { color: #4B5563; font-size: 1rem; line-height: 1.7; margin-bottom: 30px; }
+.service-subheading { color: var(--navy); font-size: 1.05rem; font-weight: 700; margin-bottom: 15px; }
+
+/* List Checkmark (Solid Kuning Bulat) */
+.service-check-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+.service-check-list li { display: flex; align-items: flex-start; gap: 12px; color: #4B5563; font-size: 0.95rem; line-height: 1.5; }
+.check-icon-solid { color: var(--yellow); font-size: 1.3rem; font-variation-settings: 'FILL' 1; margin-top: 1px; }
+
+/* Tombol Outline Action */
+.btn-outline-action {
+    display: inline-flex; align-items: center; justify-content: space-between; gap: 15px;
+    padding: 14px 25px; border: 1px solid var(--navy); color: var(--navy);
+    font-weight: 600; font-size: 0.95rem; border-radius: 4px; transition: 0.3s;
+    width: fit-content;
+}
+.btn-outline-action:hover { background-color: var(--navy); color: var(--white); box-shadow: 0 10px 20px rgba(11,37,69,0.15); }
+.btn-outline-action span { font-size: 1.2rem; transition: 0.3s; }
+.btn-outline-action:hover span { transform: translateX(5px); }
+
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
+@media (max-width: 1024px) {
+    .service-row { gap: 50px; padding: 80px 5%; }
+    .services-title { font-size: 3rem; }
+    .service-heading { font-size: 2rem; }
+    .service-watermark-num { font-size: 12rem; }
+    .vertical-faint-text { display: none; } /* Hilangkan teks vertikal agar tidak sempit */
+    .services-watermark-topright { display: none; }
+}
+
+@media (max-width: 768px) {
+    .services-page-hero { min-height: auto; padding: 100px 5% 60px; }
+    .services-hero-overlay { background: rgba(6, 25, 48, 0.85); } /* Solid dark overlay on mobile */
+    .services-title { font-size: 2.2rem; }
+    
+    .service-row, .reverse-row { flex-direction: column; gap: 40px; padding: 60px 5%; }
+    .service-col-img, .service-col-text { width: 100%; }
+    
+    .service-watermark-num { font-size: 8rem; top: 10px; }
+    .right-watermark { right: auto; left: 5%; } /* Pindahkan ke kiri semua di mobile */
+    
+    .service-img-overlay { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px; }
+    .overlay-text .title { font-size: 0.9rem; }
+    
+    .btn-outline-action { width: 100%; justify-content: center; }
+}
+
+
+/* =========================================
+   COMPONENT: SERVICES - FINAL CTA SECTION
+   ========================================= */
+.services-cta-final {
+    position: relative;
+    width: 100%;
+    background-color: #061930; /* Navy khas korporat */
+    padding: 100px 5%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 550px;
+}
+
+/* Gambar Latar Kanan dengan Potongan Miring */
+.srv-cta-bg {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    width: 58%; 
+    height: 100%;
+    background-size: cover; 
+    background-position: center;
+    /* Membuat potongan miring dari kiri bawah ke kanan atas */
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+/* Aksen Diagonal Kuning (Garis miring di pojok kanan) */
+.srv-cta-yellow-strip {
+    position: absolute;
+    bottom: -10%; 
+    right: -5%;
+    width: 200px; 
+    height: 120%;
+    background-color: var(--yellow);
+    transform: rotate(30deg); /* Memiringkan kotak menjadi garis diagonal */
+    z-index: 2;
+}
+
+/* Watermark Kanan Atas */
+.srv-cta-watermark {
+    position: absolute;
+    top: 50px; 
+    right: 5%;
+    text-align: right;
+    z-index: 3;
+}
+.srv-cta-watermark span {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+.srv-cta-watermark .decor-line {
+    width: 40px; height: 2px; background-color: var(--yellow);
+    margin-top: 10px; margin-left: auto;
+}
+
+/* Kontainer Utama */
+.srv-cta-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+}
+.srv-cta-content { max-width: 750px; }
+
+/* Tipografi */
+.srv-cta-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.srv-cta-desc {
+    font-size: 1.1rem;
+    color: #E5E7EB;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* Tombol Jadwalkan Konsultasi */
+.srv-btn-yellow {
+    background-color: var(--yellow);
+    color: var(--navy);
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.05rem;
+    transition: 0.3s ease;
+    border: none;
+    margin-bottom: 50px; /* Jarak antara tombol dan fitur di bawahnya */
+}
+.srv-btn-yellow:hover {
+    background-color: #E6B000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(251, 192, 45, 0.2);
+}
+
+/* Tiga Fitur Bawah */
+.srv-cta-features {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.srv-feat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.srv-feat-icon {
+    color: var(--yellow);
+    font-size: 2.2rem;
+    font-variation-settings: 'wght' 300;
+}
+.srv-feat-item p {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+}
+.srv-feat-divider {
+    width: 1px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
+@media (max-width: 1024px) {
+    .srv-cta-bg { width: 50%; clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); }
+    .srv-cta-title { font-size: 2.5rem; }
+    .srv-cta-watermark { display: none; }
+}
+
+@media (max-width: 768px) {
+    .services-cta-final { padding: 60px 5%; flex-direction: column; align-items: flex-start; }
+    
+    /* Pindahkan gambar ke atas untuk layout HP */
+    .srv-cta-bg { position: relative; width: 100%; height: 250px; clip-path: none; margin-bottom: 30px; border-radius: 8px;}
+    .srv-cta-yellow-strip { display: none; }
+    
+    .srv-cta-title { font-size: 2.2rem; }
+    .srv-cta-desc br { display: none; } /* Matikan enter paksa di teks agar rapi di HP */
+    
+    .srv-cta-features { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .srv-feat-divider { display: none; }
+}

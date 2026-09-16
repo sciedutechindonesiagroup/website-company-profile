@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek - PT Diratama Mapan Sejahtera</title>
+    
+    <!-- Link Font Korporat (Montserrat & Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Link Material Icons untuk Konsistensi Ikon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Tautan ke File CSS Global dan Spesifik Detail -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="work-detail.css">
+</head>
+<body>
+
+    <!-- Header / Navbar (Disertakan di sini untuk kelengkapan, hapus jika Anda menggunakan componentLoader) -->
+    <header class="navbar navbar-fixed we-navbar">
+        <div class="navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <img src="../../assets/images/logo-1.png" alt="Diratama Mapan Sejahtera Logo">
+                <div class="logo-text text-navy">
+                    <span class="company-name">DIRATAMA MAPAN SEJAHTERA</span>
+                    <span class="tagline">BUILD A BETTER TOMORROW</span>
+                </div>
+            </a>
+            <nav class="navbar-menu text-navy">
+                <a href="../../index.html" class="nav-item">Beranda</a>
+                <a href="../../about.html" class="nav-item active">Tentang Kami</a>
+                <a href="../../service.html" class="nav-item">Layanan</a>
+                <a href="../../work-experience.html" class="nav-item">Work Experience</a>
+                <a href="#client" class="nav-item">Klien</a>
+                <a href="#news" class="nav-item">Berita & Artikel</a>
+            </nav>
+            <div class="navbar-actions">
+                <a href="#contact" class="btn btn-primary text-white">Hubungi Kami <span class="material-icons" style="margin-left: 5px; font-size: 1.2rem;">arrow_forward</span></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="work-detail-page">
+        
+        <!-- SECTION DETAIL PROYEK -->
+        <section class="project-detail-section">
+            <div class="detail-container">
+                
+                <!-- Layout Grid (Kiri: Galeri, Kanan: Info) -->
+                <div class="detail-layout">
+                    
+                    <!-- Kolom Kiri: Galeri Gambar Proyek -->
+                    <div class="detail-col-gallery">
+                        <!-- Gambar Utama Proyek (Main Carousel) -->
+                        <div class="project-gallery-main">
+                            <!-- Navigasi Carousel (Chevron Kiri/Kanan) -->
+                            <button class="gallery-nav prev"><span class="material-icons">chevron_left</span></button>
+                            <button class="gallery-nav next"><span class="material-icons">chevron_right</span></button>
+                            
+                            <!-- Indikator Gambar (1/8) -->
+                            <div class="gallery-indicator">
+                                <span class="current">1</span> / <span class="total">8</span>
+                            </div>
+                            
+                            <!-- Gambar Proyek Utama (Hapus URL latar belakang untuk carousel dinamis) -->
+                            <div class="main-image-placeholder" style="background-image: url('assets/images/portfolio-1.png');"></div>
+                        </div>
+                        
+                        <!-- Thumbnail Gambar Proyek -->
+                        <div class="project-gallery-thumbs">
+                            <div class="thumb-item active"><img src="assets/images/portfolio-1.png" alt="Proyek Thumbnail 1"></div>
+                            <div class="thumb-item"><img src="assets/images/portfolio-2.png" alt="Proyek Thumbnail 2"></div>
+                            <div class="thumb-item"><img src="assets/images/portfolio-3.png" alt="Proyek Thumbnail 3"></div>
+                            <div class="thumb-item"><img src="assets/images/portfolio-4.png" alt="Proyek Thumbnail 4"></div>
+                            <div class="thumb-item"><img src="assets/images/portfolio-5.png" alt="Proyek Thumbnail 5"></div>
+                            <!-- ... Thumbnail Lainnya ... -->
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Informasi & Deskripsi Proyek -->
+                    <div class="detail-col-info">
+                        
+                        <!-- Blok Informasi Proyek -->
+                        <div class="project-info-block box-style">
+                            <h3>Informasi Proyek</h3>
+                            <div class="info-list">
+                                <!-- Item Klien -->
+                                <div class="info-item">
+                                    <div class="info-icon"><span class="material-icons">business_center</span></div>
+                                    <div class="info-text">
+                                        <span class="label">Klien</span>
+                                        <span class="value">PT Berkah Kawasan Manyar Sejahtera</span>
+                                    </div>
+                                </div>
+                                <!-- Item Lokasi -->
+                                <div class="info-item">
+                                    <div class="info-icon"><span class="material-icons">location_on</span></div>
+                                    <div class="info-text">
+                                        <span class="label">Lokasi</span>
+                                        <span class="value">Gresik, Jawa Timur</span>
+                                    </div>
+                                </div>
+                                <!-- Item Layanan -->
+                                <div class="info-item">
+                                    <div class="info-icon"><span class="material-icons">engineering</span></div>
+                                    <div class="info-text">
+                                        <span class="label">Layanan</span>
+                                        <span class="value">Jasa Konstruksi</span>
+                                    </div>
+                                </div>
+                                <!-- Item Tahun -->
+                                <div class="info-item">
+                                    <div class="info-icon"><span class="material-icons">calendar_today</span></div>
+                                    <div class="info-text">
+                                        <span class="label">Tahun</span>
+                                        <span class="value">2025</span>
+                                    </div>
+                                </div>
+                                <!-- Item Status -->
+                                <div class="info-item status-item">
+                                    <div class="info-icon"><span class="material-icons">verified_user</span></div>
+                                    <div class="info-text">
+                                        <span class="label">Status</span>
+                                        <span class="value status-complete"><span class="status-circle"></span>Selesai</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blok Deskripsi Proyek -->
+                        <div class="project-desc-block">
+                            <h3>Deskripsi Proyek</h3>
+                            <p>Proyek pembangunan fasilitas di kawasan JIIPE meliputi pekerjaan struktur, arsitektur, dan infrastruktur pendukung. Proyek ini dikerjakan untuk mendukung pengembangan kawasan industri dengan standar kualitas tinggi, ketepatan waktu, serta memperhatikan aspek keselamatan kerja.</p>
+                        </div>
+
+                        <!-- Blok Tantangan & Solusi (Kotak Biru) -->
+                        <div class="project-challenges-block box-style challenges-box text-white">
+                            <div class="challenges-header">
+                                <div class="challenges-icon-wrap"><span class="material-icons">track_changes</span></div>
+                                <h4>Tantangan & Solusi</h4>
+                            </div>
+                            <p>Tantangan utama dalam proyek ini adalah percepatan waktu penyelesaian dengan tetap menjaga kualitas. Kami mengatasi hal tersebut dengan manajemen proyek yang terstruktur, penggunaan teknologi konstruksi modern, dan koordinasi intensif dengan seluruh pihak terkait.</p>
+                        </div>
+
+                        <!-- Tombol Kembali ke Galeri -->
+                        <a href="work-experience.html" class="btn btn-outline text-navy btn-back">
+                            <span class="material-icons" style="margin-right: 5px;">arrow_back</span> Kembali ke Galeri
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION CALL TO ACTION (CTA) BAR BAWAH -->
+        <section class="service-cta text-white" id="cta">
+            <!-- Gambar Latar Belakang (Wajib ganti path ini dengan path gambar Anda yang sebenarnya) -->
+            <div class="service-cta-bg" style="background-image: url('assets/images/bg/bg-2.png');"></div>
+            
+            <div class="service-container">
+                <div class="service-cta-content text-left">
+                    <div class="badge-subtitle">
+                        <span class="line bg-yellow"></span>
+                        <span class="text">WUJUDKAN PROYEK ANDA</span>
+                    </div>
+                    
+                    <h2 class="service-title-large">Siap Membangun Kesuksesan<br><span class="highlight">Proyek Anda Berikutnya?</span></h2>
+                    
+                    <p class="service-desc-large">Mari diskusikan kebutuhan proyek Anda bersama tim ahli kami. Kami siap memberikan solusi terbaik dan terintegrasi.</p>
+                    
+                    <!-- Tombol Hubungi Kami CTA -->
+                    <a href="https://wa.me/6281234567890" class="btn btn-primary text-white text-dark-blue btn-cta">
+                        Hubungi Kami Sekarang <span class="material-icons" style="margin-left: 5px; font-size: 1.2rem;">arrow_forward</span>
+                    </a>
+
+                    <!-- Fitur-Fitur Ikon di Bawah Tombol -->
+                    <div class="service-feat-bar">
+                        <div class="feat-item">
+                            <span class="material-icons feat-icon">chat</span>
+                            <p>Respon Cepat<br>dan Profesional</p>
+                        </div>
+                        <div class="feat-item">
+                            <span class="material-icons feat-icon">groups</span>
+                            <p>Konsultasi<br>Tanpa Biaya</p>
+                        </div>
+                        <div class="feat-item">
+                            <span class="material-icons feat-icon">verified_user</span>
+                            <p>Mitra Terpercaya<br>untuk Jangka Panjang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Sama dengan halaman lain) -->
+    <footer class="persistent-footer vm-bottom-bar vm-feature-v2">
+        <span class="material-symbols-outlined vm-feature-icon icon-yellow">shield_verified</span>
+        <div class="vm-feature-text">
+            <span class="title">LEGAL.</span>
+            <span class="desc">TERPERCAYA. SIAP BERSINERGI.</span>
+        </div>
+        <div class="vm-feature-divider"></div>
+        <p class="footer-desc">PT Diratama Mapan Sejahtera berkomitmen penuh dalam kepatuhan hukum dan regulasi demi memberikan layanan terbaik yang berkelanjutan bagi mitra kami.</p>
+    </footer>
+
+
+
+    <!-- Script Engine Utama -->
+    <script src="../../utils/componentLoader.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

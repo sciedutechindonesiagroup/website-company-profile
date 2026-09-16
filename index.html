@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Diratama Mapan Sejahtera</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- CSS Komponen (Diletakkan di sini agar siap saat HTML komponen dimuat) -->
+    <link rel="stylesheet" href="components/about/about.css">
+    <link rel="stylesheet" href="components/services/services.css">
+    <link rel="stylesheet" href="components/work-experience/work-experience.css">
+    <link rel="stylesheet" href="components/clients/clients.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         1. NAVBAR (TETAP / PATEN)
+         ========================================== -->
+    <header id="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="assets/images/logo-4.png" alt="Logo Diratama Mapan Sejahtera" class="logo-img">
+                <div class="logo-text">
+                    <span class="company-name">DIRATAMA MAPAN</span>
+                    <span class="tagline">SEJAHTERA</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav (Perhatikan penambahan onclick dan class nav-link) -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active" onclick="loadPage('home')">Beranda</a></li>
+                    <li><a href="#" class="nav-link" onclick="loadPage('about')">Tentang Kami</a></li>
+                    <li><a href="#" class="nav-link" onclick="loadPage('services')">Layanan</a></li>
+                    <li><a href="#" class="nav-link" onclick="loadPage('work')">Pengalaman Kerja</a></li>
+                    <li><a href="#" class="nav-link" onclick="loadPage('clients')">Klien</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://wa.me/6281234567890" class="btn btn-primary" target="_blank">Hubungi Kami</a>
+                <button class="hamburger" id="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo-area">
+                <img src="assets/images/logo-4.png" alt="Logo Diratama Mapan Sejahtera" class="logo-img">
+                <div class="logo-text">
+                    <span class="company-name">DIRATAMA MAPAN</span>
+                    <span class="tagline">SEJAHTERA</span>
+                </div>
+            </div>
+            <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#" class="nav-link-mobile active" onclick="loadPage('home')">Beranda</a></li>
+                <li><a href="#" class="nav-link-mobile" onclick="loadPage('about')">Tentang Kami</a></li>
+                <li><a href="#" class="nav-link-mobile" onclick="loadPage('services')">Layanan</a></li>
+                <li><a href="#" class="nav-link-mobile" onclick="loadPage('work')">Pengalaman Kerja</a></li>
+                <li><a href="#" class="nav-link-mobile" onclick="loadPage('clients')">Klien</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/6281234567890" class="btn btn-primary mobile-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Hubungi Kami
+        </a>
+    </div>
+
+    <!-- ==========================================
+         2. AREA KONTEN DINAMIS (BERUBAH-UBAH)
+         ========================================== -->
+    <main id="app-content">
+        <!-- Javascript akan menyuntikkan (inject) file HTML komponen ke dalam area ini -->
+    </main>
+
+    <!-- ==========================================
+         3. FOOTER (TETAP / PATEN)
+         ========================================== -->
+    <footer class="site-footer">
+        <div class="footer-bg-overlay"></div>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-col-about">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo-putih.png" alt="PT Diratama Mapan Sejahtera" class="footer-logo-img">
+                    </div>
+                    <p class="footer-desc">
+                        PT Diratama Mapan Sejahtera merupakan perusahaan yang bergerak di bidang penyedia tenaga kerja, kontraktor, dan pengadaan barang dengan komitmen memberikan solusi terbaik untuk mendukung pertumbuhan bisnis dan pembangunan di Indonesia.
+                    </p>
+                    <div class="footer-tagline-box">
+                        <p>SOLUSI KONSTRUKSI<br>UNTUK NEGERI</p>
+                        <div class="footer-tagline-line"></div>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col-links">
+                    <div class="footer-heading">
+                        <div class="heading-dash"></div>
+                        <h3>Tautan Cepat</h3>
+                    </div>
+                    <ul class="quick-links">
+                        <li><a href="#" onclick="loadPage('home')">Beranda <span class="material-symbols-outlined">chevron_right</span></a></li>
+                        <li><a href="#" onclick="loadPage('about')">Tentang Kami <span class="material-symbols-outlined">chevron_right</span></a></li>
+                        <li><a href="#" onclick="loadPage('services')">Layanan <span class="material-symbols-outlined">chevron_right</span></a></li>
+                        <li><a href="#" onclick="loadPage('work')">Work Experience <span class="material-symbols-outlined">chevron_right</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-contact">
+                    <div class="footer-heading">
+                        <div class="heading-dash"></div>
+                        <h3>Informasi Kontak</h3>
+                    </div>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-icon"><span class="material-symbols-outlined">location_on</span></div>
+                            <div class="contact-text">
+                                <h4>Alamat Kantor</h4>
+                                <p>Pondok Permata Suci Blok C No. 12,<br>Manyar, Gresik, Jawa Timur 61151</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <p>+62 812-3456-7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><span class="material-symbols-outlined">mail</span></div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>ptdiratamamapansejahtera@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col-ornament">
+                    <div class="ornament-text">
+                        <span>BUILD A<br>BETTER<br>TOMORROW</span>
+                        <div class="ornament-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="legal-main">
+                    <span class="material-symbols-outlined legal-icon">description</span>
+                    <div class="legal-text">
+                        <h4>Legalitas Perusahaan</h4>
+                        <p>PT Diratama Mapan Sejahtera telah terdaftar secara resmi<br>dan memiliki izin usaha yang sah.</p>
+                    </div>
+                </div>
+                <div class="legal-divider"></div>
+                <div class="legal-item">
+                    <h4>NIB</h4>
+                    <p>1234567890123</p>
+                </div>
+                <div class="legal-divider"></div>
+                <div class="legal-item">
+                    <h4>NPWP</h4>
+                    <p>12.345.678.9-012.000</p>
+                </div>
+                <div class="legal-divider"></div>
+                <div class="legal-item">
+                    <h4>SBU-JK</h4>
+                    <p>0-1234-56-789012-3</p>
+                </div>
+                <div class="legal-divider"></div>
+                <div class="legal-trust">
+                    <span class="material-symbols-outlined trust-shield">verified_user</span>
+                    <p>Berkomitmen pada<br>Integritas dan Kepatuhan</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2026 PT Diratama Mapan Sejahtera. All rights reserved.
+                </div>
+                <div class="footer-policy-links">
+                    <a href="#">Kebijakan Privasi</a>
+                    <span class="separator">|</span>
+                    <a href="#">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Script Engine Utama -->
+    <script src="utils/componentLoader.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

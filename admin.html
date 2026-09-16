@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PT Diratama Mapan Sejahtera</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- CSS Khusus Admin -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+    <div class="admin-layout">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <img src="assets/images/logo-putih.png" alt="Logo" class="admin-logo">
+                <span>AUTHORITY PANEL</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <p class="nav-label">MANAJEMEN KONTEN</p>
+                <a href="#" class="nav-item" data-target="dashboard"><span class="material-icons">dashboard</span> Dashboard Utama</a>
+                <a href="#" class="nav-item active" data-target="work-exp"><span class="material-icons">architecture</span> Work Experience</a>
+                <a href="#" class="nav-item" data-target="clients"><span class="material-icons">handshake</span> Mitra & Klien</a>
+                
+                <p class="nav-label">PENGATURAN</p>
+                <a href="#" class="nav-item" data-target="general"><span class="material-icons">settings</span> Pengaturan Umum</a>
+                <a href="index.html" class="nav-item logout-btn"><span class="material-icons">logout</span> Keluar ke Website</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-main">
+            <!-- TOPBAR -->
+            <header class="admin-topbar">
+                <div class="topbar-title">
+                    <h2 id="page-title">Manajemen Work Experience</h2>
+                </div>
+                <div class="topbar-user">
+                    <span class="user-role">Super Admin</span>
+                    <div class="user-avatar"><span class="material-icons">person</span></div>
+                </div>
+            </header>
+
+            <!-- KONTEN DINAMIS ADMIN -->
+            <div class="admin-content-area">
+                
+                <!-- TAB: WORK EXPERIENCE -->
+                <section id="work-exp" class="admin-section active">
+                    <div class="section-header-flex">
+                        <div class="section-text">
+                            <h3>Galeri Proyek (Work Experience)</h3>
+                            <p>Upload gambar, atur deskripsi, dan kelola portofolio proyek yang akan tampil di halaman depan.</p>
+                        </div>
+                        <button class="btn-primary-admin" id="btn-add-project">
+                            <span class="material-icons">add</span> Tambah Proyek Baru
+                        </button>
+                    </div>
+
+                    <!-- Form Tambah Proyek (Sembunyi secara default) -->
+                    <div class="admin-card form-card" id="form-add-project" style="display: none;">
+                        <h4>Formulir Proyek Baru</h4>
+                        <form id="projectForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Nama Proyek</label>
+                                    <input type="text" id="projName" placeholder="Contoh: Pembangunan Gudang Logistik" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nama Klien / Instansi</label>
+                                    <input type="text" id="projClient" placeholder="Contoh: PT Sarana Logistik Nusantara" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Kategori Proyek</label>
+                                    <select id="projCategory">
+                                        <option value="konstruksi">Jasa Konstruksi</option>
+                                        <option value="pengadaan">Pengadaan Barang</option>
+                                        <option value="manpower">Penyedia Tenaga Kerja</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tahun Selesai</label>
+                                    <input type="number" id="projYear" placeholder="Contoh: 2026" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Upload Gambar / Thumbnail Proyek</label>
+                                    <div class="file-upload-wrapper">
+                                        <input type="file" id="projImage" accept="image/*" required>
+                                        <div class="file-upload-ui">
+                                            <span class="material-icons">cloud_upload</span>
+                                            <p>Klik atau seret gambar ke sini (Maks 2MB)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary-admin" id="btn-cancel-project">Batal</button>
+                                <button type="submit" class="btn-primary-admin">Simpan Proyek</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Tabel Data Proyek -->
+                    <div class="admin-card">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Thumbnail</th>
+                                    <th>Nama Proyek</th>
+                                    <th>Klien</th>
+                                    <th>Kategori</th>
+                                    <th>Tahun</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="project-table-body">
+                                <!-- Data akan disuntikkan via JS -->
+                                <tr>
+                                    <td><img src="assets/images/portfolio-1.png" class="table-thumb"></td>
+                                    <td>Pembangunan Gedung Kantor Pemerintahan</td>
+                                    <td>Pemprov DKI Jakarta</td>
+                                    <td><span class="status-badge bg-blue">Konstruksi</span></td>
+                                    <td>2025</td>
+                                    <td>
+                                        <button class="action-btn edit"><span class="material-icons">edit</span></button>
+                                        <button class="action-btn delete"><span class="material-icons">delete</span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- TAB: MITRA & KLIEN -->
+                <section id="clients" class="admin-section" style="display: none;">
+                    <div class="section-header-flex">
+                        <div class="section-text">
+                            <h3>Logo Mitra & Instansi</h3>
+                            <p>Kelola logo perusahaan klien yang ditampilkan di halaman Klien.</p>
+                        </div>
+                        <button class="btn-primary-admin">
+                            <span class="material-icons">add</span> Tambah Logo Klien
+                        </button>
+                    </div>
+
+                    <!-- Tabel Data Klien -->
+                    <div class="admin-card">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Logo Instansi</th>
+                                    <th>Nama Instansi / Perusahaan</th>
+                                    <th>Status Tampil</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="assets/images/clients/pln.png" class="table-logo-thumb"></td>
+                                    <td>PT PLN (Persero)</td>
+                                    <td><span class="status-badge bg-green">Aktif</span></td>
+                                    <td>
+                                        <button class="action-btn delete"><span class="material-icons">delete</span></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="assets/images/clients/pelindo.png" class="table-logo-thumb"></td>
+                                    <td>PT Pelabuhan Indonesia (Persero)</td>
+                                    <td><span class="status-badge bg-green">Aktif</span></td>
+                                    <td>
+                                        <button class="action-btn delete"><span class="material-icons">delete</span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

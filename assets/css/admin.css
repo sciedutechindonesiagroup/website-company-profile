@@ -1,0 +1,109 @@
+/* =========================================
+   ADMIN DASHBOARD STYLES
+   ========================================= */
+:root {
+    --admin-navy: #061930;
+    --admin-yellow: #FBC02D;
+    --admin-bg: #F4F7FE; /* Warna latar sangat terang untuk dashboard */
+    --admin-white: #FFFFFF;
+    --admin-text: #2B3674;
+    --admin-gray: #A3AED0;
+    --admin-border: #E0E5F2;
+    font-family: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { background-color: var(--admin-bg); color: var(--admin-text); }
+
+.admin-layout { display: flex; width: 100%; min-height: 100vh; }
+
+/* SIDEBAR */
+.admin-sidebar {
+    width: 260px; background-color: var(--admin-navy); color: var(--admin-white);
+    display: flex; flex-direction: column; position: fixed; height: 100vh; z-index: 100;
+}
+.sidebar-header {
+    padding: 30px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.admin-logo { width: 120px; margin-bottom: 15px; }
+.sidebar-header span { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; color: var(--admin-yellow); }
+
+.sidebar-nav { padding: 20px 0; display: flex; flex-direction: column; }
+.nav-label { font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.4); padding: 15px 25px 5px; }
+.nav-item {
+    display: flex; align-items: center; gap: 15px; padding: 15px 25px;
+    color: var(--admin-gray); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: 0.3s;
+    border-left: 3px solid transparent;
+}
+.nav-item span { font-size: 1.3rem; }
+.nav-item:hover { color: var(--admin-white); background-color: rgba(255,255,255,0.05); }
+.nav-item.active { color: var(--admin-white); background-color: rgba(255,255,255,0.1); border-left-color: var(--admin-yellow); }
+.logout-btn { color: #FF5B5B !important; margin-top: auto; }
+
+/* MAIN AREA */
+.admin-main { flex: 1; margin-left: 260px; display: flex; flex-direction: column; }
+
+/* TOPBAR */
+.admin-topbar {
+    height: 80px; background-color: var(--admin-bg); display: flex; justify-content: space-between;
+    align-items: center; padding: 0 40px; position: sticky; top: 0; z-index: 90;
+    backdrop-filter: blur(10px); background-color: rgba(244, 247, 254, 0.8);
+}
+.topbar-title h2 { font-size: 1.5rem; color: var(--admin-text); }
+.topbar-user { display: flex; align-items: center; gap: 15px; }
+.user-role { font-weight: 600; font-size: 0.9rem; }
+.user-avatar { width: 40px; height: 40px; background-color: var(--admin-navy); color: var(--admin-yellow); border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+
+/* KONTEN DINAMIS */
+.admin-content-area { padding: 30px 40px; }
+
+.section-header-flex { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; }
+.section-text h3 { font-size: 1.8rem; margin-bottom: 5px; }
+.section-text p { color: var(--admin-gray); font-size: 0.95rem; }
+
+/* KARTU & FORM */
+.admin-card { background-color: var(--admin-white); border-radius: 12px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.02); margin-bottom: 30px; }
+.form-card h4 { margin-bottom: 20px; font-size: 1.2rem; border-bottom: 1px solid var(--admin-border); padding-bottom: 10px;}
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label { font-size: 0.85rem; font-weight: 600; color: var(--admin-text); }
+.form-group input, .form-group select {
+    padding: 12px 15px; border: 1px solid var(--admin-border); border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; outline: none; transition: 0.3s;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--admin-navy); }
+
+/* Upload Area UI */
+.file-upload-wrapper { position: relative; width: 100%; height: 120px; border: 2px dashed var(--admin-border); border-radius: 8px; background-color: #FAFCFE; transition: 0.3s; }
+.file-upload-wrapper:hover { border-color: var(--admin-navy); }
+.file-upload-wrapper input[type="file"] { position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 10; }
+.file-upload-ui { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--admin-gray); }
+.file-upload-ui span { font-size: 2.5rem; color: var(--admin-navy); margin-bottom: 5px;}
+
+.form-actions { display: flex; justify-content: flex-end; gap: 15px; margin-top: 30px; }
+
+/* BUTTONS */
+button { cursor: pointer; font-family: 'Inter', sans-serif; border: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px;}
+.btn-primary-admin { background-color: var(--admin-navy); color: var(--admin-white); padding: 12px 24px; }
+.btn-primary-admin:hover { background-color: var(--admin-yellow); color: var(--admin-navy); }
+.btn-secondary-admin { background-color: var(--admin-bg); color: var(--admin-text); padding: 12px 24px; }
+.btn-secondary-admin:hover { background-color: #E0E5F2; }
+
+/* TABLE */
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th { text-align: left; padding: 15px; color: var(--admin-gray); font-size: 0.85rem; font-weight: 600; border-bottom: 1px solid var(--admin-border); }
+.admin-table td { padding: 15px; border-bottom: 1px solid var(--admin-border); font-size: 0.95rem; vertical-align: middle; }
+.table-thumb { width: 80px; height: 50px; object-fit: cover; border-radius: 4px; }
+.table-logo-thumb { width: 100px; height: 40px; object-fit: contain; }
+
+.status-badge { padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+.bg-blue { background-color: #E1F0FF; color: #0075FF; }
+.bg-green { background-color: #E5F8ED; color: #05A660; }
+
+.action-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; padding: 5px; color: var(--admin-gray); }
+.action-btn.edit:hover { color: #0075FF; }
+.action-btn.delete:hover { color: #FF5B5B; }

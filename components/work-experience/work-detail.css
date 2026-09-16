@@ -1,0 +1,336 @@
+/* =========================================
+   COMPONENT: WORK EXPERIENCE - DETAIL PREVIEW
+   ========================================= */
+
+.work-detail-page {
+    position: relative;
+    width: 100%;
+    padding-top: 100px; /* Menghindari tabrakan dengan navbar fixed */
+    background-color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--gray-dark);
+}
+
+.detail-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 80px 5%;
+}
+
+/* layout grid untuk galeri dan info */
+.detail-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+/* --- Kolom Kiri: Galeri --- */
+.detail-col-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-gallery-main {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Atur tinggi gambar utama di sini */
+    background-color: var(--navy);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+}
+
+.main-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navigasi Carousel (Chevron Kiri/Kanan) */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background-color: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+}
+.gallery-nav:hover {
+    background-color: var(--navy-light);
+    color: var(--yellow);
+}
+.gallery-nav.prev { left: 20px; }
+.gallery-nav.next { right: 20px; }
+
+/* Indikator Gambar (1/8) */
+.gallery-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(11, 37, 69, 0.9);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 10;
+    font-family: var(--font-body);
+}
+
+/* Thumbnail Gambar Proyek */
+.project-gallery-thumbs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.thumb-item {
+    width: calc(20% - 8px); /* Atur 5 thumbnail per baris */
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+.thumb-item:hover {
+    border-color: var(--navy);
+}
+.thumb-item.active {
+    border-color: var(--yellow);
+}
+.thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Kolom Kanan: Info & Deskripsi --- */
+.detail-col-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Gaya kotak info umum (Box-Style) */
+.box-style {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 30px;
+    border: 1px solid #EEEEEE;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EEEEEE;
+}
+.info-item:last-child { border-bottom: none; }
+
+.info-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #F0F4F8; /* Warna biru pucat/abu-abu terang */
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.info-icon span {
+    font-size: 1.8rem;
+    color: var(--navy);
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+}
+.info-text .label {
+    font-size: 0.85rem;
+    color: #6B7280; /* Abu-abu medium */
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+.info-text .value {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-weight: 600;
+}
+
+/* Gaya Khusus Status Selesai */
+.status-item .value { display: flex; align-items: center; gap: 8px;}
+.status-complete { color: #10B981; font-weight: 600 !important; } /* Hijau Selesai */
+.status-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10B981; /* Hijau Selesai */
+    display: inline-block;
+}
+
+/* Deskripsi Proyek */
+.project-desc-block p {
+    color: var(--gray-medium);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Kotak Tantangan & Solusi (Kotak Biru) */
+.challenges-box {
+    background-color: #F0F8FF; /* Biru muda */
+    border: none;
+    padding: 30px;
+}
+.challenges-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.challenges-header h4 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+}
+.challenges-icon-wrap {
+    width: 40px;
+    height: 40px;
+    background-color: var(--navy);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.challenges-icon-wrap span {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+.challenges-box p {
+    color: var(--gray-medium);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Tombol Kembali ke Galeri */
+.btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--navy);
+    background-color: var(--white);
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    padding: 14px 25px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+.btn-back:hover {
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+/* --- SECTION CTA (SALIN DARI ABOUT/SERVICE CSS AGAR KONSISTEN) --- */
+/* (Saya lampirkan di sini karena ini file komponen terpisah) */
+
+.service-cta {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background-color: var(--navy);
+    padding: 100px 5%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.service-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+.service-cta-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center; opacity: 0.3; z-index: 1;
+}
+
+.service-title-large {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+.service-desc-large {
+    color: #E5E7EB; font-size: 1.15rem; line-height: 1.6; margin-bottom: 45px;
+}
+
+.service-cta-content { max-width: 800px; }
+
+.service-feat-bar {
+    display: flex; gap: 40px; margin-top: 50px; flex-wrap: wrap;
+}
+.feat-item { display: flex; align-items: center; gap: 12px; }
+.feat-icon { color: var(--yellow); font-size: 2.2rem; }
+.feat-item p { color: var(--white); font-size: 0.95rem; font-weight: 500; line-height: 1.4; margin: 0; }
+
+.btn-cta { font-size: 1.05rem; }
+
+/* --- RESPONSIVE ADJUSTMENTS UNTUK DETAIL PROYEK --- */
+@media (max-width: 1024px) {
+    .detail-layout { grid-template-columns: 1fr; gap: 40px; }
+    .project-gallery-main { height: 350px; }
+}
+
+@media (max-width: 768px) {
+    .work-detail-page { padding-top: 80px; }
+    .project-gallery-main { height: 280px; }
+    h3 { font-size: 1.3rem; margin-bottom: 20px; }
+    .box-style { padding: 25px; }
+    
+    .project-gallery-thumbs { flex-wrap: wrap; }
+    .thumb-item { width: calc(25% - 8px); height: 70px; } /* 4 thumbnail per baris di HP */
+
+    .service-title-large { font-size: 2.4rem; }
+}
