@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - PT Diratama Mapan Sejahtera</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,32 +14,62 @@
 </head>
 <body>
 
-    <div class="admin-layout">
-        <!-- SIDEBAR -->
+    <!-- Loader sementara sebelum Auth dicek -->
+        <div id="auth-loader" style="height: 100vh; display: flex; justify-content: center; align-items: center; background: #F4F7FE; font-family: 'Montserrat'; color: #061930;">
+            <h2>Memverifikasi Akses Keamanan...</h2>
+        </div>
+
+        <!-- Layout Admin (Disembunyikan default) -->
+        <div class="admin-layout" id="admin-layout" style="display: none;">
+        <!-- ==========================================
+             SIDEBAR NAVIGASI
+             ========================================== -->
         <aside class="admin-sidebar">
             <div class="sidebar-header">
-                <img src="assets/images/logo-putih.png" alt="Logo" class="admin-logo">
+                <img src="assets/images/logo-putih.png" alt="Logo" class="admin-logo" id="sidebar-logo">
                 <span>AUTHORITY PANEL</span>
             </div>
             
             <nav class="sidebar-nav">
-                <p class="nav-label">MANAJEMEN KONTEN</p>
-                <a href="#" class="nav-item" data-target="dashboard"><span class="material-icons">dashboard</span> Dashboard Utama</a>
-                <a href="#" class="nav-item active" data-target="work-exp"><span class="material-icons">architecture</span> Work Experience</a>
-                <a href="#" class="nav-item" data-target="clients"><span class="material-icons">handshake</span> Mitra & Klien</a>
+                <p class="nav-label">MANAJEMEN WEBSITE</p>
+                <!-- Menu Utama / Global Settings -->
+                <a href="#" class="nav-item active" data-target="utama">
+                    <span class="material-icons">web</span> Utama
+                </a>
+                <a href="#" class="nav-item" data-target="home-settings">
+                    <span class="material-icons">home</span> Beranda (Home)
+                </a>
+                <a href="#" class="nav-item" data-target="about">
+                    <span class="material-icons">info</span> About
+                </a>
+                <a href="#" class="nav-item" data-target="layanan">
+                    <span class="material-icons">design_services</span> Layanan
+                </a>
+                <a href="#" class="nav-item" data-target="work-exp">
+                    <span class="material-icons">architecture</span> Pengalaman Kerja
+                </a>
+                <a href="#" class="nav-item" data-target="clients">
+                    <span class="material-icons">handshake</span> Klien
+                </a>
                 
                 <p class="nav-label">PENGATURAN</p>
-                <a href="#" class="nav-item" data-target="general"><span class="material-icons">settings</span> Pengaturan Umum</a>
-                <a href="index.html" class="nav-item logout-btn"><span class="material-icons">logout</span> Keluar ke Website</a>
+                <a href="#" class="nav-item" data-target="berkas">
+                    <span class="material-icons">folder_open</span> Berkas Perusahaan
+                </a>
+                <a href="index.html" class="nav-item logout-btn">
+                    <span class="material-icons">logout</span> Keluar ke Website
+                </a>
             </nav>
         </aside>
 
-        <!-- MAIN CONTENT -->
+        <!-- ==========================================
+             MAIN CONTENT
+             ========================================== -->
         <main class="admin-main">
             <!-- TOPBAR -->
             <header class="admin-topbar">
                 <div class="topbar-title">
-                    <h2 id="page-title">Manajemen Work Experience</h2>
+                    <h2 id="page-title">Manajemen Utama</h2>
                 </div>
                 <div class="topbar-user">
                     <span class="user-role">Super Admin</span>
@@ -46,137 +77,3392 @@
                 </div>
             </header>
 
-            <!-- KONTEN DINAMIS ADMIN -->
             <div class="admin-content-area">
                 
-                <!-- TAB: WORK EXPERIENCE -->
-                <section id="work-exp" class="admin-section active">
+                <!-- ==========================================
+                     TAB 1: UTAMA (IDENTITAS, KONTAK, FOOTER)
+                     ========================================== -->
+                <section id="utama" class="admin-section active">
                     <div class="section-header-flex">
                         <div class="section-text">
-                            <h3>Galeri Proyek (Work Experience)</h3>
-                            <p>Upload gambar, atur deskripsi, dan kelola portofolio proyek yang akan tampil di halaman depan.</p>
+                            <h3>Pengaturan Utama & Identitas</h3>
+                            <p>Kustomisasi logo (via Cloudinary), teks footer, nomor kontak universal, dan legalitas yang tampil di seluruh halaman.</p>
                         </div>
-                        <button class="btn-primary-admin" id="btn-add-project">
-                            <span class="material-icons">add</span> Tambah Proyek Baru
-                        </button>
                     </div>
 
-                    <!-- Form Tambah Proyek (Sembunyi secara default) -->
-                    <div class="admin-card form-card" id="form-add-project" style="display: none;">
-                        <h4>Formulir Proyek Baru</h4>
-                        <form id="projectForm">
+                    <form id="form-utama">
+                        <!-- Kartu 1: Logo Perusahaan -->
+                        <div class="admin-card">
+                            <h4>Logo Perusahaan</h4>
                             <div class="form-grid">
                                 <div class="form-group">
-                                    <label>Nama Proyek</label>
-                                    <input type="text" id="projName" placeholder="Contoh: Pembangunan Gudang Logistik" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Nama Klien / Instansi</label>
-                                    <input type="text" id="projClient" placeholder="Contoh: PT Sarana Logistik Nusantara" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Kategori Proyek</label>
-                                    <select id="projCategory">
-                                        <option value="konstruksi">Jasa Konstruksi</option>
-                                        <option value="pengadaan">Pengadaan Barang</option>
-                                        <option value="manpower">Penyedia Tenaga Kerja</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Tahun Selesai</label>
-                                    <input type="number" id="projYear" placeholder="Contoh: 2026" required>
-                                </div>
-                                <div class="form-group full-width">
-                                    <label>Upload Gambar / Thumbnail Proyek</label>
+                                    <label>Logo Utama (Navbar)</label>
                                     <div class="file-upload-wrapper">
-                                        <input type="file" id="projImage" accept="image/*" required>
+                                        <input type="file" id="logo_url" accept="image/*">
                                         <div class="file-upload-ui">
                                             <span class="material-icons">cloud_upload</span>
-                                            <p>Klik atau seret gambar ke sini (Maks 2MB)</p>
+                                            <p>Upload Logo Utama (Otomatis ke Cloudinary)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Logo Putih (Footer & Admin)</label>
+                                    <div class="file-upload-wrapper">
+                                        <input type="file" id="logo_footer_url" accept="image/*">
+                                        <div class="file-upload-ui">
+                                            <span class="material-icons">cloud_upload</span>
+                                            <p>Upload Logo Putih Transparan</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-actions">
-                                <button type="button" class="btn-secondary-admin" id="btn-cancel-project">Batal</button>
-                                <button type="submit" class="btn-primary-admin">Simpan Proyek</button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
 
-                    <!-- Tabel Data Proyek -->
-                    <div class="admin-card">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>Thumbnail</th>
-                                    <th>Nama Proyek</th>
-                                    <th>Klien</th>
-                                    <th>Kategori</th>
-                                    <th>Tahun</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody id="project-table-body">
-                                <!-- Data akan disuntikkan via JS -->
-                                <tr>
-                                    <td><img src="assets/images/portfolio-1.png" class="table-thumb"></td>
-                                    <td>Pembangunan Gedung Kantor Pemerintahan</td>
-                                    <td>Pemprov DKI Jakarta</td>
-                                    <td><span class="status-badge bg-blue">Konstruksi</span></td>
-                                    <td>2025</td>
-                                    <td>
-                                        <button class="action-btn edit"><span class="material-icons">edit</span></button>
-                                        <button class="action-btn delete"><span class="material-icons">delete</span></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <!-- Kartu 2: Identitas & Teks -->
+                        <div class="admin-card">
+                            <h4>Identitas Perusahaan</h4>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Nama Perusahaan (Teks Navigasi)</label>
+                                    <input type="text" id="company_name" placeholder="Contoh: DIRATAMA MAPAN">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tagline / Motto Navigasi</label>
+                                    <input type="text" id="tagline" placeholder="Contoh: SEJAHTERA">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Deskripsi Singkat (Footer)</label>
+                                    <textarea id="company_desc" rows="3" placeholder="Deskripsi perusahaan..."></textarea>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Teks Ornamen Footer</label>
+                                    <input type="text" id="footer_motto" placeholder="Contoh: SOLUSI KONSTRUKSI UNTUK NEGERI">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kartu 3: Kontak & Sosial Media -->
+                        <div class="admin-card">
+                            <h4>Kontak Universal & Sosial Media</h4>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Nomor WhatsApp (Format: 628...)</label>
+                                    <input type="number" id="contact_wa" placeholder="6281234567890">
+                                </div>
+                                <div class="form-group">
+                                    <label>Alamat Email</label>
+                                    <input type="email" id="contact_email" placeholder="email@perusahaan.com">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Alamat Lengkap Kantor</label>
+                                    <input type="text" id="contact_address" placeholder="Alamat lengkap...">
+                                </div>
+                                <div class="form-group">
+                                    <label>Link LinkedIn</label>
+                                    <input type="url" id="socmed_linkedin" placeholder="https://linkedin.com/...">
+                                </div>
+                                <div class="form-group">
+                                    <label>Link Instagram</label>
+                                    <input type="url" id="socmed_ig" placeholder="https://instagram.com/...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kartu 4: Legalitas -->
+                        <div class="admin-card">
+                            <h4>Legalitas Perusahaan (Footer)</h4>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Nomor Induk Berusaha (NIB)</label>
+                                    <input type="text" id="legal_nib" placeholder="Contoh: 1234567890123">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nomor NPWP</label>
+                                    <input type="text" id="legal_npwp" placeholder="Contoh: 12.345.678.9-012.000">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nomor SBU-JK</label>
+                                    <input type="text" id="legal_sbujk" placeholder="Contoh: 0-1234-56-789012-3">
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary-admin" id="btn-save-utama">Simpan Pengaturan Utama</button>
+                            </div>
+                        </div>
+                    </form>
                 </section>
 
-                <!-- TAB: MITRA & KLIEN -->
-                <section id="clients" class="admin-section" style="display: none;">
+
+                <!-- ==========================================
+                    TAB: BERANDA / HOME
+                    ========================================== -->
+                <section
+                    id="home-settings"
+                    class="admin-section"
+                    style="display:none;"
+                >
+
                     <div class="section-header-flex">
+
                         <div class="section-text">
-                            <h3>Logo Mitra & Instansi</h3>
-                            <p>Kelola logo perusahaan klien yang ditampilkan di halaman Klien.</p>
+
+                            <h3>
+                                Manajemen Halaman Beranda
+                            </h3>
+
+                            <p>
+                                Seluruh konten halaman Beranda dikendalikan
+                                dari panel ini. Perubahan akan disimpan ke
+                                Firebase dan ditampilkan pada website publik.
+                            </p>
+
                         </div>
-                        <button class="btn-primary-admin">
-                            <span class="material-icons">add</span> Tambah Logo Klien
-                        </button>
+
                     </div>
 
-                    <!-- Tabel Data Klien -->
+
+
+                    <form id="form-home">
+
+
+                        <!-- ==================================================
+                            01. HERO
+                            ================================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                01. Hero Section
+                            </h4>
+
+                            <p
+                                style="
+                                    color:var(--admin-gray);
+                                    font-size:.85rem;
+                                    margin-bottom:20px;
+                                "
+                            >
+                                Atur seluruh isi Hero termasuk sampai 6
+                                background slider.
+                            </p>
+
+
+                            <h5>
+                                Background Slider
+                            </h5>
+
+
+                            <div class="form-grid">
+
+
+                                <!-- HERO 1 -->
+                                <div class="form-group">
+
+                                    <label>
+                                        Background 1
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_hero_bg_1"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Background 1
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-hero-1"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:140px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:6px;
+                                        "
+                                    >
+
+
+                                    <label
+                                        style="
+                                            display:flex;
+                                            gap:8px;
+                                            align-items:center;
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_hero_bg_1"
+                                        >
+
+                                        Hapus background
+
+                                    </label>
+
+                                </div>
+
+
+
+                                <!-- HERO 2 -->
+                                <div class="form-group">
+
+                                    <label>
+                                        Background 2
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_hero_bg_2"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Background 2
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-hero-2"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:140px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:6px;
+                                        "
+                                    >
+
+                                    <label
+                                        style="
+                                            display:flex;
+                                            gap:8px;
+                                            align-items:center;
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_hero_bg_2"
+                                        >
+
+                                        Hapus background
+
+                                    </label>
+
+                                </div>
+
+
+
+                                <!-- HERO 3 -->
+                                <div class="form-group">
+
+                                    <label>
+                                        Background 3
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_hero_bg_3"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Background 3
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-hero-3"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:140px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:6px;
+                                        "
+                                    >
+
+                                    <label
+                                        style="
+                                            display:flex;
+                                            gap:8px;
+                                            align-items:center;
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_hero_bg_3"
+                                        >
+
+                                        Hapus background
+
+                                    </label>
+
+                                </div>
+
+
+
+                                <!-- HERO 4 -->
+                                <div class="form-group">
+
+                                    <label>
+                                        Background 4
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_hero_bg_4"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Background 4
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-hero-4"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:140px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:6px;
+                                        "
+                                    >
+
+                                    <label
+                                        style="
+                                            display:flex;
+                                            gap:8px;
+                                            align-items:center;
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_hero_bg_4"
+                                        >
+
+                                        Hapus background
+
+                                    </label>
+
+                                </div>
+
+
+
+                                <!-- HERO 5 -->
+                                <div class="form-group">
+
+                                    <label>
+                                        Background 5
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_hero_bg_5"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Background 5
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-hero-5"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:140px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:6px;
+                                        "
+                                    >
+
+                                    <label
+                                        style="
+                                            display:flex;
+                                            gap:8px;
+                                            align-items:center;
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_hero_bg_5"
+                                        >
+
+                                        Hapus background
+
+                                    </label>
+
+                                </div>
+
+
+
+                                <!-- HERO 6 -->
+                                <div class="form-group">
+
+                                    <label>
+                                        Background 6
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_hero_bg_6"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Background 6
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-hero-6"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:140px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:6px;
+                                        "
+                                    >
+
+                                    <label
+                                        style="
+                                            display:flex;
+                                            gap:8px;
+                                            align-items:center;
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_hero_bg_6"
+                                        >
+
+                                        Hapus background
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <hr
+                                style="
+                                    border:0;
+                                    border-top:
+                                        1px solid var(--admin-border);
+                                    margin:30px 0;
+                                "
+                            >
+
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Badge / Subtitle
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_hero_badge"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Motto
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_hero_motto"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Judul Utama
+                                    </label>
+
+                                    <textarea
+                                        id="home_hero_title_main"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Judul Highlight
+                                    </label>
+
+                                    <textarea
+                                        id="home_hero_title_highlight"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Deskripsi
+                                    </label>
+
+                                    <textarea
+                                        id="home_hero_desc"
+                                        rows="4"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Tombol Utama
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_hero_btn_primary_text"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        URL Tombol Utama
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_hero_btn_primary_url"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Tombol Kedua
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_hero_btn_secondary_text"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        URL Tombol Kedua
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_hero_btn_secondary_url"
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==================================================
+                            02. ABOUT SUMMARY
+                            ================================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                02. Tentang Kami — Ringkasan
+                            </h4>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Badge
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_badge"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Motto
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_motto"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Judul Utama
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_title_main"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Judul Highlight
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_title_highlight"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Deskripsi
+                                    </label>
+
+                                    <textarea
+                                        id="home_about_desc"
+                                        rows="4"
+                                    ></textarea>
+
+                                </div>
+
+
+
+                                <!-- ABOUT IMAGE 1 -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Gambar Utama
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_about_image_main"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Gambar Utama
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-about-main"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:150px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                        "
+                                    >
+
+
+                                    <label>
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_about_image_main"
+                                        >
+
+                                        Hapus gambar
+
+                                    </label>
+
+                                </div>
+
+
+
+                                <!-- ABOUT IMAGE 2 -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Gambar Pendukung
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_about_image_secondary"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Gambar Pendukung
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-about-secondary"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:150px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                        "
+                                    >
+
+
+                                    <label>
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_about_image_secondary"
+                                        >
+
+                                        Hapus gambar
+
+                                    </label>
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Floating Text
+                                    </label>
+
+                                    <textarea
+                                        id="home_about_floating_text"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Overlay Text
+                                    </label>
+
+                                    <textarea
+                                        id="home_about_overlay_text"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+
+                                <!-- STATS -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Statistik 1
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_stat_1_num"
+                                        style="margin-bottom:6px;"
+                                    >
+
+                                    <textarea
+                                        id="home_about_stat_1_label"
+                                        rows="2"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Statistik 2
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_stat_2_num"
+                                        style="margin-bottom:6px;"
+                                    >
+
+                                    <textarea
+                                        id="home_about_stat_2_label"
+                                        rows="2"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Statistik 3
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_stat_3_num"
+                                        style="margin-bottom:6px;"
+                                    >
+
+                                    <textarea
+                                        id="home_about_stat_3_label"
+                                        rows="2"
+                                    ></textarea>
+
+                                </div>
+
+
+
+                                <!-- FEATURE 1 -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Feature 1 — Judul
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_feature_1_title"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Feature 1 — Deskripsi
+                                    </label>
+
+                                    <textarea
+                                        id="home_about_feature_1_desc"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <!-- FEATURE 2 -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Feature 2 — Judul
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_feature_2_title"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Feature 2 — Deskripsi
+                                    </label>
+
+                                    <textarea
+                                        id="home_about_feature_2_desc"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <!-- FEATURE 3 -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Feature 3 — Judul
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_feature_3_title"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Feature 3 — Deskripsi
+                                    </label>
+
+                                    <textarea
+                                        id="home_about_feature_3_desc"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Teks Tombol
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_about_button_text"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Tujuan Tombol
+                                    </label>
+
+                                    <select
+                                        id="home_about_button_target"
+                                    >
+
+                                        <option value="about">
+                                            Tentang Kami
+                                        </option>
+
+                                        <option value="services">
+                                            Layanan
+                                        </option>
+
+                                        <option value="work">
+                                            Work Experience
+                                        </option>
+
+                                        <option value="clients">
+                                            Klien
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==================================================
+                            03. VALUES
+                            ================================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                03. Nilai Perusahaan
+                            </h4>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Judul Utama
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_values_title_main"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Judul Highlight
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="home_values_title_highlight"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Deskripsi
+                                    </label>
+
+                                    <textarea
+                                        id="home_values_desc"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <!-- VALUE 1-6 -->
+
+                                <div class="form-group">
+                                    <label>Nilai 1 — Judul</label>
+                                    <input id="home_value_1_title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nilai 1 — Icon</label>
+                                    <input
+                                        id="home_value_1_icon"
+                                        placeholder="verified_user"
+                                    >
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Nilai 1 — Deskripsi</label>
+                                    <textarea
+                                        id="home_value_1_desc"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Nilai 2 — Judul</label>
+                                    <input id="home_value_2_title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nilai 2 — Icon</label>
+                                    <input
+                                        id="home_value_2_icon"
+                                        placeholder="handshake"
+                                    >
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Nilai 2 — Deskripsi</label>
+                                    <textarea
+                                        id="home_value_2_desc"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Nilai 3 — Judul</label>
+                                    <input id="home_value_3_title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nilai 3 — Icon</label>
+                                    <input
+                                        id="home_value_3_icon"
+                                        placeholder="engineering"
+                                    >
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Nilai 3 — Deskripsi</label>
+                                    <textarea
+                                        id="home_value_3_desc"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Nilai 4 — Judul</label>
+                                    <input id="home_value_4_title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nilai 4 — Icon</label>
+                                    <input
+                                        id="home_value_4_icon"
+                                        placeholder="groups"
+                                    >
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Nilai 4 — Deskripsi</label>
+                                    <textarea
+                                        id="home_value_4_desc"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Nilai 5 — Judul</label>
+                                    <input id="home_value_5_title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nilai 5 — Icon</label>
+                                    <input
+                                        id="home_value_5_icon"
+                                        placeholder="lightbulb"
+                                    >
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Nilai 5 — Deskripsi</label>
+                                    <textarea
+                                        id="home_value_5_desc"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Nilai 6 — Judul</label>
+                                    <input id="home_value_6_title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nilai 6 — Icon</label>
+                                    <input
+                                        id="home_value_6_icon"
+                                        placeholder="eco"
+                                    >
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Nilai 6 — Deskripsi</label>
+                                    <textarea
+                                        id="home_value_6_desc"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==================================================
+                            04. SERVICES
+                            ================================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                04. Solusi Terintegrasi / Layanan
+                            </h4>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Judul Utama
+                                    </label>
+
+                                    <input
+                                        id="home_services_title_main"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Judul Highlight
+                                    </label>
+
+                                    <input
+                                        id="home_services_title_highlight"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Deskripsi
+                                    </label>
+
+                                    <textarea
+                                        id="home_services_desc"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- SERVICE 1 -->
+
+                            <hr
+                                style="
+                                    border:0;
+                                    border-top:
+                                        1px solid var(--admin-border);
+                                    margin:30px 0;
+                                "
+                            >
+
+
+                            <h5>
+                                01 — Jasa Konstruksi
+                            </h5>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label>Nomor</label>
+                                    <input id="home_service_1_number">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Judul</label>
+                                    <input id="home_service_1_title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Icon</label>
+                                    <input
+                                        id="home_service_1_icon"
+                                        placeholder="construction"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Overlay Text</label>
+                                    <textarea
+                                        id="home_service_1_overlay"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Deskripsi</label>
+                                    <textarea
+                                        id="home_service_1_desc"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 1</label>
+                                    <input id="home_service_1_feat_1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 2</label>
+                                    <input id="home_service_1_feat_2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 3</label>
+                                    <input id="home_service_1_feat_3">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 4</label>
+                                    <input id="home_service_1_feat_4">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 5</label>
+                                    <input id="home_service_1_feat_5">
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Gambar
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_service_1_image"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Gambar
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-service-1"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:160px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                        "
+                                    >
+
+
+                                    <label>
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_service_1_image"
+                                        >
+
+                                        Hapus gambar
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- SERVICE 2 -->
+
+                            <hr
+                                style="
+                                    border:0;
+                                    border-top:
+                                        1px solid var(--admin-border);
+                                    margin:30px 0;
+                                "
+                            >
+
+
+                            <h5>
+                                02 — Penyedia Tenaga Kerja
+                            </h5>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label>Nomor</label>
+                                    <input id="home_service_2_number">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Judul</label>
+                                    <input id="home_service_2_title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Icon</label>
+                                    <input
+                                        id="home_service_2_icon"
+                                        placeholder="groups"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Overlay Text</label>
+                                    <textarea
+                                        id="home_service_2_overlay"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Deskripsi</label>
+                                    <textarea
+                                        id="home_service_2_desc"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 1</label>
+                                    <input id="home_service_2_feat_1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 2</label>
+                                    <input id="home_service_2_feat_2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 3</label>
+                                    <input id="home_service_2_feat_3">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 4</label>
+                                    <input id="home_service_2_feat_4">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 5</label>
+                                    <input id="home_service_2_feat_5">
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Gambar
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_service_2_image"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Gambar
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-service-2"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:160px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                        "
+                                    >
+
+
+                                    <label>
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_service_2_image"
+                                        >
+
+                                        Hapus gambar
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- SERVICE 3 -->
+
+                            <hr
+                                style="
+                                    border:0;
+                                    border-top:
+                                        1px solid var(--admin-border);
+                                    margin:30px 0;
+                                "
+                            >
+
+
+                            <h5>
+                                03 — Pengadaan Barang
+                            </h5>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label>Nomor</label>
+                                    <input id="home_service_3_number">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Judul</label>
+                                    <input id="home_service_3_title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Icon</label>
+                                    <input
+                                        id="home_service_3_icon"
+                                        placeholder="inventory_2"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Overlay Text</label>
+                                    <textarea
+                                        id="home_service_3_overlay"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Deskripsi</label>
+                                    <textarea
+                                        id="home_service_3_desc"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 1</label>
+                                    <input id="home_service_3_feat_1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 2</label>
+                                    <input id="home_service_3_feat_2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 3</label>
+                                    <input id="home_service_3_feat_3">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 4</label>
+                                    <input id="home_service_3_feat_4">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fitur 5</label>
+                                    <input id="home_service_3_feat_5">
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Gambar
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_service_3_image"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Gambar
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-service-3"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:160px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                        "
+                                    >
+
+
+                                    <label>
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_service_3_image"
+                                        >
+
+                                        Hapus gambar
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==================================================
+                            05. WORK EXPERIENCE
+                            ================================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                05. Work Experience di Home
+                            </h4>
+
+
+                            <p
+                                style="
+                                    color:var(--admin-gray);
+                                    font-size:.85rem;
+                                    margin-bottom:20px;
+                                "
+                            >
+                                Data proyek akan dikelola nanti melalui
+                                modul Pengalaman Kerja. Untuk sekarang,
+                                bagian ini hanya mengatur tampilan section
+                                pada Home.
+                            </p>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label>
+                                        Judul Utama
+                                    </label>
+
+                                    <input
+                                        id="home_work_title_main"
+                                    >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>
+                                        Judul Highlight
+                                    </label>
+
+                                    <input
+                                        id="home_work_title_highlight"
+                                    >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>
+                                        Teks Tombol
+                                    </label>
+
+                                    <input
+                                        id="home_work_button_text"
+                                    >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>
+                                        Tujuan Tombol
+                                    </label>
+
+                                    <select
+                                        id="home_work_button_target"
+                                    >
+
+                                        <option value="work">
+                                            Work Experience
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==================================================
+                            06. FINAL CTA
+                            ================================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                06. Final CTA
+                            </h4>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Judul CTA
+                                    </label>
+
+                                    <textarea
+                                        id="home_cta_title"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Deskripsi CTA
+                                    </label>
+
+                                    <textarea
+                                        id="home_cta_desc"
+                                        rows="4"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Teks Tombol
+                                    </label>
+
+                                    <input
+                                        id="home_cta_button_text"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        URL Tombol
+                                    </label>
+
+                                    <input
+                                        id="home_cta_button_url"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Background CTA
+                                    </label>
+
+                                    <div
+                                        class="file-upload-wrapper"
+                                        style="height:110px;"
+                                    >
+
+                                        <input
+                                            type="file"
+                                            id="home_cta_bg"
+                                            accept="image/*"
+                                        >
+
+                                        <div class="file-upload-ui">
+
+                                            <span class="material-icons">
+                                                image
+                                            </span>
+
+                                            <p>
+                                                Upload Background CTA
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <img
+                                        id="preview-home-cta"
+                                        src=""
+                                        alt=""
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:180px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                        "
+                                    >
+
+
+                                    <label>
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_home_cta_bg"
+                                        >
+
+                                        Hapus background
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- SAVE -->
+
+                            <div
+                                class="form-actions"
+                                style="margin-top:30px;"
+                            >
+
+                                <button
+                                    type="submit"
+                                    class="btn-primary-admin"
+                                    id="btn-save-home"
+                                >
+                                    Simpan Seluruh Konten Beranda
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                    </form>
+
+                </section>
+                
+                <!-- ==========================================
+                    TAB 2: ABOUT (TENTANG KAMI DETAIL)
+                    ========================================== -->
+                <section id="about" class="admin-section" style="display: none;">
+                    <div class="section-header-flex">
+                        <div class="section-text">
+                            <h3>Manajemen Halaman About</h3>
+                            <p>Kustomisasi seluruh konten teks, visi, misi, legalitas, budaya, hingga keunggulan perusahaan.</p>
+                        </div>
+                    </div>
+                    
+                    <form id="form-about">
+                        <!-- 1. HERO SECTION -->
+                        <div class="admin-card">
+                            <h4>1. Hero Section</h4>
+                            <div class="form-grid">
+                                <div class="form-group"><label>Badge / Subtitle</label><input type="text" id="abt_hero_badge" placeholder="PROFESIONAL | TERPERCAYA | BERKELANJUTAN"></div>
+                                <div class="form-group"><label>Judul Utama (Gunakan &lt;span class="highlight"&gt;)</label><input type="text" id="abt_hero_title" placeholder="Tentang <span class='highlight'>Kami</span>"></div>
+                                <div class="form-group full-width"><label>Deskripsi Hero</label><textarea id="abt_hero_desc" rows="2"></textarea></div>
+                            </div>
+                        </div>
+
+                        <!-- 2. WHO WE ARE -->
+                        <div class="admin-card">
+                            <h4>2. Who We Are</h4>
+                            <div class="form-grid">
+                                <div class="form-group full-width"><label>Judul Who We Are</label><textarea id="abt_who_title" rows="2"></textarea></div>
+                                <div class="form-group full-width"><label>Deskripsi Who We Are</label><textarea id="abt_who_desc" rows="3"></textarea></div>
+                            </div>
+                        </div>
+
+                        <!-- 3. VISI & MISI -->
+                        <div class="admin-card">
+                            <h4>3. Visi & Misi</h4>
+                            <div class="form-grid">
+                                <div class="form-group full-width"><label>Deskripsi Visi</label><textarea id="abt_visi_desc" rows="3"></textarea></div>
+                                <div class="form-group full-width"><label>Poin Misi 1</label><input type="text" id="abt_misi_1"></div>
+                                <div class="form-group full-width"><label>Poin Misi 2</label><input type="text" id="abt_misi_2"></div>
+                                <div class="form-group full-width"><label>Poin Misi 3</label><input type="text" id="abt_misi_3"></div>
+                                <div class="form-group full-width"><label>Poin Misi 4</label><input type="text" id="abt_misi_4"></div>
+                            </div>
+                        </div>
+
+                        <!-- 4. LEGALITAS & SERTIFIKASI -->
+                        <div class="admin-card">
+                            <h4>4. Legalitas & Sertifikasi</h4>
+                            <div class="form-grid">
+                                <div class="form-group full-width"><label>Deskripsi Legalitas</label><textarea id="abt_legal_desc" rows="2"></textarea></div>
+                                <!-- 8 Kartu Legalitas -->
+                                <div class="form-group"><label>1. Akta Notaris (Detail)</label><input type="text" id="abt_leg_1" placeholder="SULIS WIGYATI... Nomor 01 Tahun 2024"></div>
+                                <div class="form-group"><label>2. SKT (Detail)</label><input type="text" id="abt_leg_2"></div>
+                                <div class="form-group"><label>3. NIB (Detail)</label><input type="text" id="abt_leg_3"></div>
+                                <div class="form-group"><label>4. SBU-JK (Detail)</label><input type="text" id="abt_leg_4"></div>
+                                <div class="form-group"><label>5. NPWP (Detail)</label><input type="text" id="abt_leg_5"></div>
+                                <div class="form-group"><label>6. BPJS (Detail)</label><input type="text" id="abt_leg_6"></div>
+                                <div class="form-group"><label>7. SPPKP (Detail)</label><input type="text" id="abt_leg_7"></div>
+                                <div class="form-group"><label>8. GAPENSI (Detail)</label><input type="text" id="abt_leg_8"></div>
+                            </div>
+                        </div>
+
+                        <!-- 5. OUR CULTURE & 6. KEUNGGULAN & 7. CTA -->
+                        <div class="admin-card">
+                            <h4>5. Budaya, Keunggulan & CTA</h4>
+                            <div class="form-grid">
+                                <div class="form-group full-width"><label>Deskripsi Our Culture</label><input type="text" id="abt_cul_desc"></div>
+                                <div class="form-group full-width"><label>Deskripsi Keunggulan Kami</label><input type="text" id="abt_exc_desc"></div>
+                                
+                                <hr style="grid-column: 1/-1; margin: 10px 0;">
+                                
+                                <div class="form-group"><label>Keunggulan 1 (Judul)</label><textarea id="abt_exc_1_title" rows="2"></textarea></div>
+                                <div class="form-group"><label>Keunggulan 1 (Desc)</label><textarea id="abt_exc_1_desc" rows="2"></textarea></div>
+                                <div class="form-group"><label>Keunggulan 2 (Judul)</label><textarea id="abt_exc_2_title" rows="2"></textarea></div>
+                                <div class="form-group"><label>Keunggulan 2 (Desc)</label><textarea id="abt_exc_2_desc" rows="2"></textarea></div>
+                                <div class="form-group"><label>Keunggulan 3 (Judul)</label><textarea id="abt_exc_3_title" rows="2"></textarea></div>
+                                <div class="form-group"><label>Keunggulan 3 (Desc)</label><textarea id="abt_exc_3_desc" rows="2"></textarea></div>
+
+                                <hr style="grid-column: 1/-1; margin: 10px 0;">
+
+                                <div class="form-group"><label>Judul CTA</label><input type="text" id="abt_cta_title"></div>
+                                <div class="form-group"><label>Deskripsi CTA</label><input type="text" id="abt_cta_desc"></div>
+                            </div>
+                            
+                            <div class="form-actions" style="margin-top: 20px;">
+                                <button type="submit" class="btn-primary-admin" id="btn-save-about">Simpan Halaman About</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                  
+
+                <!-- ==========================================
+                    TAB 3: LAYANAN (DETAIL)
+                    ========================================== -->
+                <!-- ==========================================
+                    TAB 3: LAYANAN
+                    URUTAN FINAL:
+                    01. JASA KONSTRUKSI
+                    02. PENYEDIA TENAGA KERJA
+                    03. PENGADAAN BARANG
+                    ========================================== -->
+
+                <section
+                    id="layanan"
+                    class="admin-section"
+                    style="display:none;"
+                >
+
+                    <div class="section-header-flex">
+
+                        <div class="section-text">
+
+                            <h3>
+                                Manajemen Halaman Layanan
+                            </h3>
+
+                            <p>
+                                Kelola seluruh konten halaman Layanan,
+                                termasuk hero, tiga layanan utama,
+                                lima fitur masing-masing layanan,
+                                gambar, tombol, dan CTA.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <form
+                        id="form-layanan"
+                    >
+
+
+                        <!-- ======================================
+                            01. HERO LAYANAN
+                            ====================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                01. Header Halaman Layanan
+                            </h4>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Judul Utama
+                                    </label>
+
+                                    <textarea
+                                        id="srv_hero_title"
+                                        rows="2"
+                                        placeholder="Layanan Terpadu Kami"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Deskripsi Header
+                                    </label>
+
+                                    <textarea
+                                        id="srv_hero_desc"
+                                        rows="3"
+                                        placeholder="Deskripsi halaman layanan..."
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Background Hero
+                                    </label>
+
+                                    <input
+                                        type="file"
+                                        id="srv_hero_bg"
+                                        accept="image/*"
+                                    >
+
+
+                                    <img
+                                        id="preview-srv-hero-bg"
+                                        alt="Preview Hero"
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:220px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:8px;
+                                        "
+                                    >
+
+
+                                    <label
+                                        style="
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_srv_hero_bg"
+                                        >
+
+                                        Hapus background hero
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ======================================
+                            02. JASA KONSTRUKSI
+                            ====================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                02. Jasa Konstruksi
+                            </h4>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Badge / Kategori
+                                    </label>
+
+                                    <input
+                                        id="srv_1_badge"
+                                        placeholder="GENERAL CONTRACTOR"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Icon
+                                    </label>
+
+                                    <input
+                                        id="srv_1_icon"
+                                        placeholder="construction"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Judul Layanan
+                                    </label>
+
+                                    <input
+                                        id="srv_1_title"
+                                        placeholder="Jasa Konstruksi"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Deskripsi Layanan
+                                    </label>
+
+                                    <textarea
+                                        id="srv_1_desc"
+                                        rows="4"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Overlay Judul
+                                    </label>
+
+                                    <input
+                                        id="srv_1_overlay_title"
+                                        placeholder="KONSTRUKSI BERKUALITAS"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Overlay Deskripsi
+                                    </label>
+
+                                    <input
+                                        id="srv_1_overlay_desc"
+                                        placeholder="UNTUK KEMAJUAN BERSAMA"
+                                    >
+
+                                </div>
+
+
+                                <!-- FOTO -->
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Gambar Layanan
+                                    </label>
+
+                                    <input
+                                        type="file"
+                                        id="srv_1_image"
+                                        accept="image/*"
+                                    >
+
+
+                                    <img
+                                        id="preview-srv-1-image"
+                                        alt="Preview Jasa Konstruksi"
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:220px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:8px;
+                                        "
+                                    >
+
+
+                                    <label
+                                        style="
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_srv_1_image"
+                                        >
+
+                                        Hapus gambar
+
+                                    </label>
+
+                                </div>
+
+
+                                <!-- FITUR -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 1
+                                    </label>
+
+                                    <input
+                                        id="srv_1_feat_1"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 2
+                                    </label>
+
+                                    <input
+                                        id="srv_1_feat_2"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 3
+                                    </label>
+
+                                    <input
+                                        id="srv_1_feat_3"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 4
+                                    </label>
+
+                                    <input
+                                        id="srv_1_feat_4"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 5
+                                    </label>
+
+                                    <input
+                                        id="srv_1_feat_5"
+                                    >
+
+                                </div>
+
+
+                                <!-- BUTTON -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Teks Tombol
+                                    </label>
+
+                                    <input
+                                        id="srv_1_button_text"
+                                        placeholder="Konsultasi Proyek Konstruksi"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        URL Tombol
+                                    </label>
+
+                                    <input
+                                        id="srv_1_button_url"
+                                        placeholder="https://wa.me/..."
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ======================================
+                            03. PENYEDIA TENAGA KERJA
+                            ====================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                03. Penyedia Tenaga Kerja
+                            </h4>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Badge / Kategori
+                                    </label>
+
+                                    <input
+                                        id="srv_2_badge"
+                                        placeholder="OUTSOURCING SERVICE"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Icon
+                                    </label>
+
+                                    <input
+                                        id="srv_2_icon"
+                                        placeholder="groups"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Judul Layanan
+                                    </label>
+
+                                    <input
+                                        id="srv_2_title"
+                                        placeholder="Penyedia Tenaga Kerja"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Deskripsi Layanan
+                                    </label>
+
+                                    <textarea
+                                        id="srv_2_desc"
+                                        rows="4"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Overlay Judul
+                                    </label>
+
+                                    <input
+                                        id="srv_2_overlay_title"
+                                        placeholder="TENAGA KERJA BERKUALITAS"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Overlay Deskripsi
+                                    </label>
+
+                                    <input
+                                        id="srv_2_overlay_desc"
+                                        placeholder="UNTUK HASIL MAKSIMAL"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Gambar Layanan
+                                    </label>
+
+                                    <input
+                                        type="file"
+                                        id="srv_2_image"
+                                        accept="image/*"
+                                    >
+
+
+                                    <img
+                                        id="preview-srv-2-image"
+                                        alt="Preview Penyedia Tenaga Kerja"
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:220px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:8px;
+                                        "
+                                    >
+
+
+                                    <label
+                                        style="
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_srv_2_image"
+                                        >
+
+                                        Hapus gambar
+
+                                    </label>
+
+                                </div>
+
+
+                                <!-- FITUR -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 1
+                                    </label>
+
+                                    <input
+                                        id="srv_2_feat_1"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 2
+                                    </label>
+
+                                    <input
+                                        id="srv_2_feat_2"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 3
+                                    </label>
+
+                                    <input
+                                        id="srv_2_feat_3"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 4
+                                    </label>
+
+                                    <input
+                                        id="srv_2_feat_4"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 5
+                                    </label>
+
+                                    <input
+                                        id="srv_2_feat_5"
+                                    >
+
+                                </div>
+
+
+                                <!-- BUTTON -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Teks Tombol
+                                    </label>
+
+                                    <input
+                                        id="srv_2_button_text"
+                                        placeholder="Lihat Detail Manpower"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        URL Tombol
+                                    </label>
+
+                                    <input
+                                        id="srv_2_button_url"
+                                        placeholder="https://wa.me/..."
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ======================================
+                            04. PENGADAAN BARANG
+                            ====================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                04. Pengadaan Barang
+                            </h4>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Badge / Kategori
+                                    </label>
+
+                                    <input
+                                        id="srv_3_badge"
+                                        placeholder="SUPPLIER"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Icon
+                                    </label>
+
+                                    <input
+                                        id="srv_3_icon"
+                                        placeholder="inventory_2"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Judul Layanan
+                                    </label>
+
+                                    <input
+                                        id="srv_3_title"
+                                        placeholder="Pengadaan Barang"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Deskripsi Layanan
+                                    </label>
+
+                                    <textarea
+                                        id="srv_3_desc"
+                                        rows="4"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Overlay Judul
+                                    </label>
+
+                                    <input
+                                        id="srv_3_overlay_title"
+                                        placeholder="PENGADAAN TEPAT"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Overlay Deskripsi
+                                    </label>
+
+                                    <input
+                                        id="srv_3_overlay_desc"
+                                        placeholder="KUALITAS TERJAMIN"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Gambar Layanan
+                                    </label>
+
+                                    <input
+                                        type="file"
+                                        id="srv_3_image"
+                                        accept="image/*"
+                                    >
+
+
+                                    <img
+                                        id="preview-srv-3-image"
+                                        alt="Preview Pengadaan Barang"
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:220px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:8px;
+                                        "
+                                    >
+
+
+                                    <label
+                                        style="
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_srv_3_image"
+                                        >
+
+                                        Hapus gambar
+
+                                    </label>
+
+                                </div>
+
+
+                                <!-- FITUR -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 1
+                                    </label>
+
+                                    <input
+                                        id="srv_3_feat_1"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 2
+                                    </label>
+
+                                    <input
+                                        id="srv_3_feat_2"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 3
+                                    </label>
+
+                                    <input
+                                        id="srv_3_feat_3"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 4
+                                    </label>
+
+                                    <input
+                                        id="srv_3_feat_4"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Fitur 5
+                                    </label>
+
+                                    <input
+                                        id="srv_3_feat_5"
+                                    >
+
+                                </div>
+
+
+                                <!-- BUTTON -->
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Teks Tombol
+                                    </label>
+
+                                    <input
+                                        id="srv_3_button_text"
+                                        placeholder="Konsultasi Pengadaan"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        URL Tombol
+                                    </label>
+
+                                    <input
+                                        id="srv_3_button_url"
+                                        placeholder="https://wa.me/..."
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ======================================
+                            05. FINAL CTA
+                            ====================================== -->
+
+                        <div class="admin-card">
+
+                            <h4>
+                                05. Final CTA
+                            </h4>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Judul CTA
+                                    </label>
+
+                                    <textarea
+                                        id="srv_cta_title"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Deskripsi CTA
+                                    </label>
+
+                                    <textarea
+                                        id="srv_cta_desc"
+                                        rows="3"
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Teks Tombol CTA
+                                    </label>
+
+                                    <input
+                                        id="srv_cta_button_text"
+                                        value="Konsultasi Sekarang"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        URL Tombol CTA
+                                    </label>
+
+                                    <input
+                                        id="srv_cta_button_url"
+                                        placeholder="https://wa.me/..."
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label>
+                                        Background CTA
+                                    </label>
+
+                                    <input
+                                        type="file"
+                                        id="srv_cta_bg"
+                                        accept="image/*"
+                                    >
+
+
+                                    <img
+                                        id="preview-srv-cta-bg"
+                                        alt="Preview CTA"
+                                        style="
+                                            display:none;
+                                            width:100%;
+                                            max-height:220px;
+                                            object-fit:cover;
+                                            margin-top:10px;
+                                            border-radius:8px;
+                                        "
+                                    >
+
+
+                                    <label
+                                        style="
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <input
+                                            type="checkbox"
+                                            id="remove_srv_cta_bg"
+                                        >
+
+                                        Hapus background CTA
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="form-actions"
+                                style="margin-top:20px;"
+                            >
+
+                                <button
+                                    type="submit"
+                                    class="btn-primary-admin"
+                                    id="btn-save-layanan"
+                                >
+                                    Simpan Halaman Layanan
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                    </form>
+
+                </section>
+
+                <!-- ==========================================
+                TAB 4: PENGALAMAN KERJA
+                ========================================== -->
+            <section id="work-exp" class="admin-section" style="display: none;">
+                <div class="section-header-flex">
+                    <div class="section-text">
+                        <h3>Galeri Proyek (Work Experience)</h3>
+                        <p>Upload gambar (ke Cloudinary), atur deskripsi, dan kelola portofolio.</p>
+                    </div>
+                    <button class="btn-primary-admin" id="btn-add-project">
+                        <span class="material-icons">add</span> Tambah Proyek Baru
+                    </button>
+                </div>
+
+                <!-- AREA FORM TAMBAH PROYEK (Disembunyikan secara default) -->
+                <div class="admin-card" id="form-add-project" style="display: none; margin-bottom: 20px;">
+                    <h4>Tambah Proyek Baru</h4>
+                    <form id="projectForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nama Proyek</label>
+                                <input type="text" id="projName" placeholder="Contoh: Pembangunan Gudang" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Nama Klien / Lokasi</label>
+                                <input type="text" id="projClient" placeholder="Contoh: PT ABC, Jakarta" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Kategori</label>
+                                <select id="projCategory" required>
+                                    <option value="konstruksi">Konstruksi</option>
+                                    <option value="pengadaan">Pengadaan Barang</option>
+                                    <option value="manpower">Penyedia Tenaga Kerja</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Tahun</label>
+                                <input type="number" id="projYear" placeholder="2026" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Foto / Thumbnail Proyek</label>
+                                <div class="file-upload-wrapper" style="height: 120px;">
+                                    <input type="file" id="projImage" accept="image/*" required>
+                                    <div class="file-upload-ui">
+                                        <span class="material-icons">add_photo_alternate</span>
+                                        <p>Klik untuk upload foto (Otomatis ke Cloudinary)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions" style="margin-top: 20px;">
+                            <button type="button" class="btn-outline-admin" id="btn-cancel-project" style="padding: 10px 20px; border-radius: 6px; cursor: pointer; border: 1px solid var(--admin-border); background: #fff; margin-right: 10px;">Batal</button>
+                            <button type="submit" class="btn-primary-admin">Simpan Proyek</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- TABEL DATA PROYEK -->
+                <div class="admin-card">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Foto</th>
+                                <th>Nama Proyek</th>
+                                <th>Klien / Lokasi</th>
+                                <th>Kategori</th>
+                                <th>Tahun</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="project-table-body">
+                            <!-- Data akan dirender secara dinamis oleh admin.js -->
+                            <tr><td colspan="6" class="text-center">Memuat data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+                <!-- ==========================================
+                TAB 5: KLIEN & MITRA
+                ========================================== -->
+            <section id="clients" class="admin-section" style="display: none;">
+                <div class="section-header-flex">
+                    <div class="section-text">
+                        <h3>Logo Mitra & Instansi</h3>
+                        <p>Kelola logo perusahaan klien yang akan ditampilkan di grid halaman Klien.</p>
+                    </div>
+                    <button class="btn-primary-admin" id="btn-add-client">
+                        <span class="material-icons">add</span> Tambah Logo Klien
+                    </button>
+                </div>
+
+                <!-- AREA FORM TAMBAH KLIEN (Disembunyikan secara default) -->
+                <div class="admin-card" id="form-add-client" style="display: none; margin-bottom: 20px;">
+                    <h4>Upload Logo Klien Baru</h4>
+                    <form id="clientForm">
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Nama Perusahaan / Instansi</label>
+                                <input type="text" id="clientName" placeholder="Contoh: PT Semen Indonesia" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>File Logo Klien (Disarankan PNG berlatar transparan)</label>
+                                <div class="file-upload-wrapper" style="height: 120px;">
+                                    <input type="file" id="clientLogo" accept="image/png, image/jpeg, image/webp" required>
+                                    <div class="file-upload-ui">
+                                        <span class="material-icons">add_photo_alternate</span>
+                                        <p>Klik untuk upload logo</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions" style="margin-top: 20px;">
+                            <button type="button" class="btn-outline-admin" id="btn-cancel-client" style="padding: 10px 20px; border-radius: 6px; cursor: pointer; border: 1px solid var(--admin-border); background: #fff; margin-right: 10px;">Batal</button>
+                            <button type="submit" class="btn-primary-admin">Simpan Logo</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- TABEL DATA KLIEN -->
+                <div class="admin-card">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 100px;">Logo</th>
+                                <th>Nama Klien</th>
+                                <th>Tanggal Ditambahkan</th>
+                                <th style="width: 100px;">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="client-table-body">
+                            <tr><td colspan="4" class="text-center">Memuat data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+                <!-- ==========================================
+                     TAB 6: BERKAS PERUSAHAAN (PENGATURAN)
+                     ========================================== -->
+                <section id="berkas" class="admin-section" style="display: none;">
+                    <div class="section-header-flex">
+                        <div class="section-text">
+                            <h3>Berkas Perusahaan</h3>
+                            <p>Unggah file dokumen resmi perusahaan (PDF) seperti Company Profile untuk diunduh oleh publik.</p>
+                        </div>
+                    </div>
+
                     <div class="admin-card">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>Logo Instansi</th>
-                                    <th>Nama Instansi / Perusahaan</th>
-                                    <th>Status Tampil</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><img src="assets/images/clients/pln.png" class="table-logo-thumb"></td>
-                                    <td>PT PLN (Persero)</td>
-                                    <td><span class="status-badge bg-green">Aktif</span></td>
-                                    <td>
-                                        <button class="action-btn delete"><span class="material-icons">delete</span></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="assets/images/clients/pelindo.png" class="table-logo-thumb"></td>
-                                    <td>PT Pelabuhan Indonesia (Persero)</td>
-                                    <td><span class="status-badge bg-green">Aktif</span></td>
-                                    <td>
-                                        <button class="action-btn delete"><span class="material-icons">delete</span></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <h4>Manajemen Dokumen Resmi</h4>
+                        <div class="form-grid">
+                            
+                            <!-- Company Profile -->
+                            <div class="form-group full-width">
+                                <label>Company Profile (PDF)</label>
+                                <div class="file-upload-wrapper" style="height: 100px;">
+                                    <input type="file" id="file_compro" accept=".pdf">
+                                    <div class="file-upload-ui">
+                                        <span class="material-icons" style="color: #E53935;">picture_as_pdf</span>
+                                        <p>Upload Dokumen Company Profile (Maks 10MB)</p>
+                                    </div>
+                                </div>
+                                <p class="current-file-status" style="font-size: 0.85rem; color: var(--admin-gray); margin-top: 5px;">File saat ini: <strong>Diratama_Compro_2026.pdf</strong></p>
+                            </div>
+
+                            <!-- Katalog Layanan -->
+                            <div class="form-group full-width">
+                                <label>Katalog Layanan & Alat (PDF)</label>
+                                <div class="file-upload-wrapper" style="height: 100px;">
+                                    <input type="file" id="file_katalog" accept=".pdf">
+                                    <div class="file-upload-ui">
+                                        <span class="material-icons" style="color: #E53935;">picture_as_pdf</span>
+                                        <p>Upload Katalog Layanan</p>
+                                    </div>
+                                </div>
+                                <p class="current-file-status" style="font-size: 0.85rem; color: var(--admin-gray); margin-top: 5px;">File saat ini: <em>Belum ada file yang diunggah.</em></p>
+                            </div>
+
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary-admin" id="btn-save-berkas">Simpan Pembaruan Dokumen</button>
+                        </div>
                     </div>
                 </section>
 
@@ -184,6 +3470,7 @@
         </main>
     </div>
 
-    <script src="assets/js/admin.js"></script>
+    <!-- Script Admin Layouting & Firebase Database -->
+    <script type="module" src="assets/js/admin.js"></script>
 </body>
 </html>

@@ -1,0 +1,610 @@
+/* =========================================================
+   PT DIRATAMA MAPAN SEJAHTERA
+   FOOTER
+   ========================================================= */
+
+
+/* =========================================================
+   1. FOOTER
+   ========================================================= */
+
+.site-footer {
+    background-color: #051A32;
+
+    position: relative;
+
+    padding-top: 80px;
+
+    overflow: hidden;
+
+    color: var(--gray-text);
+}
+
+.footer-bg-overlay {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to left,
+            rgba(11, 37, 69, 0.25),
+            transparent
+        );
+
+    opacity: 0.6;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 0 5%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   2. TOP
+   ========================================================= */
+
+.footer-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 60px;
+}
+
+.footer-col-about {
+    flex: 1.2;
+
+    padding-right: 40px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col-links {
+    flex: 1;
+
+    padding-right: 40px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col-contact {
+    flex: 1.2;
+}
+
+.footer-col-ornament {
+    flex: 0.8;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   3. ABOUT
+   ========================================================= */
+
+.footer-logo-img {
+    height: 75px;
+
+    margin-bottom: 25px;
+
+    object-fit: contain;
+}
+
+.footer-desc {
+    font-size: 0.85rem;
+
+    line-height: 1.6;
+
+    color: #D1D5DB;
+
+    margin-bottom: 30px;
+}
+
+.footer-tagline-box p {
+    font-family: var(--font-heading);
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    color: #9CA3AF;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+    line-height: 1.4;
+}
+
+.footer-tagline-line {
+    width: 35px;
+
+    height: 3px;
+
+    background-color: var(--yellow);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   4. SOCIAL MEDIA
+   ========================================================= */
+
+.footer-socials {
+    display: flex;
+
+    gap: 15px;
+}
+
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--white);
+
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    background-color: var(--yellow);
+
+    color: var(--navy);
+
+    border-color: var(--yellow);
+}
+
+
+/* =========================================================
+   5. FOOTER HEADINGS
+   ========================================================= */
+
+.footer-heading {
+    margin-bottom: 25px;
+}
+
+.heading-dash {
+    width: 30px;
+    height: 3px;
+
+    background-color: var(--yellow);
+
+    margin-bottom: 15px;
+}
+
+.footer-heading h3 {
+    font-family: var(--font-heading);
+
+    font-size: 1.2rem;
+
+    color: var(--white);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   6. QUICK LINKS
+   ========================================================= */
+
+.quick-links {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.quick-links li {
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quick-links li:last-child {
+    border-bottom: none;
+}
+
+.quick-links a {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px 0;
+
+    color: #D1D5DB;
+
+    font-size: 0.9rem;
+
+    transition: 0.3s;
+}
+
+.quick-links a:hover {
+    color: var(--yellow);
+
+    transform: translateX(5px);
+}
+
+.quick-links a span {
+    font-size: 1.2rem;
+
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================================================
+   7. CONTACT
+   ========================================================= */
+
+.contact-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+
+    background-color:
+        rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--white);
+
+    flex-shrink: 0;
+}
+
+.contact-icon span,
+.contact-icon i {
+    font-size: 1.2rem;
+}
+
+.contact-text h4 {
+    color: var(--white);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+.contact-text p {
+    font-size: 0.85rem;
+
+    color: #9CA3AF;
+
+    margin: 0;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   8. ORNAMENT
+   ========================================================= */
+
+.ornament-text {
+    text-align: right;
+
+    margin-top: 40px;
+}
+
+.ornament-text span {
+    font-family: var(--font-heading);
+
+    font-size: 1.2rem;
+
+    font-weight: 800;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    line-height: 1.3;
+
+    letter-spacing: 1px;
+}
+
+.ornament-line {
+    width: 40px;
+    height: 3px;
+
+    background-color: var(--yellow);
+
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   9. LEGALITAS
+   ========================================================= */
+
+.footer-middle {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 30px 0;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    margin-bottom: 30px;
+}
+
+.legal-main {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.legal-icon {
+    font-size: 2.5rem;
+
+    color: var(--white);
+}
+
+.legal-text h4 {
+    color: var(--white);
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.legal-text p {
+    font-size: 0.75rem;
+
+    color: #9CA3AF;
+
+    margin: 0;
+
+    line-height: 1.4;
+}
+
+.legal-divider {
+    width: 1px;
+
+    height: 40px;
+
+    background-color:
+        rgba(255, 255, 255, 0.1);
+}
+
+.legal-item h4 {
+    color: var(--white);
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+.legal-item p {
+    font-size: 0.85rem;
+
+    color: #D1D5DB;
+
+    margin: 0;
+
+    font-family: monospace;
+
+    letter-spacing: 0.5px;
+}
+
+.legal-trust {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.trust-shield {
+    font-size: 1.8rem;
+
+    color: var(--white);
+}
+
+.legal-trust p {
+    font-size: 0.8rem;
+
+    color: #D1D5DB;
+
+    margin: 0;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   10. COPYRIGHT
+   ========================================================= */
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 30px;
+}
+
+.copyright {
+    font-size: 0.8rem;
+
+    color: #9CA3AF;
+}
+
+.footer-policy-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 0.8rem;
+}
+
+.footer-policy-links a {
+    color: #9CA3AF;
+
+    transition: 0.3s;
+}
+
+.footer-policy-links a:hover {
+    color: var(--white);
+}
+
+.footer-policy-links .separator {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================================
+   11. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .footer-top {
+        flex-wrap: wrap;
+    }
+
+    .footer-col-about,
+    .footer-col-links,
+    .footer-col-contact {
+        flex: 1 1 45%;
+
+        border-right: none;
+
+        margin-bottom: 40px;
+    }
+
+    .footer-col-ornament {
+        display: none;
+    }
+
+    .footer-middle {
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+    .legal-divider {
+        display: none;
+    }
+
+    .legal-main {
+        flex: 1 1 100%;
+
+        margin-bottom: 15px;
+    }
+
+    .legal-item,
+    .legal-trust {
+        flex: 1 1 45%;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .footer-top {
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+    .footer-col-about,
+    .footer-col-links,
+    .footer-col-contact {
+        flex: 1 1 100%;
+
+        padding-right: 0;
+
+        margin-bottom: 0;
+    }
+
+    .footer-middle {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .legal-item,
+    .legal-trust {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+}

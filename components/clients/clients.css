@@ -318,3 +318,44 @@
         font-size: 1rem;
     }
 }
+
+
+.clients-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
+    align-items: center;
+}
+
+.client-logo-card {
+    background: #FFFFFF;
+    border: 1px solid #E0E5F2;
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.client-logo-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Efek Grayscale Default */
+    filter: grayscale(100%) opacity(60%);
+    transition: all 0.3s ease;
+}
+
+.client-logo-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-color: #FBC02D; /* Aksen Kuning saat hover */
+}
+
+.client-logo-card:hover img {
+    /* Kembali ke warna asli saat di-hover */
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.05);
+}

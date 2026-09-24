@@ -1,0 +1,283 @@
+/* =========================================================
+   MOBILE MENU - FINAL REVISION
+   ========================================================= */
+
+
+/* ---------------------------------------------
+   MOBILE SOCIAL MEDIA
+   --------------------------------------------- */
+
+.mobile-socials {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    margin-top:
+        18px;
+
+    padding-top:
+        18px;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+}
+
+
+.mobile-socials a {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.22
+        );
+
+    border-radius:
+        50%;
+
+    color:
+        var(--white);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.05
+        );
+
+    text-decoration:
+        none;
+
+    transition:
+        all
+        0.25s ease;
+
+}
+
+
+.mobile-socials a i {
+
+    font-size:
+        1.05rem;
+
+}
+
+
+.mobile-socials a:hover {
+
+    background:
+        var(--yellow);
+
+    border-color:
+        var(--yellow);
+
+    color:
+        var(--navy);
+
+    transform:
+        translateY(
+            -2px
+        );
+
+}
+
+
+/* ---------------------------------------------
+   MOBILE CONTACT BUTTON
+   --------------------------------------------- */
+
+.mobile-btn {
+
+    width:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    box-sizing:
+        border-box;
+
+}
+
+
+/* =========================================================
+   MOBILE HERO HOME
+   ========================================================= */
+
+@media (
+    max-width: 768px
+) {
+
+
+    /* ---------------------------------------------
+       HERO CONTENT
+       --------------------------------------------- */
+
+    .hero-content {
+
+        min-height:
+            calc(
+                100svh -
+                80px
+            );
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        justify-content:
+            flex-start;
+
+        position:
+            relative;
+
+        box-sizing:
+            border-box;
+
+        padding-bottom:
+            135px;
+
+    }
+
+
+    /* ---------------------------------------------
+       DESCRIPTION
+       --------------------------------------------- */
+
+    .hero-content #home-desc {
+
+        margin-bottom:
+            0;
+
+    }
+
+
+    /* ---------------------------------------------
+       PRIMARY BUTTON
+       --------------------------------------------- */
+
+    .hero-content #home-btn-wa-1 {
+
+        position:
+            absolute;
+
+        left:
+            0;
+
+        right:
+            0;
+
+        bottom:
+            58px;
+
+        width:
+            100%;
+
+        max-width:
+            none;
+
+        margin:
+            0;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        box-sizing:
+            border-box;
+
+    }
+
+
+    /* ---------------------------------------------
+       SECONDARY BUTTON
+       --------------------------------------------- */
+
+    .hero-content #home-btn-secondary {
+
+        position:
+            absolute;
+
+        left:
+            0;
+
+        right:
+            0;
+
+        bottom:
+            8px;
+
+        width:
+            100%;
+
+        max-width:
+            none;
+
+        margin:
+            0;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        box-sizing:
+            border-box;
+
+    }
+
+}

@@ -1,251 +1,961 @@
-<!-- =========================================
-     1. SERVICES PAGE HERO SECTION
-     ========================================= -->
-<section class="services-page-hero">
-    <!-- Background Hero -->
-    <div class="services-hero-bg" style="background-image: url('assets/images/bg/bg-3.png');"></div>
+<!-- =========================================================
+     PT DIRATAMA MAPAN SEJAHTERA
+     SERVICES PAGE
+     FINAL REVISION
+     
+     URUTAN FINAL:
+     01. JASA KONSTRUKSI
+     02. PENYEDIA TENAGA KERJA
+     03. PENGADAAN BARANG
+     ========================================================= -->
+
+
+<!-- =========================================================
+     1. HERO
+     ========================================================= -->
+
+<section
+    class="services-page-hero"
+    id="services-page-wrapper"
+>
+
+    <div
+        class="services-hero-bg"
+        id="services-hero-bg"
+    ></div>
+
+
     <div class="services-hero-overlay"></div>
 
+
     <div class="services-hero-container">
-        <div class="services-hero-content">
-            <div class="badge section-badge">
-                <span class="line"></span>
-                <span class="text-white" style="letter-spacing: 2px; font-size: 0.85rem;">LAYANAN KAMI</span>
-            </div>
-            
-            <h1 class="services-title">Layanan <span class="highlight">Terpadu Kami</span></h1>
-            <p class="services-desc">
-                Solusi end-to-end untuk kebutuhan tenaga kerja,<br>konstruksi, dan pengadaan proyek Anda.
-            </p>
-            
-            <div class="breadcrumb">
-                <a href="#" onclick="loadPage('home'); return false;">Beranda</a> 
-                <span class="material-symbols-outlined breadcrumb-arrow">chevron_right</span> 
-                <span class="current">Layanan</span>
-            </div>
-        </div>
 
-        <!-- Watermark Kanan Atas -->
-        <div class="services-watermark-topright">
-            <span>BUILD A<br>BETTER<br>TOMORROW</span>
-            <div class="decor-line"></div>
-        </div>
-    </div>
-</section>
+        <div
+            class="
+                services-hero-content
+                reveal-item
+            "
+            style="--reveal-delay:1;"
+        >
 
-<!-- =========================================
-     2. DAFTAR LAYANAN (ALTERNATING LAYOUT)
-     ========================================= -->
-<section class="services-detail-section">
-    
-    <!-- SERVICE 1: PENYEDIA TENAGA KERJA (KIRI: GAMBAR, KANAN: TEKS) -->
-    <div class="service-row">
-        <!-- Watermark Angka Besar -->
-        <div class="service-watermark-num right-watermark">01</div>
-        <!-- Teks Vertikal Samar Kanan -->
-        <div class="vertical-faint-text text-right-pos">SOLUSI<br>TERBAIK<br>UNTUK<br>INDUSTRI</div>
+            <h1
+                class="services-title"
+                id="pub_srv_hero_title"
+            >
+                Layanan
+                <span class="highlight">
+                    Terpadu Kami
+                </span>
+            </h1>
 
-        <!-- Kolom Gambar -->
-        <div class="service-col-img">
-            <div class="service-img-box">
-                <img src="assets/images/bg/bg-5.png" alt="Penyedia Tenaga Kerja">
-                <!-- Overlay Kotak Navy Bawah -->
-                <div class="service-img-overlay">
-                    <span class="material-symbols-outlined overlay-icon">groups</span>
-                    <div class="overlay-text">
-                        <span class="title">TENAGA KERJA BERKUALITAS</span>
-                        <span class="desc">UNTUK HASIL MAKSIMAL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Kolom Teks -->
-        <div class="service-col-text">
-            <div class="service-badge-v2">
-                <div class="badge-num">01</div>
-                <div class="badge-text">OUTSOURCING SERVICE</div>
-            </div>
-            
-            <h2 class="service-heading">Penyedia Tenaga Kerja</h2>
-            <p class="service-paragraph">
-                Kami menyediakan tenaga kerja terlatih, berkompeten, dan sesuai dengan kebutuhan Anda, baik untuk jangka pendek maupun panjang. Tim kami mencakup tenaga ahli di berbagai bidang, mulai dari teknisi, administrasi, hingga operator di berbagai industri.
+            <p
+                class="services-desc"
+                id="pub_srv_hero_desc"
+            >
+                Solusi end-to-end untuk kebutuhan
+                tenaga kerja, konstruksi, dan
+                pengadaan proyek Anda.
             </p>
 
-            <h4 class="service-subheading">Kenapa Harus Memilih Kami?</h4>
-            <ul class="service-check-list">
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Proses recruitment ketat dan selektif.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Tenaga kerja profesional dan berpengalaman.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Meningkatkan efisiensi, fleksibilitas, dan produktivitas kerja.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Membangun kerja sama baik dengan pelanggan dan mitra.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Penghematan dan pengendalian biaya operasional.</li>
-            </ul>
 
-            <a href="https://wa.me/6281234567890" class="btn-outline-action">
-                Konsultasi Kebutuhan Manpower <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-        </div>
-    </div>
+            <div class="services-breadcrumb">
 
-    <!-- SERVICE 2: JASA KONSTRUKSI (KIRI: TEKS, KANAN: GAMBAR) -->
-    <div class="service-row reverse-row bg-gray-light">
-        <!-- Watermark Angka Besar -->
-        <div class="service-watermark-num left-watermark">02</div>
-        <!-- Teks Vertikal Samar Kiri -->
-        <div class="vertical-faint-text text-left-pos">MEMBANGUN<br>DENGAN<br>KUALITAS<br>DAN<br>INTEGRITAS</div>
+                <a
+                    href="#"
+                    onclick="
+                        loadPage('home');
+                        return false;
+                    "
+                >
+                    Beranda
+                </a>
 
-        <!-- Kolom Teks (Di Kiri karena reverse-row) -->
-        <div class="service-col-text">
-            <div class="service-badge-v2">
-                <div class="badge-num">02</div>
-                <div class="badge-text">GENERAL CONTRACTOR</div>
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    chevron_right
+                </span>
+
+
+                <span>
+                    Layanan
+                </span>
+
             </div>
-            
-            <h2 class="service-heading">Jasa Konstruksi</h2>
-            <p class="service-paragraph">
-                Kami menawarkan jasa kontraktor yang mencakup perencanaan, pelaksanaan, dan penyelesaian proyek konstruksi. Mulai dari pembangunan infrastruktur, renovasi, hingga pengembangan fasilitas industri.
-            </p>
 
-            <h4 class="service-subheading">Kenapa Harus Memilih Kami?</h4>
-            <ul class="service-check-list">
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Bantuan perencanaan pembangunan matang dan detail.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Kualitas pengerjaan tinggi.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Manajemen proyek berpengalaman, transparan dan bertanggung jawab.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Kepatuhan terhadap jadwal proyek.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Prioritas keselamatan kerja.</li>
-            </ul>
-
-            <a href="https://wa.me/6281234567890" class="btn-outline-action">
-                Konsultasi Proyek Konstruksi <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
         </div>
 
-        <!-- Kolom Gambar -->
-        <div class="service-col-img">
-            <div class="service-img-box">
-                <img src="assets/images/bg/bg-2.png" alt="Jasa Konstruksi">
-                <!-- Overlay Kotak Navy Bawah -->
-                <div class="service-img-overlay">
-                    <span class="material-symbols-outlined overlay-icon">construction</span>
-                    <div class="overlay-text">
-                        <span class="title">KONSTRUKSI BERKUALITAS</span>
-                        <span class="desc">UNTUK KEMAJUAN BERSAMA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SERVICE 3: PENGADAAN BARANG (KIRI: GAMBAR, KANAN: TEKS) -->
-    <div class="service-row">
-        <!-- Watermark Angka Besar -->
-        <div class="service-watermark-num right-watermark">03</div>
-        <!-- Teks Vertikal Samar Kanan -->
-        <div class="vertical-faint-text text-right-pos">PASOKAN<br>TERPERCAYA<br>UNTUK<br>PERTUMBUHAN<br>ANDA</div>
-
-        <!-- Kolom Gambar -->
-        <div class="service-col-img">
-            <div class="service-img-box">
-                <img src="assets/images/bg/bg-6.png" alt="Pengadaan Barang">
-                <!-- Overlay Kotak Navy Bawah -->
-                <div class="service-img-overlay">
-                    <span class="material-symbols-outlined overlay-icon">inventory_2</span>
-                    <div class="overlay-text">
-                        <span class="title">PENGADAAN TEPAT</span>
-                        <span class="desc">UNTUK OPERASIONAL YANG LANCAR</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Kolom Teks -->
-        <div class="service-col-text">
-            <div class="service-badge-v2">
-                <div class="badge-num">03</div>
-                <div class="badge-text">SUPPLIER</div>
-            </div>
-            
-            <h2 class="service-heading">Pengadaan Barang</h2>
-            <p class="service-paragraph">
-                Kami menyediakan solusi pengadaan barang dan material berkualitas untuk mendukung kebutuhan operasional proyek Anda. Pengadaan mencakup material konstruksi, peralatan, hingga kebutuhan industri lainnya.
-            </p>
-
-            <h4 class="service-subheading">Kenapa Harus Memilih Kami?</h4>
-            <ul class="service-check-list">
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Dukungan konsultasi terhadap pelanggan.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Kualitas barang terjamin.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Jaringan pemasok luas.</li>
-                <li><span class="material-symbols-outlined check-icon-solid">check_circle</span> Pengiriman tepat waktu.</li>
-            </ul>
-
-            <a href="https://wa.me/6281234567890" class="btn-outline-action">
-                Katalog & Pengadaan <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-        </div>
     </div>
 
 </section>
 
-<!-- =========================================
-     3. SERVICES PAGE CTA SECTION
-     ========================================= -->
-<section class="services-cta-final">
-    <!-- Background Image Kanan -->
-    <!-- Ganti URL dengan foto pekerja proyek (misal dari bg-2.png) -->
-    <div class="srv-cta-bg" style="background-image: url('assets/images/bg/bg-2.png');"></div>
-    
-    <!-- Aksen Diagonal Kuning Kanan Bawah -->
-    <div class="srv-cta-yellow-strip"></div>
 
-    <!-- Watermark Kanan Atas -->
-    <div class="srv-cta-watermark">
-        <span>BUILD A<br>BETTER<br>TOMORROW</span>
-        <div class="decor-line"></div>
+
+<!-- =========================================================
+     2. SERVICES DETAIL
+     ========================================================= -->
+
+<section
+    class="services-detail-section"
+    id="services-detail"
+>
+
+
+    <!-- =====================================================
+         SERVICE 1
+         JASA KONSTRUKSI
+         ===================================================== -->
+
+    <div
+        class="
+            service-row
+            reveal-item
+        "
+        style="--reveal-delay:1;"
+    >
+
+        <div class="service-watermark-num right-watermark">
+            01
+        </div>
+
+
+        <div
+            class="
+                vertical-faint-text
+                text-right-pos
+            "
+        >
+            GENERAL CONTRACTOR
+        </div>
+
+
+
+        <!-- IMAGE -->
+
+        <div class="service-col-img">
+
+            <div class="service-img-box">
+
+                <img
+                    src="assets/images/bg/bg-2.png"
+                    alt="Jasa Konstruksi"
+                    id="pub_srv_1_image"
+                >
+
+
+                <div class="service-img-overlay">
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            overlay-icon
+                        "
+                        id="pub_srv_1_icon"
+                    >
+                        construction
+                    </span>
+
+
+                    <div class="overlay-text">
+
+                        <span
+                            class="title"
+                            id="pub_srv_1_overlay_title"
+                        >
+                            KONSTRUKSI BERKUALITAS
+                        </span>
+
+
+                        <span
+                            class="desc"
+                            id="pub_srv_1_overlay_desc"
+                        >
+                            UNTUK KEMAJUAN BERSAMA
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="service-col-text">
+
+
+            <div class="service-badge-v2">
+
+                <span class="badge-num">
+                    01
+                </span>
+
+
+                <span
+                    class="badge-text"
+                    id="pub_srv_1_badge"
+                >
+                    GENERAL CONTRACTOR
+                </span>
+
+            </div>
+
+
+
+            <h2
+                class="service-heading"
+                id="pub_srv_1_title"
+            >
+                Jasa Konstruksi
+            </h2>
+
+
+            <p
+                class="service-paragraph"
+                id="pub_srv_1_desc"
+            >
+                Kami menawarkan jasa kontraktor yang
+                mencakup perencanaan, pelaksanaan,
+                dan penyelesaian proyek konstruksi.
+                Mulai dari pembangunan infrastruktur,
+                renovasi, hingga pengembangan fasilitas
+                industri.
+            </p>
+
+
+
+            <h4 class="service-subheading">
+                Kenapa Harus Memilih Kami?
+            </h4>
+
+
+            <ul class="service-check-list">
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_1_feat_1">
+                        Perencanaan pembangunan matang dan detail.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_1_feat_2">
+                        Kualitas pengerjaan tinggi.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_1_feat_3">
+                        Manajemen proyek berpengalaman.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_1_feat_4">
+                        Kepatuhan terhadap standar keselamatan kerja.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_1_feat_5">
+                        Penyelesaian proyek sesuai target waktu.
+                    </span>
+
+                </li>
+
+            </ul>
+
+
+
+            <a
+                href="#"
+                class="btn-outline-action"
+                id="pub_srv_1_button"
+            >
+
+                <span
+                    id="pub_srv_1_button_text"
+                >
+                    Konsultasi Proyek Konstruksi
+                </span>
+
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    arrow_forward
+                </span>
+
+            </a>
+
+        </div>
+
     </div>
 
-    <!-- Kontainer Konten -->
+
+
+    <!-- =====================================================
+         SERVICE 2
+         PENYEDIA TENAGA KERJA
+         ===================================================== -->
+
+    <div
+        class="
+            service-row
+            reverse-row
+            bg-gray-light
+            reveal-item
+        "
+        style="--reveal-delay:2;"
+    >
+
+        <div class="service-watermark-num left-watermark">
+            02
+        </div>
+
+
+        <div
+            class="
+                vertical-faint-text
+                text-left-pos
+            "
+        >
+            OUTSOURCING SERVICE
+        </div>
+
+
+
+        <!-- IMAGE -->
+
+        <div class="service-col-img">
+
+            <div class="service-img-box">
+
+                <img
+                    src="assets/images/bg/bg-5.png"
+                    alt="Penyedia Tenaga Kerja"
+                    id="pub_srv_2_image"
+                >
+
+
+                <div class="service-img-overlay">
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            overlay-icon
+                        "
+                        id="pub_srv_2_icon"
+                    >
+                        groups
+                    </span>
+
+
+                    <div class="overlay-text">
+
+                        <span
+                            class="title"
+                            id="pub_srv_2_overlay_title"
+                        >
+                            TENAGA KERJA BERKUALITAS
+                        </span>
+
+
+                        <span
+                            class="desc"
+                            id="pub_srv_2_overlay_desc"
+                        >
+                            UNTUK HASIL MAKSIMAL
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="service-col-text">
+
+
+            <div class="service-badge-v2">
+
+                <span class="badge-num">
+                    02
+                </span>
+
+
+                <span
+                    class="badge-text"
+                    id="pub_srv_2_badge"
+                >
+                    OUTSOURCING SERVICE
+                </span>
+
+            </div>
+
+
+
+            <h2
+                class="service-heading"
+                id="pub_srv_2_title"
+            >
+                Penyedia Tenaga Kerja
+            </h2>
+
+
+            <p
+                class="service-paragraph"
+                id="pub_srv_2_desc"
+            >
+                Kami menyediakan tenaga kerja terlatih,
+                berkompeten, dan sesuai dengan kebutuhan
+                Anda, baik untuk jangka pendek maupun
+                panjang. Tim kami mencakup tenaga ahli
+                di berbagai bidang, mulai dari teknisi,
+                administrasi, hingga operator di berbagai
+                industri.
+            </p>
+
+
+
+            <h4 class="service-subheading">
+                Kenapa Harus Memilih Kami?
+            </h4>
+
+
+            <ul class="service-check-list">
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_2_feat_1">
+                        Proses rekrutmen ketat dan selektif.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_2_feat_2">
+                        Tenaga kerja profesional dan berpengalaman.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_2_feat_3">
+                        Penempatan sesuai kebutuhan perusahaan.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_2_feat_4">
+                        Administrasi tenaga kerja terkelola dengan baik.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_2_feat_5">
+                        Meningkatkan efisiensi dan produktivitas kerja.
+                    </span>
+
+                </li>
+
+            </ul>
+
+
+
+            <a
+                href="#"
+                class="btn-outline-action"
+                id="pub_srv_2_button"
+            >
+
+                <span
+                    id="pub_srv_2_button_text"
+                >
+                    Lihat Detail Manpower
+                </span>
+
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    arrow_forward
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SERVICE 3
+         PENGADAAN BARANG
+         ===================================================== -->
+
+    <div
+        class="
+            service-row
+            reveal-item
+        "
+        style="--reveal-delay:3;"
+    >
+
+        <div class="service-watermark-num right-watermark">
+            03
+        </div>
+
+
+        <div
+            class="
+                vertical-faint-text
+                text-right-pos
+            "
+        >
+            SUPPLIER
+        </div>
+
+
+
+        <!-- IMAGE -->
+
+        <div class="service-col-img">
+
+            <div class="service-img-box">
+
+                <img
+                    src="assets/images/bg/bg-6.png"
+                    alt="Pengadaan Barang"
+                    id="pub_srv_3_image"
+                >
+
+
+                <div class="service-img-overlay">
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            overlay-icon
+                        "
+                        id="pub_srv_3_icon"
+                    >
+                        inventory_2
+                    </span>
+
+
+                    <div class="overlay-text">
+
+                        <span
+                            class="title"
+                            id="pub_srv_3_overlay_title"
+                        >
+                            PENGADAAN TEPAT
+                        </span>
+
+
+                        <span
+                            class="desc"
+                            id="pub_srv_3_overlay_desc"
+                        >
+                            KUALITAS TERJAMIN
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="service-col-text">
+
+
+            <div class="service-badge-v2">
+
+                <span class="badge-num">
+                    03
+                </span>
+
+
+                <span
+                    class="badge-text"
+                    id="pub_srv_3_badge"
+                >
+                    SUPPLIER
+                </span>
+
+            </div>
+
+
+
+            <h2
+                class="service-heading"
+                id="pub_srv_3_title"
+            >
+                Pengadaan Barang
+            </h2>
+
+
+            <p
+                class="service-paragraph"
+                id="pub_srv_3_desc"
+            >
+                Kami menyediakan berbagai kebutuhan
+                barang dan material dengan kualitas
+                terjamin dari supplier terpercaya,
+                sesuai dengan spesifikasi dan
+                kebutuhan proyek Anda.
+            </p>
+
+
+
+            <h4 class="service-subheading">
+                Kenapa Harus Memilih Kami?
+            </h4>
+
+
+            <ul class="service-check-list">
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_3_feat_1">
+                        Produk berkualitas sesuai spesifikasi.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_3_feat_2">
+                        Pengadaan dari supplier terpercaya.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_3_feat_3">
+                        Harga kompetitif dan transparan.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_3_feat_4">
+                        Pengiriman tepat waktu dan aman.
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span
+                        class="
+                            material-symbols-outlined
+                            check-icon-solid
+                        "
+                    >
+                        check_circle
+                    </span>
+
+                    <span id="pub_srv_3_feat_5">
+                        Dokumentasi pengadaan yang lengkap.
+                    </span>
+
+                </li>
+
+            </ul>
+
+
+
+            <a
+                href="#"
+                class="btn-outline-action"
+                id="pub_srv_3_button"
+            >
+
+                <span
+                    id="pub_srv_3_button_text"
+                >
+                    Konsultasi Pengadaan
+                </span>
+
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    arrow_forward
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     3. FINAL CTA
+     ========================================================= -->
+
+<section
+    class="services-cta-final"
+    id="services-cta"
+>
+
+
+    <div
+        class="srv-cta-bg"
+        id="srv-cta-bg"
+    ></div>
+
+
     <div class="srv-cta-container">
-        <div class="srv-cta-content">
-            <!-- Badge -->
-            <div class="badge section-badge">
-                <span class="line"></span> 
-                <span class="text-white" style="letter-spacing: 1.5px;">SIAP BERSAMA ANDA</span>
-            </div>
-            
-            <!-- Judul -->
-            <h2 class="srv-cta-title">Butuh Solusi Terintegrasi<br><span class="highlight">untuk Proyek Skala Besar?</span></h2>
-            
-            <!-- Deskripsi -->
-            <p class="srv-cta-desc">
-                Tim ahli kami siap mendiskusikan kebutuhan spesifik perusahaan Anda,<br>dari penyediaan tenaga kerja hingga konstruksi.
+
+        <div
+            class="
+                srv-cta-content
+                reveal-item
+            "
+            style="--reveal-delay:1;"
+        >
+
+            <h2
+                class="srv-cta-title"
+                id="pub_srv_cta_title"
+            >
+                Butuh Solusi Khusus
+                <br>
+                untuk Proyek Anda?
+            </h2>
+
+
+            <p
+                class="srv-cta-desc"
+                id="pub_srv_cta_desc"
+            >
+                Tim kami siap mendiskusikan
+                kebutuhan Anda dan merumuskan
+                solusi terbaik.
             </p>
 
-            <!-- Tombol Aksi -->
-            <a href="https://wa.me/6281234567890" class="btn srv-btn-yellow">
-                Jadwalkan Konsultasi Sekarang <span class="material-symbols-outlined" style="margin-left: 8px;">arrow_forward</span>
+
+            <a
+                href="https://wa.me/6281234567890"
+                class="srv-btn-yellow"
+                id="srv-cta-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span
+                    id="srv-cta-button-text"
+                >
+                    Konsultasi Sekarang
+                </span>
+
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                    style="
+                        margin-left:10px;
+                    "
+                >
+                    arrow_forward
+                </span>
+
             </a>
 
-            <!-- Deretan Fitur Bawah -->
-            <div class="srv-cta-features">
-                <div class="srv-feat-item">
-                    <span class="material-symbols-outlined srv-feat-icon">chat</span>
-                    <p>Konsultasi<br>Gratis</p>
-                </div>
-                
-                <div class="srv-feat-divider"></div>
-                
-                <div class="srv-feat-item">
-                    <span class="material-symbols-outlined srv-feat-icon">groups</span>
-                    <p>Tim Profesional<br>dan Berpengalaman</p>
-                </div>
-                
-                <div class="srv-feat-divider"></div>
-                
-                <div class="srv-feat-item">
-                    <span class="material-symbols-outlined srv-feat-icon">verified_user</span>
-                    <p>Solusi Tepat<br>dan Terpercaya</p>
-                </div>
-            </div>
         </div>
+
     </div>
+
 </section>

@@ -107,3 +107,18 @@ button { cursor: pointer; font-family: 'Inter', sans-serif; border: none; border
 .action-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; padding: 5px; color: var(--admin-gray); }
 .action-btn.edit:hover { color: #0075FF; }
 .action-btn.delete:hover { color: #FF5B5B; }
+
+/* Tambahkan di file assets/css/admin.css pada bagian .form-group */
+.form-group textarea {
+    padding: 12px 15px; 
+    border: 1px solid var(--admin-border); 
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif; 
+    font-size: 0.95rem; 
+    outline: none; 
+    transition: 0.3s;
+    resize: vertical;
+}
+.form-group textarea:focus { 
+    border-color: var(--admin-navy); 
+}

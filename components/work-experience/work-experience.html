@@ -1,292 +1,404 @@
-<!-- =========================================
-     1. WORK EXPERIENCE HERO SECTION
-     ========================================= -->
-<section class="work-exp-hero">
-    <!-- Gambar Background Kanan -->
-    <!-- Ganti URL dengan foto alat berat/konstruksi sesuai desain -->
-    <div class="we-hero-bg" style="background-image: url('../../assets/images/bg/bg-1.png');"></div>
-    
-    <!-- Overlay Transparan pada Gambar untuk Teks -->
+<!-- =========================================================
+     PT DIRATAMA MAPAN SEJAHTERA
+     WORK EXPERIENCE PAGE
+     FINAL REVISION
+     
+     REVISI:
+     - Badge Hero dihapus
+     - Statistik dihapus
+     - "Jelajahi Proyek Kami" dihapus
+     - Badge "Kategori Proyek" dihapus
+     - Badge "Portofolio Proyek" dihapus
+     - Hanya 1 heading utama
+     - Filter tetap aktif
+     ========================================================= -->
+
+
+<!-- =========================================================
+     01. HERO
+     ========================================================= -->
+
+<section
+    class="work-exp-hero"
+    id="work-exp-page"
+>
+
+    <div
+        class="we-hero-bg"
+        id="we-hero-bg"
+    ></div>
+
+
     <div class="we-hero-overlay"></div>
 
-    <!-- Watermark Kanan Atas -->
-    <div class="we-watermark">
-        <span>BUILD A<br>BETTER<br>TOMORROW</span>
-        <div class="decor-line"></div>
-    </div>
 
-    <!-- Kontainer Konten Kiri -->
     <div class="we-hero-container">
-        <div class="we-hero-content">
-            <!-- Badge -->
-            <div class="badge section-badge">
-                <span class="line"></span> 
-                <span class="text-white" style="letter-spacing: 2px;">PORTOFOLIO KAMI</span>
-            </div>
-            
-            <!-- Judul -->
-            <h1 class="we-title">Work <span class="highlight">Experience</span></h1>
-            
-            <!-- Deskripsi -->
-            <p class="we-desc">
-                Rekam jejak dedikasi dan kualitas pengerjaan kami<br>di berbagai sektor industri.
+
+        <div
+            class="
+                we-hero-content
+                reveal-item
+            "
+            style="--reveal-delay:1;"
+        >
+
+            <h1
+                class="we-title"
+                id="pub_work_hero_title"
+            >
+                Work
+                <span class="highlight">
+                    Experience
+                </span>
+            </h1>
+
+
+            <p
+                class="we-desc"
+                id="pub_work_hero_desc"
+            >
+                Rekam jejak dedikasi dan kualitas
+                pengerjaan kami di berbagai sektor industri.
             </p>
-            
-            <!-- Breadcrumb -->
+
+
             <div class="breadcrumb">
-                <a href="#" onclick="loadPage('home'); return false;">Beranda</a> 
-                <span class="material-symbols-outlined breadcrumb-arrow">chevron_right</span> 
-                <span class="current">Work Experience</span>
+
+                <a
+                    href="#"
+                    onclick="
+                        loadPage('home');
+                        return false;
+                    "
+                >
+                    Beranda
+                </a>
+
+
+                <span
+                    class="
+                        material-symbols-outlined
+                        breadcrumb-arrow
+                    "
+                >
+                    chevron_right
+                </span>
+
+
+                <span class="current">
+                    Pengalaman Kerja
+                </span>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- =========================================
-     2. WORK EXPERIENCE STATS BAR (BAR BAWAH)
-     ========================================= -->
-<div class="we-stats-wrapper">
-    <div class="we-stats-container">
-        <!-- Stat 1: Proyek Selesai -->
-        <div class="we-stat-item">
-            <div class="we-stat-icon-box">
-                <span class="material-symbols-outlined">domain</span>
-            </div>
-            <div class="we-stat-text">
-                <h3>50+</h3>
-                <p>Proyek Selesai</p>
-            </div>
-        </div>
 
-        <!-- Garis Pemisah -->
-        <div class="we-stat-divider"></div>
 
-        <!-- Stat 2: Klien Terpercaya -->
-        <div class="we-stat-item">
-            <div class="we-stat-icon-box">
-                <span class="material-symbols-outlined">groups</span>
-            </div>
-            <div class="we-stat-text">
-                <h3>30+</h3>
-                <p>Klien Terpercaya</p>
-            </div>
-        </div>
+<!-- =========================================================
+     02. PROJECT EXPERIENCE
+     ========================================================= -->
 
-        <!-- Garis Pemisah -->
-        <div class="we-stat-divider"></div>
+<section
+    class="we-portfolio-section"
+    id="work-project-section"
+>
 
-        <!-- Stat 3: Sektor Industri -->
-        <div class="we-stat-item">
-            <div class="we-stat-icon-box">
-                <span class="material-symbols-outlined">engineering</span>
-            </div>
-            <div class="we-stat-text">
-                <h3>3</h3>
-                <p>Sektor Industri</p>
-            </div>
-        </div>
-
-        <!-- Garis Pemisah -->
-        <div class="we-stat-divider"></div>
-
-        <!-- Stat 4: Wilayah Pengerjaan -->
-        <div class="we-stat-item">
-            <div class="we-stat-icon-box">
-                <!-- Ikon peta / indonesia -->
-                <span class="material-symbols-outlined">public</span>
-            </div>
-            <div class="we-stat-text">
-                <h3>10+</h3>
-                <p>Wilayah Pengerjaan</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- =========================================
-     3. KATEGORI PROYEK (FILTER) - DESAIN BARU
-     ========================================= -->
-<section class="we-filter-section">
-    <div class="we-container text-center">
-        <div class="badge section-badge center-badge">
-            <span class="line"></span> <span class="text-navy">KATEGORI PROYEK</span>
-        </div>
-        <h2 class="section-title text-navy">Jelajahi <span class="highlight">Proyek Kami</span></h2>
-        <p class="we-filter-desc">Pilih kategori untuk melihat portofolio proyek yang sesuai dengan kebutuhan Anda.</p>
-
-        <!-- Tombol Filter -->
-        <div class="filter-btn-group">
-            <button class="filter-btn active" data-filter="all">
-                <span class="material-symbols-outlined">grid_view</span>
-                <span class="btn-divider"></span>
-                Semua Proyek
-            </button>
-            <button class="filter-btn" data-filter="konstruksi">
-                <span class="material-symbols-outlined">engineering</span>
-                <span class="btn-divider"></span>
-                Jasa Konstruksi
-            </button>
-            <button class="filter-btn" data-filter="pengadaan">
-                <span class="material-symbols-outlined">inventory_2</span>
-                <span class="btn-divider"></span>
-                Pengadaan Barang
-            </button>
-        </div>
-    </div>
-</section>
-
-<!-- =========================================
-     4. GRID PORTOFOLIO & PAGINATION - DESAIN BARU
-     ========================================= -->
-<section class="we-portfolio-section">
     <div class="we-container">
-        
-        <!-- Header Grid -->
-        <div class="we-portfolio-header text-center">
-            <div class="badge section-badge center-badge">
-                <span class="line"></span> <span class="text-navy">PORTOFOLIO PROYEK</span>
-            </div>
-            <h2 class="section-title text-navy">Proyek yang <span class="highlight">Telah Kami Wujudkan</span></h2>
-            <p class="we-portfolio-desc">Setiap proyek adalah bukti komitmen kami terhadap kualitas, ketepatan waktu, dan kepuasan pelanggan.</p>
-        </div>
 
-        <!-- Grid Cards (3x2) -->
-        <div class="port-grid-v2" id="portfolio-grid">
-            
-            <!-- Card 1 -->
-            <div class="port-card-v2" data-category="konstruksi">
-                <div class="port-img-wrap-v2">
-                    <img src="assets/images/bg/bg-2.png" alt="Pembangunan Fasilitas JIIPE">
-                    <div class="port-badge-v2">
-                        <span class="material-symbols-outlined">construction</span> Konstruksi
-                    </div>
-                </div>
-                <div class="port-content-v2">
-                    <h3>Pembangunan Fasilitas JIIPE</h3>
-                    <p class="port-client-v2">Klien: PT Berkah Kawasan Manyar Sejahtera</p>
-                    <div class="port-footer-v2">
-                        <div class="port-year-v2">
-                            <span class="material-symbols-outlined">calendar_today</span> 2025
-                        </div>
-                        <a href="#" class="port-btn-v2"><span class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 2 -->
-            <div class="port-card-v2" data-category="pengadaan">
-                <div class="port-img-wrap-v2">
-                    <img src="assets/images/bg/bg-6.png" alt="Pengadaan Pipa Baja">
-                    <div class="port-badge-v2">
-                        <span class="material-symbols-outlined">inventory_2</span> Pengadaan Barang
-                    </div>
-                </div>
-                <div class="port-content-v2">
-                    <h3>Pengadaan Pipa Baja untuk Proyek Industri</h3>
-                    <p class="port-client-v2">Klien: PT Nusantara Energi Persada</p>
-                    <div class="port-footer-v2">
-                        <div class="port-year-v2">
-                            <span class="material-symbols-outlined">calendar_today</span> 2024
-                        </div>
-                        <a href="#" class="port-btn-v2"><span class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
-            </div>
+        <!-- ==============================================
+             SINGLE SECTION HEADER
+             ============================================== -->
 
-            <!-- Card 3 -->
-            <div class="port-card-v2" data-category="konstruksi">
-                <div class="port-img-wrap-v2">
-                    <img src="assets/images/bg/bg-1.png" alt="Peningkatan Jalan Akses">
-                    <div class="port-badge-v2">
-                        <span class="material-symbols-outlined">construction</span> Konstruksi
-                    </div>
-                </div>
-                <div class="port-content-v2">
-                    <h3>Peningkatan Jalan Akses Kawasan Industri</h3>
-                    <p class="port-client-v2">Klien: PT Maju Infrastruktur Indonesia</p>
-                    <div class="port-footer-v2">
-                        <div class="port-year-v2">
-                            <span class="material-symbols-outlined">calendar_today</span> 2024
-                        </div>
-                        <a href="#" class="port-btn-v2"><span class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
-            </div>
+        <div
+            class="
+                we-portfolio-header
+                text-center
+            "
+        >
 
-            <!-- Card 4 -->
-            <div class="port-card-v2" data-category="konstruksi">
-                <div class="port-img-wrap-v2">
-                    <img src="assets/images/bg/bg-4.png" alt="Pembangunan Gudang Logistik">
-                    <div class="port-badge-v2">
-                        <span class="material-symbols-outlined">construction</span> Konstruksi
-                    </div>
-                </div>
-                <div class="port-content-v2">
-                    <h3>Pembangunan Gudang Logistik</h3>
-                    <p class="port-client-v2">Klien: PT Sarana Logistik Nusantara</p>
-                    <div class="port-footer-v2">
-                        <div class="port-year-v2">
-                            <span class="material-symbols-outlined">calendar_today</span> 2023
-                        </div>
-                        <a href="#" class="port-btn-v2"><span class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
-            </div>
+            <h2
+                class="
+                    section-title
+                    text-navy
+                "
+            >
+                Proyek yang
+                <span class="highlight">
+                    Telah Kami Wujudkan
+                </span>
+            </h2>
 
-            <!-- Card 5 -->
-            <div class="port-card-v2" data-category="pengadaan">
-                <div class="port-img-wrap-v2">
-                    <img src="assets/images/bg/bg-5.png" alt="Pengadaan Alat Berat">
-                    <div class="port-badge-v2">
-                        <span class="material-symbols-outlined">inventory_2</span> Pengadaan Barang
-                    </div>
-                </div>
-                <div class="port-content-v2">
-                    <h3>Pengadaan Alat Berat untuk Proyek Tambang</h3>
-                    <p class="port-client-v2">Klien: PT Mineral Sejahtera Abadi</p>
-                    <div class="port-footer-v2">
-                        <div class="port-year-v2">
-                            <span class="material-symbols-outlined">calendar_today</span> 2023
-                        </div>
-                        <a href="#" class="port-btn-v2"><span class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 6 -->
-            <div class="port-card-v2" data-category="konstruksi">
-                <div class="port-img-wrap-v2">
-                    <img src="assets/images/bg/bg-3.png" alt="Pembangunan Fasilitas Produksi">
-                    <div class="port-badge-v2">
-                        <span class="material-symbols-outlined">construction</span> Konstruksi
-                    </div>
-                </div>
-                <div class="port-content-v2">
-                    <h3>Pembangunan Fasilitas Produksi</h3>
-                    <p class="port-client-v2">Klien: PT Indo Global Makmur</p>
-                    <div class="port-footer-v2">
-                        <div class="port-year-v2">
-                            <span class="material-symbols-outlined">calendar_today</span> 2022
-                        </div>
-                        <a href="#" class="port-btn-v2"><span class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
-            </div>
+            <p
+                class="we-portfolio-desc"
+                id="pub_work_portfolio_desc"
+            >
+                Setiap proyek merupakan bukti komitmen
+                kami terhadap kualitas, ketepatan waktu,
+                dan kepuasan pelanggan.
+            </p>
 
         </div>
 
-        <!-- Pagination -->
-        <div class="pagination-wrapper">
-            <div class="pagination-controls">
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn next"><span class="material-symbols-outlined">arrow_forward</span></button>
+
+
+        <!-- ==============================================
+             FILTER DATA
+             ============================================== -->
+
+        <div
+            class="filter-btn-group"
+            id="work-filter-group"
+        >
+
+            <!-- SEMUA -->
+
+            <button
+                class="
+                    filter-btn
+                    active
+                "
+                type="button"
+                data-filter="all"
+            >
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    grid_view
+                </span>
+
+
+                <span class="btn-divider"></span>
+
+
+                Semua Proyek
+
+            </button>
+
+
+
+            <!-- KONSTRUKSI -->
+
+            <button
+                class="filter-btn"
+                type="button"
+                data-filter="konstruksi"
+            >
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    construction
+                </span>
+
+
+                <span class="btn-divider"></span>
+
+
+                Jasa Konstruksi
+
+            </button>
+
+
+
+            <!-- MANPOWER -->
+
+            <button
+                class="filter-btn"
+                type="button"
+                data-filter="manpower"
+            >
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    groups
+                </span>
+
+
+                <span class="btn-divider"></span>
+
+
+                Penyedia Tenaga Kerja
+
+            </button>
+
+
+
+            <!-- PENGADAAN -->
+
+            <button
+                class="filter-btn"
+                type="button"
+                data-filter="pengadaan"
+            >
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    inventory_2
+                </span>
+
+
+                <span class="btn-divider"></span>
+
+
+                Pengadaan Barang
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ==============================================
+             PROJECT GRID
+             ============================================== -->
+
+        <div
+            class="port-grid-v2"
+            id="portfolio-grid"
+        >
+
+            <div
+                class="work-loading-state"
+                id="work-loading-state"
+            >
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    sync
+                </span>
+
+                Memuat proyek...
+
             </div>
-            <div class="pagination-info">
-                Menampilkan 1–6 dari 18 proyek
+
+        </div>
+
+
+
+        <!-- ==============================================
+             PAGINATION
+             ============================================== -->
+
+        <div
+            class="pagination-wrapper"
+            id="work-pagination-wrapper"
+        >
+
+            <div
+                class="pagination-controls"
+                id="work-pagination"
+            ></div>
+
+
+            <div
+                class="pagination-info"
+                id="work-pagination-info"
+            >
+                Memuat data proyek...
             </div>
+
         </div>
 
     </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     03. FINAL CTA
+     ========================================================= -->
+
+<section class="work-final-cta">
+
+    <div
+        class="work-final-cta-bg"
+        id="work-final-cta-bg"
+    ></div>
+
+
+    <div class="work-final-cta-overlay"></div>
+
+
+    <div class="work-final-cta-container">
+
+        <div
+            class="
+                work-final-cta-content
+                reveal-item
+            "
+            style="--reveal-delay:1;"
+        >
+
+            <h2
+                id="pub_work_cta_title"
+            >
+                Siap Mewujudkan
+                <br>
+
+                <span class="highlight">
+                    Proyek Berikutnya?
+                </span>
+
+            </h2>
+
+
+            <p
+                id="pub_work_cta_desc"
+            >
+                Diskusikan kebutuhan proyek Anda
+                bersama tim kami.
+            </p>
+
+
+            <a
+                href="https://wa.me/6281234567890"
+                class="work-cta-button"
+                id="work-cta-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span
+                    id="work-cta-button-text"
+                >
+                    Konsultasi Sekarang
+                </span>
+
+
+                <span
+                    class="
+                        material-symbols-outlined
+                    "
+                >
+                    arrow_forward
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
 </section>

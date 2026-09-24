@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - PT Diratama Mapan Sejahtera</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        :root { --admin-navy: #061930; --admin-yellow: #FBC02D; --admin-bg: #F4F7FE; --admin-white: #FFFFFF; --admin-text: #2B3674; --admin-border: #E0E5F2; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--admin-bg); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .login-container { background-color: var(--admin-white); padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); width: 100%; max-width: 400px; text-align: center; }
+        .login-logo { width: 150px; margin-bottom: 20px; }
+        .login-container h2 { font-family: 'Montserrat', sans-serif; color: var(--admin-navy); margin-bottom: 10px; font-size: 1.5rem; }
+        .login-container p { color: #A3AED0; font-size: 0.9rem; margin-bottom: 30px; }
+        .form-group { text-align: left; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--admin-text); }
+        .form-group input { padding: 14px 15px; border: 1px solid var(--admin-border); border-radius: 6px; font-size: 0.95rem; outline: none; transition: 0.3s; }
+        .form-group input:focus { border-color: var(--admin-navy); }
+        .btn-login { width: 100%; background-color: var(--admin-navy); color: var(--admin-white); border: none; padding: 14px; border-radius: 6px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .btn-login:hover { background-color: var(--admin-yellow); color: var(--admin-navy); }
+        .btn-login:disabled { opacity: 0.7; cursor: not-allowed; }
+        #error-msg { color: #FF5B5B; font-size: 0.85rem; margin-top: 15px; display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <img src="assets/images/logo-navy.png" alt="Logo" class="login-logo">
+        <h2>Authority Panel</h2>
+        <p>Silakan masuk untuk mengelola konten website.</p>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label>Alamat Email</label>
+                <input type="email" id="email" placeholder="admin@diratamamapan.com" required>
+            </div>
+            <div class="form-group">
+                <label>Kata Sandi</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-login" id="btn-submit">
+                Masuk <span class="material-icons">login</span>
+            </button>
+            <p id="error-msg">Email atau kata sandi salah!</p>
+        </form>
+    </div>
+
+    <!-- Firebase Auth Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+        // TODO: Copas Firebase Config Anda di sini
+        const firebaseConfig = {
+        apiKey: "AIzaSyBypc8e3XTsYJYJCJ-aA3wn6P-AUNRBcrU",
+        authDomain: "ptdiratamamapansejahtera-415b1.firebaseapp.com",
+        projectId: "ptdiratamamapansejahtera-415b1",
+        storageBucket: "ptdiratamamapansejahtera-415b1.firebasestorage.app",
+        messagingSenderId: "493525992855",
+        appId: "1:493525992855:web:31b52632a96c66a87870d2",
+        measurementId: "G-Y5B5QF9QW5"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const loginForm = document.getElementById('login-form');
+        const btnSubmit = document.getElementById('btn-submit');
+        const errorMsg = document.getElementById('error-msg');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = `<span class="material-icons" style="animation: spin 1s linear infinite;">sync</span> Memverifikasi...`;
+            errorMsg.style.display = 'none';
+
+            try {
+                // Eksekusi Login Firebase
+                await signInWithEmailAndPassword(auth, email, password);
+                // Jika sukses, arahkan ke dashboard
+                window.location.href = 'admin.html';
+            } catch (error) {
+                console.error("Login Gagal:", error);
+                errorMsg.innerText = "Email atau kata sandi salah! Akses ditolak.";
+                errorMsg.style.display = 'block';
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = `Masuk <span class="material-icons">login</span>`;
+            }
+        });
+    </script>
+</body>
+</html>

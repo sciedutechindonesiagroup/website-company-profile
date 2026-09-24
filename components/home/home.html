@@ -1,661 +1,1596 @@
-<!-- Hero Section -->
-<section class="hero" id="hero">
-    <!-- Background Slider (6 Gambar) -->
-    <div class="bg-slider" id="bg-slider">
-        <div class="slide active" style="background-image: url('assets/images/bg/bg-1.png');"></div>
-        <div class="slide" style="background-image: url('assets/images/bg/bg-2.png');"></div>
-        <div class="slide" style="background-image: url('assets/images/bg/bg-3.png');"></div>
-        <div class="slide" style="background-image: url('assets/images/bg/bg-4.png');"></div>
-        <div class="slide" style="background-image: url('assets/images/bg/bg-5.png');"></div>
-        <div class="slide" style="background-image: url('assets/images/bg/bg-6.png');"></div>
+<!-- =========================================================
+     PT DIRATAMA MAPAN SEJAHTERA
+     HOME PAGE
+     FINAL CMS-READY STRUCTURE
+     ========================================================= -->
+
+
+<!-- =========================================================
+     01. HERO
+     ========================================================= -->
+
+<section
+    class="hero"
+    id="hero"
+>
+
+    <!-- BACKGROUND SLIDER -->
+    <div
+        class="bg-slider"
+        id="bg-slider"
+    >
+
+        <!-- Background akan dibuat oleh main.js -->
+
         <div class="overlay"></div>
+
     </div>
+
+
 
     <div class="hero-content">
+
+
+        <!-- HERO CONTENT -->
+
         <div class="text-content">
+
+
+            <!-- BADGE -->
+
             <div class="badge">
-                <span class="line"></span> KONTRAKTOR TERPERCAYA
+
+                <span class="line"></span>
+
+                <span id="home-subtitle">
+                    SOLUSI TEPAT KEBUTUHAN ANDA
+                </span>
+
             </div>
-            <h1>Membangun<br>Hari Ini untuk<br><span class="highlight">Masa Depan<br>yang Lebih Baik</span></h1>
-            <p>PT Diratama Mapan Sejahtera hadir sebagai mitra konstruksi andal dengan komitmen pada kualitas, keamanan, dan keberlanjutan.</p>
+
+
+
+            <!-- TITLE -->
+
+            <h1>
+
+                <span id="home-title-main">
+                    Membangun<br>
+                    Hari Ini untuk
+                </span>
+
+                <br>
+
+                <span
+                    class="highlight"
+                    id="home-title-highlight"
+                >
+                    Masa Depan<br>
+                    yang Lebih Baik
+                </span>
+
+            </h1>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p id="home-desc">
+                PT Diratama Mapan Sejahtera hadir memberikan pelayanan
+                terbaik di bidang Jasa Konstruksi, Penyedia Tenaga Kerja,
+                dan Pengadaan Barang.
+            </p>
+
+
+
+            <!-- BUTTONS -->
+
             <div class="btn-group">
-                <a href="https://wa.me/6281234567890" class="btn btn-primary">Hubungi Kami <i class="fas fa-arrow-right"></i></a>
-                <a href="#layanan" class="btn btn-outline">Lihat Layanan <i class="fas fa-arrow-right"></i></a>
+
+
+                <a
+                    href="#"
+                    class="btn btn-primary"
+                    id="home-btn-wa-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span id="home-btn-wa-1-text">
+                        Hubungi Kami
+                    </span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+
+
+                <a
+                    href="#layanan"
+                    class="btn btn-outline"
+                    id="home-btn-secondary"
+                >
+
+                    <span id="home-btn-secondary-text">
+                        Lihat Layanan
+                    </span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+
             </div>
+
         </div>
 
-        <!-- Scroll Indicator -->
+
+
+        <!-- SLIDER INDICATOR -->
+
         <div class="scroll-indicator">
-            <div class="progress-bar"><div class="progress" id="progress"></div></div>
-            <ul class="slide-numbers" id="slide-numbers">
-                <li class="active">01</li>
-                <li>02</li>
-                <li>03</li>
-                <li>04</li>
-                <li>05</li>
-                <li>06</li>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    id="progress"
+                ></div>
+
+            </div>
+
+
+            <ul
+                class="slide-numbers"
+                id="slide-numbers"
+            >
             </ul>
+
+
         </div>
+
+
     </div>
 
-    <!-- Trust/Stats Bar Bottom (Sesuai Desain Baru) -->
-    <div class="trust-bar">
-        <div class="features">
-            <div class="feature-item">
-                <span class="material-symbols-outlined feature-icon">engineering</span>
-                <div class="feature-text">
-                    <span class="title">Profesional</span>
-                    <span class="desc">Tim berpengalaman</span>
-                </div>
-            </div>
-            <div class="feature-item">
-                <span class="material-symbols-outlined feature-icon">gpp_good</span>
-                <div class="feature-text">
-                    <span class="title">Berkualitas</span>
-                    <span class="desc">Standar terbaik</span>
-                </div>
-            </div>
-            <div class="feature-item">
-                <span class="material-symbols-outlined feature-icon">settings</span>
-                <div class="feature-text">
-                    <span class="title">Tepat Waktu</span>
-                    <span class="desc">Sesuai komitmen</span>
-                </div>
-            </div>
-            <div class="feature-item">
-                <span class="material-symbols-outlined feature-icon">eco</span>
-                <div class="feature-text">
-                    <span class="title">Berkelanjutan</span>
-                    <span class="desc">Untuk masa depan</span>
-                </div>
-            </div>
-        </div>
 
-        <hr class="trust-divider">
-
-        <div class="stats-wrapper">
-            <div class="stats">
-                <div class="stat-item">
-                    <h2>10+</h2>
-                    <p>Tahun<br>Pengalaman</p>
-                </div>
-                <div class="v-divider"></div>
-                <div class="stat-item">
-                    <h2>250+</h2>
-                    <p>Proyek<br>Terselesaikan</p>
-                </div>
-                <div class="v-divider"></div>
-                <div class="stat-item">
-                    <h2>100+</h2>
-                    <p>Klien<br>Terpercaya</p>
-                </div>
-                <div class="v-divider"></div>
-                <div class="stat-item">
-                    <h2>0</h2>
-                    <p>Kecelakaan Kerja<br>(Zero Accident)</p>
-                </div>
-            </div>
-
-            <div class="tagline-right">
-                <p>SOLUSI KONSTRUKSI<br>UNTUK NEGERI</p>
-                <div class="tagline-line"></div>
-            </div>
-        </div>
-    </div>
 </section>
 
-<!-- ABOUT SECTION (Ringkasan) -->
-<section class="about-section" id="tentang-kami">
-    <!-- Watermark/Pattern Background (Opsional, jika ada aset) -->
+
+
+<!-- =========================================================
+     02. ABOUT SUMMARY
+     ========================================================= -->
+
+<section
+    class="about-section"
+    id="tentang-kami"
+>
+
+
     <div class="about-bg-pattern"></div>
 
+
+
     <div class="about-container">
-        <!-- Kolom Kiri: Visual Layout Bertumpuk -->
+
+
+        <!-- =============================================
+             VISUAL
+             ============================================= -->
+
         <div class="about-visuals">
-            <!-- Kotak Kuning Dekoratif di belakang -->
+
+
             <div class="yellow-decor"></div>
-            
+
+
+            <!-- MAIN IMAGE -->
+
             <div class="main-image-wrapper">
-                <!-- Ganti src dengan foto 2 pekerja proyek Anda -->
-                <img src="assets/images/bg/bg-2.png" alt="Pekerja Konstruksi Diratama Mapan Sejahtera" class="main-img">
-                
-                <div class="floating-box-top">
-                    BERSAMA<br>MEMBANGUN<br>MASA DEPAN
+
+
+                <img
+                    src="assets/images/bg/bg-2.png"
+                    alt="PT Diratama Mapan Sejahtera"
+                    class="main-img"
+                    id="home-about-main-image"
+                >
+
+
+                <!-- FLOATING TEXT -->
+
+                <div
+                    class="floating-box-top"
+                    id="home-about-floating-text"
+                >
+                    BERSAMA<br>
+                    MEMBANGUN<br>
+                    MASA DEPAN
                 </div>
-                
+
+
+
+                <!-- ABOUT STATISTICS -->
+
                 <div class="floating-box-bottom">
+
+
+                    <!-- STAT 1 -->
+
                     <div class="stat">
-                        <h3>10+</h3>
-                        <p>Tahun<br>Pengalaman</p>
+
+                        <h3
+                            id="home-about-stat-1-num"
+                        >
+                            10+
+                        </h3>
+
+                        <p
+                            id="home-about-stat-1-label"
+                        >
+                            Tahun<br>
+                            Pengalaman
+                        </p>
+
                     </div>
+
+
+
+                    <!-- STAT 2 -->
+
                     <div class="stat">
-                        <h3>250+</h3>
-                        <p>Proyek<br>Terselesaikan</p>
+
+                        <h3
+                            id="home-about-stat-2-num"
+                        >
+                            250+
+                        </h3>
+
+                        <p
+                            id="home-about-stat-2-label"
+                        >
+                            Proyek<br>
+                            Terselesaikan
+                        </p>
+
                     </div>
+
+
+
+                    <!-- STAT 3 -->
+
                     <div class="stat">
-                        <h3>100+</h3>
-                        <p>Klien<br>Terpercaya</p>
+
+                        <h3
+                            id="home-about-stat-3-num"
+                        >
+                            100+
+                        </h3>
+
+                        <p
+                            id="home-about-stat-3-label"
+                        >
+                            Klien<br>
+                            Terpercaya
+                        </p>
+
                     </div>
+
+
                 </div>
+
             </div>
+
+
+
+            <!-- SECONDARY IMAGE -->
 
             <div class="secondary-image-wrapper">
-                <!-- Ganti src dengan foto crane sunset Anda -->
-                <img src="assets/images/bg/bg-1.png" alt="Proyek Konstruksi" class="sec-img">
-                <div class="sec-overlay-text">
-                    KUALITAS<br>KEAMANAN<br>KEBERLANJUTAN
+
+
+                <img
+                    src="assets/images/bg/bg-1.png"
+                    alt="Proyek Diratama"
+                    class="sec-img"
+                    id="home-about-secondary-image"
+                >
+
+
+                <div
+                    class="sec-overlay-text"
+                    id="home-about-overlay-text"
+                >
+                    KUALITAS<br>
+                    KEAMANAN<br>
+                    KEBERLANJUTAN
                 </div>
+
+
             </div>
+
+
         </div>
 
-        <!-- Kolom Kanan: Konten Teks -->
+
+
+        <!-- =============================================
+             CONTENT
+             ============================================= -->
+
         <div class="about-content">
+
+
+            <!-- BADGE -->
+
             <div class="badge section-badge">
-                <span class="line"></span> TENTANG KAMI
+
+                <span class="line"></span>
+
+                <span id="home-about-badge">
+                    TENTANG KAMI
+                </span>
+
             </div>
-            <h2 class="section-title">Tentang PT Diratama<br><span class="highlight">Mapan Sejahtera</span></h2>
-            <p class="about-desc">
-                PT Diratama Mapan Sejahtera merupakan perusahaan yang bergerak di bidang jasa penyedia tenaga kerja, kontraktor, dan pengadaan barang. Kami berkomitmen untuk memberikan pelayanan terbaik dengan mengutamakan kualitas, ketepatan waktu, serta profesionalisme dalam setiap proyek yang kami jalankan.
+
+
+
+            <!-- TITLE -->
+
+            <h2 class="section-title">
+
+
+                <span id="home-about-title-main">
+                    Tentang PT Diratama
+                </span>
+
+
+                <br>
+
+
+                <span
+                    class="highlight"
+                    id="home-about-title-highlight"
+                >
+                    Mapan Sejahtera
+                </span>
+
+
+            </h2>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+                class="home-about-desc"
+                id="home-about-desc"
+            >
+                PT Diratama Mapan Sejahtera merupakan perusahaan
+                yang bergerak di bidang jasa penyedia tenaga kerja,
+                kontraktor, dan pengadaan barang.
             </p>
+
+
+
+            <!-- FEATURES -->
 
             <div class="about-features">
+
+
+                <!-- FEATURE 1 -->
+
                 <div class="feature-row">
-                    <div class="icon-box"><span class="material-symbols-outlined">groups</span></div>
-                    <div class="text-box">
-                        <h4>Visi</h4>
-                        <p>Menjadi mitra terpercaya dalam penyediaan tenaga kerja, kontraktor, dan pengadaan barang yang berdaya saing tinggi.</p>
+
+                    <div class="icon-box">
+
+                        <span class="material-symbols-outlined">
+                            groups
+                        </span>
+
                     </div>
+
+
+                    <div class="text-box">
+
+                        <h4
+                            id="home-about-feature-1-title"
+                        >
+                            Visi
+                        </h4>
+
+
+                        <p
+                            id="home-about-feature-1-desc"
+                        >
+                            Menjadi mitra terpercaya dalam penyediaan
+                            tenaga kerja, kontraktor, dan pengadaan
+                            barang yang berdaya saing tinggi.
+                        </p>
+
+                    </div>
+
                 </div>
+
+
+
+                <!-- FEATURE 2 -->
+
                 <div class="feature-row">
-                    <div class="icon-box"><span class="material-symbols-outlined">track_changes</span></div>
-                    <div class="text-box">
-                        <h4>Misi</h4>
-                        <p>Memberikan solusi terbaik melalui layanan yang profesional, inovatif, dan berorientasi pada kepuasan pelanggan.</p>
+
+                    <div class="icon-box">
+
+                        <span class="material-symbols-outlined">
+                            track_changes
+                        </span>
+
                     </div>
+
+
+                    <div class="text-box">
+
+                        <h4
+                            id="home-about-feature-2-title"
+                        >
+                            Misi
+                        </h4>
+
+
+                        <p
+                            id="home-about-feature-2-desc"
+                        >
+                            Memberikan solusi terbaik melalui layanan
+                            yang profesional, inovatif, dan berorientasi
+                            pada kepuasan pelanggan.
+                        </p>
+
+                    </div>
+
                 </div>
+
+
+
+                <!-- FEATURE 3 -->
+
                 <div class="feature-row">
-                    <div class="icon-box"><span class="material-symbols-outlined">verified_user</span></div>
-                    <div class="text-box">
-                        <h4>Nilai Kami</h4>
-                        <p>Integritas, kualitas, keselamatan kerja, dan inovasi sebagai landasan dalam setiap langkah kami.</p>
+
+                    <div class="icon-box">
+
+                        <span class="material-symbols-outlined">
+                            verified_user
+                        </span>
+
                     </div>
+
+
+                    <div class="text-box">
+
+                        <h4
+                            id="home-about-feature-3-title"
+                        >
+                            Nilai Kami
+                        </h4>
+
+
+                        <p
+                            id="home-about-feature-3-desc"
+                        >
+                            Integritas, kualitas, keselamatan kerja,
+                            dan inovasi sebagai landasan dalam setiap
+                            langkah kami.
+                        </p>
+
+                    </div>
+
                 </div>
+
+
             </div>
 
-            <!-- Tombol dengan ikon material bawaan (Diperbarui agar load halaman About utuh) -->
-            <a href="#" class="btn btn-primary about-btn" onclick="loadPage('about'); return false;">
-                Pelajari Lebih Lanjut <span class="material-symbols-outlined" style="font-size: 1.2rem; margin-left: 5px;">arrow_forward</span>
+
+
+            <!-- BUTTON -->
+
+            <a
+                href="#"
+                class="btn btn-primary about-btn"
+                id="home-about-button"
+            >
+
+                <span id="home-about-button-text">
+                    
+                </span>
+
+
+                <span
+                    class="material-symbols-outlined"
+                    style="
+                        font-size:1.2rem;
+                        margin-left:5px;
+                    "
+                >
+                    arrow_forward
+                </span>
+
             </a>
+
+
         </div>
+
     </div>
-    
-    <!-- Tagline Kanan Bawah Section -->
+
+
+
+    <!-- ABOUT MOTTO -->
+
     <div class="about-tagline-bottom">
-        <p>SOLUSI KONSTRUKSI<br>UNTUK NEGERI</p>
+
+        <p
+            class="global-motto-text"
+            id="home-about-motto"
+        >
+            SOLUSI KONSTRUKSI<br>
+            UNTUK NEGERI
+        </p>
+
         <div class="tagline-line"></div>
+
     </div>
+
+
 </section>
 
-<!-- NILAI PERUSAHAAN SECTION -->
-<section class="values-section" id="nilai-perusahaan">
-    <!-- Ornamen Background -->
+
+
+<!-- =========================================================
+     03. NILAI PERUSAHAAN
+     ========================================================= -->
+
+<section
+    class="values-section"
+    id="nilai-perusahaan"
+>
+
+
     <div class="decor-left-navy"></div>
+
     <div class="decor-left-yellow"></div>
+
+
     <div class="decor-right-text">
-        <span>BUILD A<br>BETTER<br>TOMORROW</span>
+
+        <span>
+            BUILD A<br>
+            BETTER<br>
+            TOMORROW
+        </span>
+
         <div class="decor-line"></div>
+
     </div>
+
+
 
     <div class="values-container">
-        <!-- Header Section -->
+
+
+        <!-- HEADER -->
+
         <div class="values-header">
-            <div class="badge center-badge">
-                <span class="line"></span> <span style="color: var(--navy);">NILAI PERUSAHAAN</span>
-            </div>
-            <h2 class="section-title text-center">Prinsip Kami untuk<br><span class="highlight">Hasil yang Lebih Baik</span></h2>
-            <p class="values-desc text-center">
-                Nilai-nilai ini menjadi landasan bagi setiap langkah kami dalam memberikan layanan<br>yang profesional, terpercaya, dan berkelanjutan bagi seluruh mitra.
+
+
+            <!-- CLIENT REVISION:
+                 LABEL NILAI PERUSAHAAN DIHAPUS -->
+
+
+            <h2
+                class="section-title text-center"
+            >
+
+                <span id="home-values-title-main">
+                    Prinsip Kami untuk
+                </span>
+
+                <br>
+
+                <span
+                    class="highlight"
+                    id="home-values-title-highlight"
+                >
+                    Hasil yang Lebih Baik
+                </span>
+
+            </h2>
+
+
+            <p
+                class="values-desc text-center"
+                id="home-values-desc"
+            >
+                Nilai-nilai ini menjadi landasan bagi setiap langkah kami
+                dalam memberikan layanan yang profesional, terpercaya,
+                dan berkelanjutan bagi seluruh mitra.
             </p>
+
+
         </div>
 
-        <!-- Grid 6 Kartu -->
+
+
+        <!-- VALUE GRID -->
+
         <div class="values-grid">
-            <!-- Kartu 1 -->
+
+
+            <!-- VALUE 1 -->
+
             <div class="value-card">
+
+
                 <div class="value-icon-box">
-                    <span class="material-symbols-outlined">verified_user</span>
+
+                    <span
+                        class="material-symbols-outlined"
+                        id="home-value-1-icon"
+                    >
+                        verified_user
+                    </span>
+
                 </div>
+
+
                 <div class="value-text">
-                    <h4>Integritas</h4>
+
+                    <h4
+                        id="home-value-1-title"
+                    >
+                        Integritas
+                    </h4>
+
                     <div class="card-line"></div>
-                    <p>Menjunjung tinggi kejujuran, etika dan tanggung jawab dalam setiap proses kerja.</p>
+
+                    <p
+                        id="home-value-1-desc"
+                    >
+                        Menjunjung tinggi kejujuran,
+                        etika dan tanggung jawab
+                        dalam setiap proses kerja.
+                    </p>
+
                 </div>
-            </div>
-            
-            <!-- Kartu 2 -->
-            <div class="value-card">
-                <div class="value-icon-box">
-                    <span class="material-symbols-outlined">handshake</span>
-                </div>
-                <div class="value-text">
-                    <h4>Komitmen</h4>
-                    <div class="card-line"></div>
-                    <p>Berkomitmen memberikan hasil terbaik dan memenuhi kepercayaan setiap mitra.</p>
-                </div>
+
             </div>
 
-            <!-- Kartu 3 -->
+
+
+            <!-- VALUE 2 -->
+
             <div class="value-card">
+
+
                 <div class="value-icon-box">
-                    <span class="material-symbols-outlined">engineering</span>
+
+                    <span
+                        class="material-symbols-outlined"
+                        id="home-value-2-icon"
+                    >
+                        handshake
+                    </span>
+
                 </div>
+
+
                 <div class="value-text">
-                    <h4>Profesionalisme</h4>
+
+                    <h4
+                        id="home-value-2-title"
+                    >
+                        Komitmen
+                    </h4>
+
                     <div class="card-line"></div>
-                    <p>Didukung oleh tenaga ahli yang kompeten dan berpengalaman di bidangnya.</p>
+
+                    <p
+                        id="home-value-2-desc"
+                    >
+                        Berkomitmen memberikan hasil
+                        terbaik dan memenuhi kepercayaan
+                        setiap mitra.
+                    </p>
+
                 </div>
+
             </div>
 
-            <!-- Kartu 4 -->
+
+
+            <!-- VALUE 3 -->
+
             <div class="value-card">
+
+
                 <div class="value-icon-box">
-                    <span class="material-symbols-outlined">groups</span>
+
+                    <span
+                        class="material-symbols-outlined"
+                        id="home-value-3-icon"
+                    >
+                        engineering
+                    </span>
+
                 </div>
+
+
                 <div class="value-text">
-                    <h4>Kolaborasi</h4>
+
+                    <h4
+                        id="home-value-3-title"
+                    >
+                        Profesionalisme
+                    </h4>
+
                     <div class="card-line"></div>
-                    <p>Membangun kemitraan yang kuat dengan komunikasi terbuka dan saling mendukung.</p>
+
+                    <p
+                        id="home-value-3-desc"
+                    >
+                        Didukung oleh tenaga ahli
+                        yang kompeten dan berpengalaman
+                        di bidangnya.
+                    </p>
+
                 </div>
+
             </div>
 
-            <!-- Kartu 5 -->
+
+
+            <!-- VALUE 4 -->
+
             <div class="value-card">
+
+
                 <div class="value-icon-box">
-                    <span class="material-symbols-outlined">lightbulb</span>
+
+                    <span
+                        class="material-symbols-outlined"
+                        id="home-value-4-icon"
+                    >
+                        groups
+                    </span>
+
                 </div>
+
+
                 <div class="value-text">
-                    <h4>Inovasi</h4>
+
+                    <h4
+                        id="home-value-4-title"
+                    >
+                        Kolaborasi
+                    </h4>
+
                     <div class="card-line"></div>
-                    <p>Terus menghadirkan solusi kreatif dan efisien untuk menjawab tantangan di masa depan.</p>
+
+                    <p
+                        id="home-value-4-desc"
+                    >
+                        Membangun kemitraan yang kuat
+                        dengan komunikasi terbuka
+                        dan saling mendukung.
+                    </p>
+
                 </div>
+
             </div>
 
-            <!-- Kartu 6 -->
+
+
+            <!-- VALUE 5 -->
+
             <div class="value-card">
+
+
                 <div class="value-icon-box">
-                    <span class="material-symbols-outlined">eco</span>
+
+                    <span
+                        class="material-symbols-outlined"
+                        id="home-value-5-icon"
+                    >
+                        lightbulb
+                    </span>
+
                 </div>
+
+
                 <div class="value-text">
-                    <h4>Berkelanjutan</h4>
+
+                    <h4
+                        id="home-value-5-title"
+                    >
+                        Inovasi
+                    </h4>
+
                     <div class="card-line"></div>
-                    <p>Berorientasi pada pertumbuhan jangka panjang dan pembangunan yang ramah lingkungan.</p>
+
+                    <p
+                        id="home-value-5-desc"
+                    >
+                        Terus menghadirkan solusi kreatif
+                        dan efisien untuk menjawab tantangan
+                        di masa depan.
+                    </p>
+
                 </div>
+
             </div>
+
+
+
+            <!-- VALUE 6 -->
+
+            <div class="value-card">
+
+
+                <div class="value-icon-box">
+
+                    <span
+                        class="material-symbols-outlined"
+                        id="home-value-6-icon"
+                    >
+                        eco
+                    </span>
+
+                </div>
+
+
+                <div class="value-text">
+
+                    <h4
+                        id="home-value-6-title"
+                    >
+                        Berkelanjutan
+                    </h4>
+
+                    <div class="card-line"></div>
+
+                    <p
+                        id="home-value-6-desc"
+                    >
+                        Berorientasi pada pertumbuhan
+                        jangka panjang dan pembangunan
+                        yang ramah lingkungan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
         </div>
+
     </div>
 
-    <!-- Bottom Banner Section (Masa Depan) -->
-    <div class="values-banner">
-        <!-- Ganti dengan foto konstruksi/sunset Anda -->
-        <div class="banner-bg" style="background-image: url('assets/images/bg/bg-4.png');"></div>
-        <div class="banner-overlay-angle"></div>
-        <div class="banner-content">
-            <div class="badge banner-badge">
-                <span class="line"></span> <span class="highlight" style="margin-right: 5px;">BERSAMA</span> MEMBANGUN
-            </div>
-            <h2 class="banner-title">MASA DEPAN YANG LEBIH BAIK</h2>
-        </div>
-    </div>
+
 </section>
 
-<!-- LAYANAN UTAMA SECTION -->
-<section class="services-section" id="layanan">
-    <!-- Ornamen Kanan Atas -->
+
+
+<!-- =========================================================
+     04. SOLUSI TERINTEGRASI / LAYANAN
+     ========================================================= -->
+
+<section
+    class="services-section"
+    id="layanan"
+>
+
+
     <div class="decor-right-text services-decor">
-        <span>BUILD A<br>BETTER<br>TOMORROW</span>
+
+        <span>
+            BUILD A<br>
+            BETTER<br>
+            TOMORROW
+        </span>
+
         <div class="decor-line"></div>
+
     </div>
+
+
 
     <div class="services-container">
-        <!-- Header Section (Split Layout) -->
+
+
+        <!-- HEADER -->
+
         <div class="services-header">
+
+
             <div class="header-left">
-                <div class="badge section-badge">
-                    <span class="line"></span> <span style="color: var(--navy);">LAYANAN UTAMA</span>
-                </div>
-                <h2 class="section-title">Solusi Terintegrasi<br><span class="highlight">untuk Pertumbuhan Anda</span></h2>
+
+
+                <h2
+                    class="section-title"
+                >
+
+                    <span
+                        id="home-services-title-main"
+                    >
+                        Solusi Terintegrasi
+                    </span>
+
+                    <br>
+
+                    <span
+                        class="highlight"
+                        id="home-services-title-highlight"
+                    >
+                        untuk Pertumbuhan Anda
+                    </span>
+
+                </h2>
+
+
             </div>
+
+
             <div class="header-right">
-                <p class="services-desc">
-                    Kami menyediakan layanan di bidang penyedia tenaga kerja, kontraktor, dan pengadaan barang dengan standar kualitas tinggi, didukung oleh tim profesional dan pengalaman yang terpercaya.
+
+
+                <p
+                    class="home-services-desc"
+                    id="home-services-desc"
+                >
+                    Kami menyediakan layanan di bidang penyedia
+                    tenaga kerja, kontraktor, dan pengadaan barang
+                    dengan standar kualitas tinggi, didukung oleh
+                    tim profesional dan berpengalaman yang terpercaya.
                 </p>
+
+
             </div>
+
+
         </div>
 
-        <!-- Grid 3 Layanan -->
+
+
+        <!-- SERVICE GRID -->
+
         <div class="services-grid">
-            
-            <!-- Service 1: Penyedia Tenaga Kerja -->
+
+
+            <!-- =================================================
+                 SERVICE 1
+                 JASA KONSTRUKSI
+                 ================================================= -->
+
             <div class="service-card">
+
+
                 <div class="card-img-wrapper">
-                    <!-- Ganti dengan foto pekerja -->
-                    <img src="assets/images/bg/bg-5.png" alt="Penyedia Tenaga Kerja">
+
+
+                    <img
+                        src="assets/images/bg/bg-2.png"
+                        alt="Jasa Konstruksi"
+                        id="home-service-1-image"
+                    >
+
+
                     <div class="card-num-overlay">
-                        <span class="num">01</span>
-                        <span class="num-text">TENAGA<br>PROFESIONAL<br>UNTUK BISNIS<br>LEBIH MAJU</span>
+
+
+                        <span
+                            class="num"
+                            id="home-service-1-number"
+                        >
+                            01
+                        </span>
+
+
+                        <span
+                            class="num-text"
+                            id="home-service-1-overlay"
+                        >
+                            KONSTRUKSI<br>
+                            BERKUALITAS
+                        </span>
+
+
                     </div>
+
+
                 </div>
+
+
+
                 <div class="card-content">
+
+
                     <div class="card-header-box">
+
+
                         <div class="icon-box-small">
-                            <span class="material-symbols-outlined">groups</span>
+
+                            <span
+                                class="material-symbols-outlined"
+                                id="home-service-1-icon"
+                            >
+                                construction
+                            </span>
+
                         </div>
+
+
                         <div class="title-desc">
-                            <h3>Penyedia Tenaga Kerja</h3>
-                            <p>Menyediakan tenaga kerja profesional dan kompeten untuk berbagai sektor industri sesuai kebutuhan perusahaan Anda.</p>
+
+
+                            <h3
+                                id="home-service-1-title"
+                            >
+                                Jasa Konstruksi
+                            </h3>
+
+
+                            <p
+                                id="home-service-1-desc"
+                            >
+                                Melaksanakan pekerjaan konstruksi
+                                dengan standar kualitas, keamanan,
+                                dan ketepatan waktu yang tinggi.
+                            </p>
+
+
                         </div>
+
+
                     </div>
+
+
+
                     <ul class="card-list">
-                        <li><span class="material-symbols-outlined check-icon">check_circle</span> Proses rekrutmen ketat dan terstandar</li>
-                        <li><span class="material-symbols-outlined check-icon">check_circle</span> Tenaga kerja terlatih dan berpengalaman</li>
-                        <li><span class="material-symbols-outlined check-icon">check_circle</span> Penempatan sesuai kebutuhan dan tepat waktu</li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Kualitas pengerjaan sesuai standar
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Tim ahli dan berpengalaman
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Manajemen proyek profesional
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Kepatuhan terhadap standar keselamatan kerja
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Penyelesaian proyek sesuai target waktu
+                        </li>
+
                     </ul>
-                    <a href="#" class="card-btn" onclick="loadPage('services'); return false;">
-                        <span class="btn-text">Lihat Detail Layanan</span>
-                        <span class="btn-icon"><span class="material-symbols-outlined">arrow_forward</span></span>
-                    </a>
+
+
                 </div>
+
             </div>
 
-            <!-- Service 2: Jasa Konstruksi -->
+
+
+            <!-- =================================================
+                 SERVICE 2
+                 PENYEDIA TENAGA KERJA
+                 ================================================= -->
+
             <div class="service-card">
+
+
                 <div class="card-img-wrapper">
-                    <!-- Ganti dengan foto crane/konstruksi -->
-                    <img src="assets/images/bg/bg-2.png" alt="Jasa Konstruksi">
+
+
+                    <img
+                        src="assets/images/bg/bg-5.png"
+                        alt="Penyedia Tenaga Kerja"
+                        id="home-service-2-image"
+                    >
+
+
                     <div class="card-num-overlay">
-                        <span class="num">02</span>
-                        <span class="num-text">KONSTRUKSI<br>BERKUALITAS<br>UNTUK MASA<br>DEPAN</span>
+
+
+                        <span
+                            class="num"
+                            id="home-service-2-number"
+                        >
+                            02
+                        </span>
+
+
+                        <span
+                            class="num-text"
+                            id="home-service-2-overlay"
+                        >
+                            TENAGA<br>
+                            PROFESIONAL
+                        </span>
+
+
                     </div>
+
+
                 </div>
+
+
+
                 <div class="card-content">
+
+
                     <div class="card-header-box">
+
+
                         <div class="icon-box-small">
-                            <span class="material-symbols-outlined">construction</span>
+
+                            <span
+                                class="material-symbols-outlined"
+                                id="home-service-2-icon"
+                            >
+                                groups
+                            </span>
+
                         </div>
+
+
                         <div class="title-desc">
-                            <h3>Jasa Konstruksi</h3>
-                            <p>Melaksanakan pekerjaan konstruksi dengan standar kualitas, keamanan, dan ketepatan waktu yang tinggi.</p>
+
+
+                            <h3
+                                id="home-service-2-title"
+                            >
+                                Penyedia Tenaga Kerja
+                            </h3>
+
+
+                            <p
+                                id="home-service-2-desc"
+                            >
+                                Menyediakan tenaga kerja profesional
+                                dan kompeten untuk berbagai sektor
+                                industri sesuai kebutuhan perusahaan Anda.
+                            </p>
+
+
                         </div>
+
+
                     </div>
+
+
+
                     <ul class="card-list">
-                        <li><span class="material-symbols-outlined check-icon">check_circle</span> Kualitas pengerjaan sesuai standar</li>
-                        <li><span class="material-symbols-outlined check-icon">check_circle</span> Tim ahli dan berpengalaman</li>
-                        <li><span class="material-symbols-outlined check-icon">check_circle</span> Manajemen proyek yang profesional</li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Proses rekrutmen ketat dan terstandar
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Tenaga kerja terlatih dan berpengalaman
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Penempatan sesuai kebutuhan
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Seleksi sesuai kualifikasi dan kebutuhan
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Administrasi tenaga kerja terkelola dengan baik
+                        </li>
+
                     </ul>
-                    <a href="#" class="card-btn" onclick="loadPage('services'); return false;">
-                        <span class="btn-text">Lihat Detail Layanan</span>
-                        <span class="btn-icon"><span class="material-symbols-outlined">arrow_forward</span></span>
-                    </a>
+
+
                 </div>
+
             </div>
 
-            <!-- Service 3: Pengadaan Barang -->
+
+
+            <!-- =================================================
+                 SERVICE 3
+                 PENGADAAN BARANG
+                 ================================================= -->
+
             <div class="service-card">
+
+
                 <div class="card-img-wrapper">
-                    <!-- Ganti dengan foto gudang/material -->
-                    <img src="assets/images/bg/bg-6.png" alt="Pengadaan Barang">
+
+
+                    <img
+                        src="assets/images/bg/bg-6.png"
+                        alt="Pengadaan Barang"
+                        id="home-service-3-image"
+                    >
+
+
                     <div class="card-num-overlay">
-                        <span class="num">03</span>
-                        <span class="num-text">PENGADAAN<br>TEPAT,<br>OPERASIONAL<br>LEBIH EFISIEN</span>
+
+
+                        <span
+                            class="num"
+                            id="home-service-3-number"
+                        >
+                            03
+                        </span>
+
+
+                        <span
+                            class="num-text"
+                            id="home-service-3-overlay"
+                        >
+                            PENGADAAN<br>
+                            TEPAT
+                        </span>
+
+
                     </div>
+
+
                 </div>
+
+
+
                 <div class="card-content">
+
+
                     <div class="card-header-box">
+
+
                         <div class="icon-box-small">
-                            <span class="material-symbols-outlined">inventory_2</span>
+
+                            <span
+                                class="material-symbols-outlined"
+                                id="home-service-3-icon"
+                            >
+                                inventory_2
+                            </span>
+
                         </div>
+
+
                         <div class="title-desc">
-                            <h3>Pengadaan Barang</h3>
-                            <p>Menyediakan berbagai kebutuhan barang dan material dengan kualitas terjamin dari supplier terpercaya.</p>
+
+
+                            <h3
+                                id="home-service-3-title"
+                            >
+                                Pengadaan Barang
+                            </h3>
+
+
+                            <p
+                                id="home-service-3-desc"
+                            >
+                                Menyediakan berbagai kebutuhan barang
+                                dan material dengan kualitas terjamin
+                                dari supplier terpercaya.
+                            </p>
+
+
                         </div>
+
+
                     </div>
+
+
+
                     <ul class="card-list">
-                        <li><span class="material-symbols-outlined check-icon">check_circle</span> Produk berkualitas dan sesuai spesifikasi</li>
-                        <li><span class="material-symbols-outlined check-icon">check_circle</span> Pengadaan dari supplier terpercaya</li>
-                        <li><span class="material-symbols-outlined check-icon">check_circle</span> Pengiriman tepat waktu dan aman</li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Produk berkualitas sesuai spesifikasi
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Pengadaan dari supplier terpercaya
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Pengiriman tepat waktu dan aman
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Harga kompetitif dan transparan
+                        </li>
+
+                        <li>
+                            <span class="material-symbols-outlined check-icon">
+                                check_circle
+                            </span>
+                            Dokumentasi pengadaan yang lengkap
+                        </li>
+
                     </ul>
-                    <a href="#" class="card-btn" onclick="loadPage('services'); return false;">
-                        <span class="btn-text">Lihat Detail Layanan</span>
-                        <span class="btn-icon"><span class="material-symbols-outlined">arrow_forward</span></span>
-                    </a>
+
+
                 </div>
+
             </div>
+
 
         </div>
+
+
     </div>
 
-    <!-- Bottom CTA Banner (Mari Wujudkan Proyek Anda) -->
-    <div class="services-cta">
-        <!-- Ganti dengan foto blueprint atau background konstruksi gelap -->
-        <div class="cta-bg" style="background-image: url('assets/images/bg/bg-4.png');"></div>
-        <div class="cta-overlay"></div>
-        <div class="cta-container">
-            <div class="cta-left">
-                <div class="badge">
-                    <span class="line"></span> <span class="cta-subtitle">MARI WUJUDKAN PROYEK ANDA</span>
-                </div>
-                <h3 class="highlight cta-title">BERSAMA KAMI</h3>
-            </div>
-            <div class="cta-middle">
-                <span class="material-symbols-outlined cta-icon-large">domain</span>
-                <p>Konsultasikan kebutuhan Anda dan temukan solusi terbaik bersama tim profesional kami.</p>
-            </div>
-            <div class="cta-right">
-                <a href="https://wa.me/6281234567890" class="btn btn-primary cta-btn">
-                    Hubungi Kami <span class="material-symbols-outlined" style="font-size: 1.2rem; margin-left: 5px;">arrow_forward</span>
-                </a>
-            </div>
-        </div>
-    </div>
+
 </section>
 
-<!-- WORK EXPERIENCE SECTION -->
-<section class="work-section" id="pengalaman-kerja">
-    <!-- Background gedung samar di bagian bawah -->
+
+
+<!-- =========================================================
+     05. WORK EXPERIENCE
+     ========================================================= -->
+
+<section
+    class="work-section"
+    id="pengalaman-kerja"
+>
+
+
     <div class="work-bg-overlay"></div>
 
+
     <div class="work-container">
-        <!-- Ornamen Kanan Atas -->
-        <div class="decor-right-text work-decor">
-            <span>BUILD A<br>BETTER<br>TOMORROW</span>
+
+
+        <div class="work-decor">
+
+            <span>
+                BUILD A<br>
+                BETTER<br>
+                TOMORROW
+            </span>
+
             <div class="decor-line"></div>
+
         </div>
 
-        <!-- Header Section -->
+
+
         <div class="services-header work-header">
+
+
             <div class="header-left">
-                <div class="badge section-badge">
-                    <span class="line"></span> <span style="color: var(--white);">WORK EXPERIENCE</span>
-                </div>
-                <h2 class="section-title text-white">Work Experience &<br><span class="highlight">Proyek Unggulan</span></h2>
-            </div>
-            <div class="header-right work-header-right">
-                <p class="services-desc text-gray">
-                    Berbagai proyek yang telah kami selesaikan menjadi bukti komitmen kami dalam memberikan hasil terbaik, tepat waktu, dan sesuai standar kualitas.
-                </p>
-            </div>
-        </div>
 
-        <!-- Grid Portofolio (Asimetris) -->
-        <div class="portfolio-grid">
-            
-            <!-- Posisi 1 (Kiri - Tinggi) -->
-            <div class="port-card pos-1">
-                <img src="assets/images/portfolio-1.png" alt="Kantor Pemerintahan">
-                <div class="port-overlay">
-                    <div class="port-info">
-                        <span class="material-symbols-outlined port-icon">domain</span>
-                        <h4>Pembangunan Gedung<br>Kantor Pemerintahan</h4>
-                    </div>
-                    <div class="port-loc">
-                        <span class="material-symbols-outlined loc-icon">location_on</span>
-                        <p>Jakarta, DKI Jakarta</p>
-                    </div>
-                </div>
+
+                <h2
+                    class="section-title text-white"
+                >
+
+                    <span
+                        id="home-work-title-main"
+                    >
+                        Work Experience
+                    </span>
+
+                    <br>
+
+                    <span
+                        class="highlight"
+                        id="home-work-title-highlight"
+                    >
+                        Proyek Unggulan
+                    </span>
+
+                </h2>
+
+
             </div>
 
-            <!-- Posisi 2 (Tengah Kiri - Atas) -->
-            <div class="port-card pos-2">
-                <img src="assets/images/portfolio-2.png" alt="Rumah Sakit">
-                <div class="port-overlay">
-                    <div class="port-info">
-                        <span class="material-symbols-outlined port-icon">apartment</span>
-                        <h4>Proyek Pembangunan<br>Rumah Sakit</h4>
-                    </div>
-                    <div class="port-loc">
-                        <span class="material-symbols-outlined loc-icon">location_on</span>
-                        <p>Bekasi, Jawa Barat</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Posisi 3 (Tengah Kanan - Atas) -->
-            <div class="port-card pos-3">
-                <img src="assets/images/portfolio-3.png" alt="Pabrik Manufaktur">
-                <div class="port-overlay">
-                    <div class="port-info">
-                        <span class="material-symbols-outlined port-icon">factory</span>
-                        <h4>Konstruksi Pabrik Manufaktur</h4>
-                    </div>
-                    <div class="port-loc">
-                        <span class="material-symbols-outlined loc-icon">location_on</span>
-                        <p>Karawang, Jawa Barat</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Posisi 4 (Kanan - Tinggi) -->
-            <div class="port-card pos-4">
-                <img src="assets/images/portfolio-4.png" alt="Jalan dan Infrastruktur">
-                <div class="port-overlay">
-                    <div class="port-info">
-                        <span class="material-symbols-outlined port-icon">add_road</span>
-                        <h4>Pembangunan Jalan dan<br>Infrastruktur Pendukung</h4>
-                    </div>
-                    <div class="port-loc">
-                        <span class="material-symbols-outlined loc-icon">location_on</span>
-                        <p>Cikampek, Jawa Barat</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Posisi 5 (Tengah Kiri - Bawah) -->
-            <div class="port-card pos-5">
-                <img src="assets/images/portfolio-5.png" alt="Pengolahan Air">
-                <div class="port-overlay">
-                    <div class="port-info">
-                        <span class="material-symbols-outlined port-icon">water_damage</span>
-                        <h4>Instalasi Pengolahan Air (IPA)</h4>
-                    </div>
-                    <div class="port-loc">
-                        <span class="material-symbols-outlined loc-icon">location_on</span>
-                        <p>Tangerang, Banten</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Posisi 6 (Tengah Kanan - Bawah) -->
-            <div class="port-card pos-6">
-                <img src="assets/images/portfolio-6.png" alt="Gudang Logistik">
-                <div class="port-overlay">
-                    <div class="port-info">
-                        <span class="material-symbols-outlined port-icon">warehouse</span>
-                        <h4>Pembangunan Gudang Logistik</h4>
-                    </div>
-                    <div class="port-loc">
-                        <span class="material-symbols-outlined loc-icon">location_on</span>
-                        <p>Surabaya, Jawa Timur</p>
-                    </div>
-                </div>
-            </div>
 
         </div>
 
-        <!-- Tombol Tengah (Lihat Semua) -->
-        <div class="work-center-btn">
-            <a href="#" class="btn btn-outline-yellow" onclick="loadPage('work'); return false;">
-                Lihat Semua Work Experience <span class="material-symbols-outlined" style="margin-left: 8px;">arrow_forward</span>
-            </a>
-        </div>
 
-        <!-- Footer / Navigasi Bawah Section -->
-        <div class="work-bottom-nav">
-            <div class="work-bottom-left">
-                <div class="badge-line-small"></div>
-                <p>KUALITAS HARI INI<br>UNTUK MASA DEPAN YANG LEBIH BAIK</p>
-            </div>
-        </div>
 
-    </div>
-</section>
+        <!-- DYNAMIC PORTFOLIO -->
 
-<!-- FINAL CTA SECTION -->
-<section class="final-cta-section" id="hubungi-kami">
-    <!-- Latar Belakang & Bentuk Geometris (Absolute) -->
-    <!-- Ganti dengan foto pekerja menunjuk proyek -->
-    <div class="final-cta-bg-img" style="background-image: url('assets/images/bg/bg-4.png');"></div>
-    
-    <!-- Bayangan/Aksen Kuning Gelap di belakang -->
-    <div class="shape-yellow-accent"></div>
-    <!-- Latar Kuning Utama -->
-    <div class="shape-yellow-main"></div>
-    
-    <!-- Bentuk Navy di Kanan -->
-    <div class="shape-navy-right">
-        <div class="navy-right-content">
-            <span class="text-light">BUILD A<br>BETTER<br>TOMORROW</span>
-            <div class="decor-line-yellow"></div>
-        </div>
-    </div>
+        <div
+            class="portfolio-grid"
+            id="home-portfolio-grid"
+        >
 
-    <!-- Konten Utama CTA -->
-    <div class="final-cta-container">
-        <div class="final-cta-left">
-            <div class="badge final-cta-badge">
-                <span class="line navy-line"></span> <span class="text-navy">MARI WUJUDKAN RENCANA ANDA</span>
-            </div>
-            <h2 class="final-cta-title">Siap Memulai Proyek Anda<br>Bersama Kami?</h2>
-            <p class="final-cta-desc">
-                Kami siap menjadi mitra terpercaya untuk mewujudkan proyek Anda dengan kualitas terbaik, tepat waktu, dan solusi yang efisien.
+            <p
+                style="
+                    grid-column:1/-1;
+                    text-align:center;
+                    padding:50px 0;
+                    color:white;
+                "
+            >
+                Memuat proyek...
             </p>
 
-            <div class="final-cta-action-area">
-                <!-- Tombol -->
-                <a href="https://wa.me/6281234567890" class="btn btn-navy">
-                    Hubungi Tim Kami Sekarang <span class="material-symbols-outlined" style="margin-left: 10px;">arrow_forward</span>
-                </a>
-                
-                <!-- Garis Pemisah Vertikal -->
-                <div class="action-divider"></div>
-
-                <!-- 3 Poin Keunggulan -->
-                <div class="cta-features">
-                    <div class="cta-feature-item">
-                        <span class="material-symbols-outlined icon-navy">verified_user</span>
-                        <p>Profesional<br>dan Terpercaya</p>
-                    </div>
-                    <div class="feature-divider"></div>
-                    <div class="cta-feature-item">
-                        <span class="material-symbols-outlined icon-navy">settings</span>
-                        <p>Solusi Tepat<br>Sesuai Kebutuhan</p>
-                    </div>
-                    <div class="feature-divider"></div>
-                    <div class="cta-feature-item">
-                        <span class="material-symbols-outlined icon-navy">groups</span>
-                        <p>Siap Mendukung<br>Setiap Tahap Proyek</p>
-                    </div>
-                </div>
-            </div>
         </div>
+
+
+
+        <!-- BUTTON -->
+
+        <div class="work-center-btn">
+
+
+            <a
+                href="#"
+                class="btn btn-outline-yellow"
+                id="home-work-button"
+            >
+
+                <span id="home-work-button-text">
+                    Lihat Semua Work Experience
+                </span>
+
+
+                <span
+                    class="material-symbols-outlined"
+                    style="margin-left:8px;"
+                >
+                    arrow_forward
+                </span>
+
+            </a>
+
+
+        </div>
+
+
     </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     06. FINAL CTA
+     ========================================================= -->
+
+<section
+    class="final-cta-section"
+    id="hubungi-kami"
+>
+
+
+    <div
+        class="final-cta-bg-img"
+        id="home-cta-bg"
+        style="
+            background-image:
+            url('assets/images/bg/bg-4.png');
+        "
+    ></div>
+
+
+
+    <div class="shape-yellow-accent"></div>
+
+    <div class="shape-yellow-main"></div>
+
+
+
+    <div class="shape-navy-right"></div>
+
+
+
+    <div class="final-cta-container">
+
+
+        <div class="final-cta-left">
+
+
+            <h2
+                class="final-cta-title"
+                id="home-cta-title"
+            >
+                Siap Memulai Proyek Anda
+                Bersama Kami?
+            </h2>
+
+
+
+            <p
+                class="final-cta-desc"
+                id="home-cta-desc"
+            >
+                Kami siap menjadi mitra terpercaya untuk mewujudkan
+                proyek Anda dengan kualitas terbaik, tepat waktu,
+                dan solusi yang efisien.
+            </p>
+
+
+
+            <div class="final-cta-action-area">
+
+
+                <a
+                    href="#"
+                    class="btn btn-navy"
+                    id="home-cta-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span id="home-cta-button-text">
+                        Hubungi Tim Kami Sekarang
+                    </span>
+
+
+                    <span
+                        class="material-symbols-outlined"
+                        style="margin-left:10px;"
+                    >
+                        arrow_forward
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
 </section>
